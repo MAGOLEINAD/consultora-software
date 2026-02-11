@@ -1,0 +1,425 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "caseStudies": "Case Studies",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "badge": "OUR TRUSTED SUPPORT",
+      "title": "Building the Future with State of the Art IT Solutions",
+      "subtitle": "We design and deliver data platforms, business intelligence, automation, and AI solutions that replace manual work, unify fragmented systems, and turn information into measurable operational and financial outcomes.",
+      "cta1": "Discover More",
+      "cta2": "Watch Demo"
+    },
+    "trustedBy": "Trusted by leading companies",
+    "services": {
+      "title": "Transform Your Operations",
+      "subtitle": "Productized solutions designed for rapid delivery and measurable results"
+    },
+    "pricing": {
+      "title": "Productized Packages",
+      "subtitle": "Fixed scope. Predictable timeline. Measurable outcomes.",
+      "packages": {
+        "dataPlatform": {
+          "name": "Operational Data Hub + BI Sprint",
+          "duration": "8-10 weeks",
+          "priceFrom": "$50,000",
+          "featured": false,
+          "features": [
+            "Centralized data integration from multiple sources",
+            "Real-time dashboards and KPI tracking",
+            "Data quality framework and governance",
+            "Self-service analytics for business users",
+            "Team training and documentation"
+          ],
+          "cta": "Get Started"
+        },
+        "automation": {
+          "name": "Workflow Automation Sprint",
+          "duration": "6-8 weeks",
+          "priceFrom": "$45,000",
+          "featured": true,
+          "badge": "Most Popular",
+          "features": [
+            "End-to-end process mapping and analysis",
+            "Workflow automation and system integrations",
+            "Exception handling and audit trails",
+            "Change management and training",
+            "Performance monitoring dashboard"
+          ],
+          "cta": "Get Started"
+        },
+        "managed": {
+          "name": "Managed Improvements",
+          "duration": "Monthly retainer",
+          "priceFrom": "$8,000",
+          "priceUnit": "per month",
+          "featured": false,
+          "features": [
+            "Ongoing optimization of data, BI, or automation",
+            "Feature enhancements and integrations",
+            "Performance monitoring and reporting",
+            "Priority support and SLA guarantees",
+            "Quarterly strategic reviews"
+          ],
+          "cta": "Learn More"
+        }
+      }
+    },
+    "approach": {
+      "title": "Our Proven Methodology",
+      "subtitle": "Fast, focused delivery that minimizes risk and maximizes results",
+      "steps": [
+        {
+          "title": "Discovery",
+          "description": "We understand your current state, pain points, and desired outcomes through structured workshops and analysis."
+        },
+        {
+          "title": "Design",
+          "description": "We design the future state with clear architecture, data flows, and success metrics aligned to your business goals."
+        },
+        {
+          "title": "Build",
+          "description": "We deliver in rapid sprints with continuous feedback, ensuring you see progress every week."
+        },
+        {
+          "title": "Deploy & Optimize",
+          "description": "We launch, train your team, monitor performance, and iterate based on real-world usage and feedback."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "items": [
+        {
+          "quote": "The data platform transformed how we make decisions. We went from weekly reports to real-time insights in just 9 weeks.",
+          "author": "CFO, Mid-Market Manufacturing"
+        },
+        {
+          "quote": "Automation saved us 200+ hours per month and eliminated costly errors. The ROI was clear within 3 months.",
+          "author": "Operations Director, B2B Services"
+        },
+        {
+          "quote": "Finally, a consultancy that delivers on time, on budget, and with measurable results. Highly recommend.",
+          "author": "CTO, SaaS Company"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How are productized services different from traditional consulting?",
+          "answer": "Productized services have fixed scope, clear deliverables, and predictable timelines. You know exactly what you're getting and when. No scope creep, no endless discovery phases."
+        },
+        {
+          "question": "What if our needs don't fit a standard package?",
+          "answer": "We customize within the productized framework. During discovery, we adapt the package to your specific systems and workflows while maintaining timeline predictability."
+        },
+        {
+          "question": "Do you provide ongoing support after delivery?",
+          "answer": "Yes. Our Managed Improvements package provides continuous optimization, feature additions, and priority support. Many clients start with a sprint and transition to managed services."
+        },
+        {
+          "question": "What technologies do you use?",
+          "answer": "We're technology-agnostic and select tools based on your needs. Common choices include modern data platforms (Snowflake, BigQuery), BI tools (Power BI, Tableau), and automation platforms (Make, Zapier, custom APIs)."
+        },
+        {
+          "question": "How quickly can we get started?",
+          "answer": "Most projects start within 2-3 weeks of signing. We book discovery sessions, align on goals, and begin execution rapidly."
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Specialized solutions for data, automation, and AI",
+    "dataPlatformsBi": {
+      "name": "Data Platforms & Business Intelligence",
+      "shortDescription": "Centralize data, build real-time dashboards, and empower self-service analytics.",
+      "challenges": {
+        "title": "Common Challenges",
+        "items": [
+          "Data silos across multiple systems (CRM, ERP, spreadsheets)",
+          "Outdated infrastructure that can't scale",
+          "Lack of skilled resources to build and maintain platforms",
+          "Misunderstanding of BI costs and ROI"
+        ]
+      },
+      "deliverables": {
+        "title": "What We Deliver",
+        "items": [
+          "Data platform architecture and design",
+          "Centralized data layer with real-time pipelines",
+          "Self-service BI dashboards for key stakeholders",
+          "KPI governance and data quality framework",
+          "Managed optimization and ongoing support options"
+        ]
+      },
+      "outcomes": {
+        "title": "Outcomes",
+        "items": [
+          "Faster, data-driven decision making",
+          "Higher data reliability and trust",
+          "Reduced time spent on manual reporting",
+          "Improved operational and financial performance"
+        ]
+      }
+    },
+    "processAutomation": {
+      "name": "Process Automation (Workflow + RPA)",
+      "shortDescription": "Eliminate manual work, reduce errors, and scale operations efficiently.",
+      "challenges": {
+        "title": "Common Challenges",
+        "items": [
+          "High labor costs for repetitive tasks",
+          "Error-prone manual processes",
+          "Team burnout from tedious work",
+          "Slow decision cycles due to manual handoffs",
+          "Limited ability to scale without adding headcount"
+        ]
+      },
+      "deliverables": {
+        "title": "What We Deliver",
+        "items": [
+          "End-to-end workflow mapping and bottleneck analysis",
+          "Future-state design with automation opportunities",
+          "Automated workflows and system integrations",
+          "Audit trails, controls, and exception handling",
+          "Change management and team training"
+        ]
+      },
+      "outcomes": {
+        "title": "Outcomes",
+        "items": [
+          "Reduced cycle time (often 50-80%)",
+          "Fewer errors and compliance risks",
+          "Lower operational costs",
+          "Scalable processes that don't require proportional headcount"
+        ]
+      }
+    },
+    "appliedAi": {
+      "name": "Applied AI for Operations",
+      "shortDescription": "Automate knowledge work with AI-powered summarization, triage, and search.",
+      "challenges": {
+        "title": "Common Challenges",
+        "items": [
+          "Information overload from emails, documents, and systems",
+          "Disparate knowledge sources (wikis, emails, Slack, files)",
+          "Manual analysis and summarization work",
+          "Speed and accuracy constraints in high-volume workflows"
+        ]
+      },
+      "deliverables": {
+        "title": "What We Deliver",
+        "items": [
+          "AI-powered summarization and information extraction",
+          "Intelligent triage and routing workflows",
+          "Searchable knowledge base with semantic search",
+          "Automation of repetitive tasks (email responses, document generation)",
+          "Guardrails, human-in-the-loop, and quality controls"
+        ]
+      },
+      "outcomes": {
+        "title": "Outcomes",
+        "items": [
+          "Less manual analysis and administrative work",
+          "Faster response times to customers and stakeholders",
+          "Improved accuracy and consistency",
+          "Higher throughput without adding headcount"
+        ]
+      }
+    },
+    "mlForecasting": {
+      "name": "Advanced Analytics & Forecasting (ML)",
+      "shortDescription": "Build predictive models for demand forecasting, pricing, and planning.",
+      "challenges": {
+        "title": "Common Challenges",
+        "items": [
+          "Poor data quality and inconsistent sources",
+          "Data silos that prevent comprehensive analysis",
+          "Lack of in-house ML/data science resources",
+          "Outdated forecasting methods (spreadsheets, gut feel)"
+        ]
+      },
+      "deliverables": {
+        "title": "What We Deliver",
+        "items": [
+          "Data readiness assessment and cleanup",
+          "Custom forecasting and pricing models",
+          "Real-time model update pipelines",
+          "Model monitoring and iterative learning",
+          "Decision dashboards for business users"
+        ]
+      },
+      "outcomes": {
+        "title": "Outcomes",
+        "items": [
+          "Better forecast accuracy and reduced waste",
+          "Smarter pricing and margin optimization",
+          "Reliable planning and budgeting",
+          "Competitive advantage through data-driven insights"
+        ]
+      }
+    },
+    "softwareSelection": {
+      "name": "Software Selection & Implementation",
+      "shortDescription": "When off-the-shelf tools are better than custom, we help you choose and implement the right solution.",
+      "challenges": {
+        "title": "Common Challenges",
+        "items": [
+          "Overwhelming number of vendor options",
+          "Misalignment between business needs and software capabilities",
+          "Poor implementation leading to low adoption",
+          "Vendor lock-in and unexpected costs"
+        ]
+      },
+      "deliverables": {
+        "title": "What We Deliver",
+        "items": [
+          "Requirements gathering and prioritization",
+          "Vendor evaluation and scoring",
+          "Proof of concept and pilot testing",
+          "Implementation and system integration",
+          "Training and change management"
+        ]
+      },
+      "outcomes": {
+        "title": "Outcomes",
+        "items": [
+          "Confident software selection aligned to business needs",
+          "Faster time-to-value with expert implementation",
+          "Higher user adoption and ROI",
+          "Reduced risk of costly mistakes"
+        ]
+      }
+    },
+    "managedServices": {
+      "name": "Managed Services (Ongoing Support)",
+      "shortDescription": "Continuous optimization, monitoring, and support for your data, BI, automation, and AI systems.",
+      "challenges": {
+        "title": "Common Challenges",
+        "items": [
+          "Solutions degrade over time without maintenance",
+          "Lack of in-house expertise to troubleshoot issues",
+          "No capacity to add features or improvements",
+          "Risk of downtime or data quality issues"
+        ]
+      },
+      "deliverables": {
+        "title": "What We Deliver",
+        "items": [
+          "Proactive monitoring and alerting",
+          "Regular optimization and performance tuning",
+          "Feature enhancements and integrations",
+          "Priority support with SLA guarantees",
+          "Quarterly business reviews and strategic planning"
+        ]
+      },
+      "outcomes": {
+        "title": "Outcomes",
+        "items": [
+          "High system reliability and uptime",
+          "Continuous improvement and innovation",
+          "Predictable monthly costs",
+          "Peace of mind with expert support"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Senior engineers and delivery-focused consultants",
+    "description": "We are a team of senior engineers and delivery-focused consultants passionate about building business-critical platforms. We combine modern software engineering with operational and financial understanding to deliver solutions that are fast, robust, and measurable.",
+    "values": {
+      "title": "What Sets Us Apart",
+      "items": [
+        {
+          "title": "Rapid Delivery",
+          "description": "We use a clear, proven methodology that delivers results in weeks, not months."
+        },
+        {
+          "title": "Automation Mindset",
+          "description": "We replace 'spreadsheet armies' with scalable, automated systems."
+        },
+        {
+          "title": "Enterprise Practices",
+          "description": "Security, auditability, and reliability are built in from day one."
+        },
+        {
+          "title": "Long-Term Partnership",
+          "description": "We provide clear documentation and ongoing support options so you're never left stranded."
+        }
+      ]
+    }
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Real results for real businesses",
+    "items": [
+      {
+        "title": "Centralized Data for Cost Efficiency",
+        "problem": "A mid-market manufacturer struggled with data silos across ERP, CRM, and spreadsheets. Reporting took days, and decisions were based on outdated information.",
+        "approach": "We built a centralized data platform with real-time pipelines and self-service BI dashboards for finance and operations teams.",
+        "results": "Reporting time reduced from 3 days to real-time. Improved inventory management led to 15% reduction in carrying costs within 6 months."
+      },
+      {
+        "title": "Automation Boosts Revenue Efficiency",
+        "problem": "A B2B services company spent 200+ hours per month on manual order processing, invoicing, and customer communications.",
+        "approach": "We automated end-to-end workflows including order intake, approval routing, invoice generation, and customer notifications.",
+        "results": "Manual work reduced by 85%. Freed up team capacity to focus on growth. ROI achieved in under 4 months."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's discuss how we can help transform your operations",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "message": "Tell us about your challenges and goals",
+      "submit": "Send Message",
+      "success": "Thank you! We'll be in touch within 24 hours.",
+      "error": "Something went wrong. Please try again or email us directly."
+    },
+    "or": "Or",
+    "schedule": "Schedule a Discovery Call",
+    "responseTime": "We typically respond within 24 hours (Mon-Fri, 9am-6pm EST)."
+  },
+  "footer": {
+    "tagline": "Building business-critical platforms that deliver measurable results.",
+    "services": "Services",
+    "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2026 Consultora Software. All rights reserved."
+  },
+  "metadata": {
+    "home": {
+      "title": "Consultora Software | Data Platforms, Automation & AI Solutions",
+      "description": "Premium software consultancy delivering productized data platforms, business intelligence, automation, and AI solutions. Fixed scope, predictable timelines, measurable outcomes."
+    },
+    "services": {
+      "title": "Services | Consultora Software",
+      "description": "Specialized solutions for data platforms, process automation, applied AI, forecasting, and managed services."
+    },
+    "about": {
+      "title": "About Us | Consultora Software",
+      "description": "Senior engineers and delivery-focused consultants building business-critical platforms with rapid delivery and enterprise practices."
+    },
+    "caseStudies": {
+      "title": "Case Studies | Consultora Software",
+      "description": "Real results: how we've helped companies centralize data, automate workflows, and drive operational efficiency."
+    },
+    "contact": {
+      "title": "Contact Us | Consultora Software",
+      "description": "Get in touch to discuss how we can help transform your operations with data, automation, and AI."
+    }
+  }
+}

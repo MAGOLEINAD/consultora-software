@@ -1,0 +1,425 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "caseStudies": "Casos de Éxito",
+    "contact": "Contacto"
+  },
+  "home": {
+    "hero": {
+      "badge": "NUESTRO SOPORTE CONFIABLE",
+      "title": "Construyendo el Futuro con Soluciones IT de Última Generación",
+      "subtitle": "Diseñamos y entregamos plataformas de datos, business intelligence, automatización e IA aplicada para reemplazar trabajo manual, unificar sistemas dispersos y transformar información en resultados medibles.",
+      "cta1": "Descubrir Más",
+      "cta2": "Ver Demo"
+    },
+    "trustedBy": "Confiado por empresas líderes",
+    "services": {
+      "title": "Transformá tus Operaciones",
+      "subtitle": "Soluciones productizadas diseñadas para entrega rápida y resultados medibles"
+    },
+    "pricing": {
+      "title": "Paquetes Productizados",
+      "subtitle": "Alcance fijo. Cronograma predecible. Resultados medibles.",
+      "packages": {
+        "dataPlatform": {
+          "name": "Hub de Datos Operacional + BI Sprint",
+          "duration": "8-10 semanas",
+          "priceFrom": "$50,000",
+          "featured": false,
+          "features": [
+            "Integración centralizada de datos desde múltiples fuentes",
+            "Dashboards en tiempo real y seguimiento de KPIs",
+            "Framework de calidad de datos y gobernanza",
+            "Analytics de autoservicio para usuarios de negocio",
+            "Capacitación y documentación del equipo"
+          ],
+          "cta": "Comenzar"
+        },
+        "automation": {
+          "name": "Automatización de Workflows Sprint",
+          "duration": "6-8 semanas",
+          "priceFrom": "$45,000",
+          "featured": true,
+          "badge": "Más Popular",
+          "features": [
+            "Mapeo y análisis de procesos end-to-end",
+            "Automatización de workflows e integraciones de sistemas",
+            "Manejo de excepciones y auditoría",
+            "Gestión del cambio y capacitación",
+            "Dashboard de monitoreo de performance"
+          ],
+          "cta": "Comenzar"
+        },
+        "managed": {
+          "name": "Mejoras Gestionadas",
+          "duration": "Retainer mensual",
+          "priceFrom": "$8,000",
+          "priceUnit": "por mes",
+          "featured": false,
+          "features": [
+            "Optimización continua de datos, BI o automatización",
+            "Mejoras de funcionalidades e integraciones",
+            "Monitoreo de performance y reportes",
+            "Soporte prioritario con garantías de SLA",
+            "Revisiones estratégicas trimestrales"
+          ],
+          "cta": "Más Información"
+        }
+      }
+    },
+    "approach": {
+      "title": "Nuestra Metodología Comprobada",
+      "subtitle": "Entrega rápida y enfocada que minimiza riesgos y maximiza resultados",
+      "steps": [
+        {
+          "title": "Descubrimiento",
+          "description": "Entendemos tu estado actual, puntos de dolor y resultados deseados a través de talleres estructurados y análisis."
+        },
+        {
+          "title": "Diseño",
+          "description": "Diseñamos el estado futuro con arquitectura clara, flujos de datos y métricas de éxito alineadas a tus objetivos de negocio."
+        },
+        {
+          "title": "Construcción",
+          "description": "Entregamos en sprints rápidos con retroalimentación continua, asegurando que veas progreso cada semana."
+        },
+        {
+          "title": "Implementación y Optimización",
+          "description": "Lanzamos, capacitamos a tu equipo, monitoreamos el rendimiento e iteramos basándonos en uso real y feedback."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen Nuestros Clientes",
+      "items": [
+        {
+          "quote": "La plataforma de datos transformó cómo tomamos decisiones. Pasamos de reportes semanales a insights en tiempo real en solo 9 semanas.",
+          "author": "CFO, Manufactura Mid-Market"
+        },
+        {
+          "quote": "La automatización nos ahorró más de 200 horas por mes y eliminó errores costosos. El ROI fue claro en 3 meses.",
+          "author": "Director de Operaciones, Servicios B2B"
+        },
+        {
+          "quote": "Finalmente, una consultora que entrega a tiempo, dentro del presupuesto y con resultados medibles. Altamente recomendado.",
+          "author": "CTO, Empresa SaaS"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "items": [
+        {
+          "question": "¿En qué se diferencian los servicios productizados de la consultoría tradicional?",
+          "answer": "Los servicios productizados tienen alcance fijo, entregables claros y cronogramas predecibles. Sabés exactamente qué vas a recibir y cuándo. Sin expansión de alcance, sin fases de descubrimiento interminables."
+        },
+        {
+          "question": "¿Qué pasa si nuestras necesidades no encajan en un paquete estándar?",
+          "answer": "Personalizamos dentro del marco productizado. Durante el descubrimiento, adaptamos el paquete a tus sistemas y flujos de trabajo específicos mientras mantenemos la previsibilidad del cronograma."
+        },
+        {
+          "question": "¿Brindan soporte continuo después de la entrega?",
+          "answer": "Sí. Nuestro paquete de Mejoras Gestionadas proporciona optimización continua, adición de funcionalidades y soporte prioritario. Muchos clientes comienzan con un sprint y luego pasan a servicios gestionados."
+        },
+        {
+          "question": "¿Qué tecnologías utilizan?",
+          "answer": "Somos agnósticos en tecnología y seleccionamos herramientas según tus necesidades. Las opciones comunes incluyen plataformas de datos modernas (Snowflake, BigQuery), herramientas de BI (Power BI, Tableau) y plataformas de automatización (Make, Zapier, APIs personalizadas)."
+        },
+        {
+          "question": "¿Qué tan rápido podemos comenzar?",
+          "answer": "La mayoría de los proyectos comienzan dentro de 2-3 semanas de la firma. Agendamos sesiones de descubrimiento, alineamos objetivos y comenzamos la ejecución rápidamente."
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones especializadas para datos, automatización e IA",
+    "dataPlatformsBi": {
+      "name": "Plataformas de Datos y Business Intelligence",
+      "shortDescription": "Centralizá datos, construí dashboards en tiempo real y empoderá analytics de autoservicio.",
+      "challenges": {
+        "title": "Desafíos Comunes",
+        "items": [
+          "Silos de datos en múltiples sistemas (CRM, ERP, planillas)",
+          "Infraestructura obsoleta que no puede escalar",
+          "Falta de recursos capacitados para construir y mantener plataformas",
+          "Malentendidos sobre costos y ROI de BI"
+        ]
+      },
+      "deliverables": {
+        "title": "Qué Entregamos",
+        "items": [
+          "Arquitectura y diseño de plataforma de datos",
+          "Capa de datos centralizada con pipelines en tiempo real",
+          "Dashboards de BI de autoservicio para stakeholders clave",
+          "Gobernanza de KPIs y framework de calidad de datos",
+          "Opciones de optimización gestionada y soporte continuo"
+        ]
+      },
+      "outcomes": {
+        "title": "Resultados",
+        "items": [
+          "Toma de decisiones más rápida basada en datos",
+          "Mayor confiabilidad y confianza en los datos",
+          "Tiempo reducido en reportes manuales",
+          "Mejora en rendimiento operacional y financiero"
+        ]
+      }
+    },
+    "processAutomation": {
+      "name": "Automatización de Procesos (Workflows + RPA)",
+      "shortDescription": "Eliminá trabajo manual, reducí errores y escalá operaciones eficientemente.",
+      "challenges": {
+        "title": "Desafíos Comunes",
+        "items": [
+          "Altos costos laborales para tareas repetitivas",
+          "Procesos manuales propensos a errores",
+          "Agotamiento del equipo por trabajo tedioso",
+          "Ciclos de decisión lentos debido a handoffs manuales",
+          "Capacidad limitada para escalar sin agregar personal"
+        ]
+      },
+      "deliverables": {
+        "title": "Qué Entregamos",
+        "items": [
+          "Mapeo de workflows end-to-end y análisis de cuellos de botella",
+          "Diseño del estado futuro con oportunidades de automatización",
+          "Workflows automatizados e integraciones de sistemas",
+          "Auditoría, controles y manejo de excepciones",
+          "Gestión del cambio y capacitación del equipo"
+        ]
+      },
+      "outcomes": {
+        "title": "Resultados",
+        "items": [
+          "Tiempo de ciclo reducido (frecuentemente 50-80%)",
+          "Menos errores y riesgos de cumplimiento",
+          "Costos operacionales menores",
+          "Procesos escalables que no requieren personal proporcional"
+        ]
+      }
+    },
+    "appliedAi": {
+      "name": "IA Aplicada para Operaciones",
+      "shortDescription": "Automatizá trabajo de conocimiento con resumenes, clasificación y búsqueda potenciados por IA.",
+      "challenges": {
+        "title": "Desafíos Comunes",
+        "items": [
+          "Sobrecarga de información de emails, documentos y sistemas",
+          "Fuentes de conocimiento dispersas (wikis, emails, Slack, archivos)",
+          "Trabajo manual de análisis y resumen",
+          "Limitaciones de velocidad y precisión en workflows de alto volumen"
+        ]
+      },
+      "deliverables": {
+        "title": "Qué Entregamos",
+        "items": [
+          "Resumen y extracción de información potenciados por IA",
+          "Workflows de clasificación y enrutamiento inteligentes",
+          "Base de conocimiento con búsqueda semántica",
+          "Automatización de tareas repetitivas (respuestas de email, generación de documentos)",
+          "Controles de calidad, human-in-the-loop y guardarraíles"
+        ]
+      },
+      "outcomes": {
+        "title": "Resultados",
+        "items": [
+          "Menos análisis manual y trabajo administrativo",
+          "Tiempos de respuesta más rápidos a clientes y stakeholders",
+          "Mayor precisión y consistencia",
+          "Mayor throughput sin agregar personal"
+        ]
+      }
+    },
+    "mlForecasting": {
+      "name": "Analítica Avanzada y Forecasting (ML)",
+      "shortDescription": "Construí modelos predictivos para forecasting de demanda, pricing y planificación.",
+      "challenges": {
+        "title": "Desafíos Comunes",
+        "items": [
+          "Mala calidad de datos y fuentes inconsistentes",
+          "Silos de datos que impiden análisis integral",
+          "Falta de recursos internos de ML/ciencia de datos",
+          "Métodos de forecasting obsoletos (planillas, intuición)"
+        ]
+      },
+      "deliverables": {
+        "title": "Qué Entregamos",
+        "items": [
+          "Evaluación y limpieza de preparación de datos",
+          "Modelos personalizados de forecasting y pricing",
+          "Pipelines de actualización de modelos en tiempo real",
+          "Monitoreo de modelos y aprendizaje iterativo",
+          "Dashboards de decisión para usuarios de negocio"
+        ]
+      },
+      "outcomes": {
+        "title": "Resultados",
+        "items": [
+          "Mejor precisión de forecast y reducción de desperdicios",
+          "Pricing más inteligente y optimización de márgenes",
+          "Planificación y presupuestación confiables",
+          "Ventaja competitiva a través de insights basados en datos"
+        ]
+      }
+    },
+    "softwareSelection": {
+      "name": "Selección e Implementación de Software",
+      "shortDescription": "Cuando las herramientas off-the-shelf son mejores que custom, te ayudamos a elegir e implementar la solución correcta.",
+      "challenges": {
+        "title": "Desafíos Comunes",
+        "items": [
+          "Número abrumador de opciones de vendors",
+          "Desalineación entre necesidades del negocio y capacidades del software",
+          "Mala implementación que lleva a baja adopción",
+          "Vendor lock-in y costos inesperados"
+        ]
+      },
+      "deliverables": {
+        "title": "Qué Entregamos",
+        "items": [
+          "Recolección y priorización de requerimientos",
+          "Evaluación y scoring de vendors",
+          "Proof of concept y testing piloto",
+          "Implementación e integración de sistemas",
+          "Capacitación y gestión del cambio"
+        ]
+      },
+      "outcomes": {
+        "title": "Resultados",
+        "items": [
+          "Selección de software confiable alineada a necesidades del negocio",
+          "Tiempo de valor más rápido con implementación experta",
+          "Mayor adopción de usuarios y ROI",
+          "Riesgo reducido de errores costosos"
+        ]
+      }
+    },
+    "managedServices": {
+      "name": "Servicios Gestionados (Soporte Continuo)",
+      "shortDescription": "Optimización, monitoreo y soporte continuo para tus sistemas de datos, BI, automatización e IA.",
+      "challenges": {
+        "title": "Desafíos Comunes",
+        "items": [
+          "Las soluciones se degradan con el tiempo sin mantenimiento",
+          "Falta de expertise interna para solucionar problemas",
+          "Sin capacidad para agregar funcionalidades o mejoras",
+          "Riesgo de downtime o problemas de calidad de datos"
+        ]
+      },
+      "deliverables": {
+        "title": "Qué Entregamos",
+        "items": [
+          "Monitoreo proactivo y alertas",
+          "Optimización regular y ajuste de performance",
+          "Mejoras de funcionalidades e integraciones",
+          "Soporte prioritario con garantías de SLA",
+          "Revisiones de negocio trimestrales y planificación estratégica"
+        ]
+      },
+      "outcomes": {
+        "title": "Resultados",
+        "items": [
+          "Alta confiabilidad del sistema y uptime",
+          "Mejora continua e innovación",
+          "Costos mensuales predecibles",
+          "Tranquilidad con soporte experto"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "Nosotros",
+    "subtitle": "Ingenieros senior y consultores enfocados en entrega",
+    "description": "Somos un equipo de ingenieros senior y consultores enfocados en entrega, apasionados por construir plataformas críticas para el negocio. Combinamos ingeniería de software moderna con entendimiento operacional y financiero para entregar soluciones que son rápidas, robustas y medibles.",
+    "values": {
+      "title": "Qué Nos Diferencia",
+      "items": [
+        {
+          "title": "Entrega Rápida",
+          "description": "Usamos una metodología clara y comprobada que entrega resultados en semanas, no meses."
+        },
+        {
+          "title": "Mentalidad de Automatización",
+          "description": "Reemplazamos 'ejércitos de planillas' con sistemas automatizados y escalables."
+        },
+        {
+          "title": "Prácticas Empresariales",
+          "description": "Seguridad, auditabilidad y confiabilidad están integradas desde el día uno."
+        },
+        {
+          "title": "Asociación a Largo Plazo",
+          "description": "Proveemos documentación clara y opciones de soporte continuo para que nunca quedes varado."
+        }
+      ]
+    }
+  },
+  "caseStudies": {
+    "title": "Casos de Éxito",
+    "subtitle": "Resultados reales para negocios reales",
+    "items": [
+      {
+        "title": "Datos Centralizados para Eficiencia de Costos",
+        "problem": "Un fabricante mid-market luchaba con silos de datos en ERP, CRM y planillas. Los reportes tomaban días y las decisiones se basaban en información desactualizada.",
+        "approach": "Construimos una plataforma de datos centralizada con pipelines en tiempo real y dashboards de BI de autoservicio para equipos de finanzas y operaciones.",
+        "results": "Tiempo de reporte reducido de 3 días a tiempo real. La gestión mejorada de inventario llevó a una reducción del 15% en costos de mantenimiento en 6 meses."
+      },
+      {
+        "title": "Automatización Aumenta Eficiencia de Ingresos",
+        "problem": "Una empresa de servicios B2B gastaba más de 200 horas por mes en procesamiento manual de pedidos, facturación y comunicaciones con clientes.",
+        "approach": "Automatizamos workflows end-to-end incluyendo ingreso de pedidos, routing de aprobación, generación de facturas y notificaciones a clientes.",
+        "results": "Trabajo manual reducido en 85%. Se liberó capacidad del equipo para enfocarse en crecimiento. ROI logrado en menos de 4 meses."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ponete en Contacto",
+    "subtitle": "Conversemos sobre cómo podemos ayudar a transformar tus operaciones",
+    "form": {
+      "name": "Nombre Completo",
+      "email": "Email",
+      "company": "Nombre de la Empresa",
+      "message": "Contanos sobre tus desafíos y objetivos",
+      "submit": "Enviar Mensaje",
+      "success": "¡Gracias! Nos pondremos en contacto en 24 horas.",
+      "error": "Algo salió mal. Por favor intentá de nuevo o envianos un email directamente."
+    },
+    "or": "O",
+    "schedule": "Agendá una Sesión de Discovery",
+    "responseTime": "Típicamente respondemos en 24 horas (Lun-Vie, 9am-6pm EST)."
+  },
+  "footer": {
+    "tagline": "Construyendo plataformas críticas para el negocio que entregan resultados medibles.",
+    "services": "Servicios",
+    "company": "Empresa",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "copyright": "© 2026 Consultora Software. Todos los derechos reservados."
+  },
+  "metadata": {
+    "home": {
+      "title": "Consultora Software | Plataformas de Datos, Automatización y Soluciones de IA",
+      "description": "Consultoría de software premium que entrega plataformas de datos productizadas, business intelligence, automatización y soluciones de IA. Alcance fijo, cronogramas predecibles, resultados medibles."
+    },
+    "services": {
+      "title": "Servicios | Consultora Software",
+      "description": "Soluciones especializadas para plataformas de datos, automatización de procesos, IA aplicada, forecasting y servicios gestionados."
+    },
+    "about": {
+      "title": "Nosotros | Consultora Software",
+      "description": "Ingenieros senior y consultores enfocados en entrega construyendo plataformas críticas para el negocio con entrega rápida y prácticas empresariales."
+    },
+    "caseStudies": {
+      "title": "Casos de Éxito | Consultora Software",
+      "description": "Resultados reales: cómo ayudamos a empresas a centralizar datos, automatizar workflows e impulsar eficiencia operacional."
+    },
+    "contact": {
+      "title": "Contacto | Consultora Software",
+      "description": "Ponete en contacto para conversar sobre cómo podemos ayudar a transformar tus operaciones con datos, automatización e IA."
+    }
+  }
+}
