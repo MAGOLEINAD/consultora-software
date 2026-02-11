@@ -42,6 +42,8 @@ export default async function MlForecastingPage(props: { params: Promise<{ local
         title={t('services.mlForecasting.outcomes.title')}
         items={Array.from({ length: 4 }, (_, i) => t(`services.mlForecasting.outcomes.items.${i}`))}
         ctaText={t('navigation.contact')}
+        cardTitle={t('services.outcomesCtaTitle')}
+        cardDescription={t('services.outcomesCtaDescription')}
       />
     </>
   );

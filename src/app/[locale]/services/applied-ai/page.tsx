@@ -42,6 +42,8 @@ export default async function AppliedAiPage(props: { params: Promise<{ locale: s
         title={t('services.appliedAi.outcomes.title')}
         items={Array.from({ length: 4 }, (_, i) => t(`services.appliedAi.outcomes.items.${i}`))}
         ctaText={t('navigation.contact')}
+        cardTitle={t('services.outcomesCtaTitle')}
+        cardDescription={t('services.outcomesCtaDescription')}
       />
     </>
   );

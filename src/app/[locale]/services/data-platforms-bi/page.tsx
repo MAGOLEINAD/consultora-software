@@ -59,6 +59,8 @@ export default async function DataPlatformsBiPage(props: { params: Promise<{ loc
         title={t('services.dataPlatformsBi.outcomes.title')}
         items={outcomes}
         ctaText={t('navigation.contact')}
+        cardTitle={t('services.outcomesCtaTitle')}
+        cardDescription={t('services.outcomesCtaDescription')}
       />
     </>
   );

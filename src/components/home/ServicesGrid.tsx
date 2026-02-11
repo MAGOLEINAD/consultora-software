@@ -1,7 +1,9 @@
 import { Link } from '@/i18n/routing';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Database, Workflow, Brain, TrendingUp, ShoppingCart, Headphones, ArrowRight } from 'lucide-react';
 import SectionHeading from '@/components/shared/SectionHeading';
+import Image from 'next/image';
+import { defaultBlurDataURL } from '@/lib/image';
 
 const serviceIcons = {
   'data-platforms-bi': Database,
@@ -10,6 +12,33 @@ const serviceIcons = {
   'ml-forecasting': TrendingUp,
   'software-selection': ShoppingCart,
   'managed-services': Headphones,
+};
+
+const serviceMedia: Record<string, { image: string; accent: string }> = {
+  'data-platforms-bi': {
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    accent: 'from-orange-500/30 to-transparent',
+  },
+  'process-automation': {
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+    accent: 'from-slate-900/40 to-transparent',
+  },
+  'applied-ai': {
+    image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80',
+    accent: 'from-orange-500/30 to-transparent',
+  },
+  'ml-forecasting': {
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    accent: 'from-slate-900/40 to-transparent',
+  },
+  'software-selection': {
+    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=80',
+    accent: 'from-orange-500/30 to-transparent',
+  },
+  'managed-services': {
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80',
+    accent: 'from-slate-900/40 to-transparent',
+  },
 };
 
 interface Service {
@@ -25,30 +54,44 @@ interface ServicesGridProps {
   services: Service[];
 }
 
-export default function ServicesGrid({ locale, title, subtitle, services }: ServicesGridProps) {
+export default function ServicesGrid({ title, subtitle, services }: ServicesGridProps) {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <SectionHeading title={title} subtitle={subtitle} />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => {
             const Icon = serviceIcons[service.slug as keyof typeof serviceIcons] || Database;
+            const media = serviceMedia[service.slug] || serviceMedia['data-platforms-bi'];
 
             return (
               <Link key={service.slug} href={`/services/${service.slug}`}>
-                <Card className="h-full transition-all hover:shadow-lg hover:border-[hsl(var(--primary))] group">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--accent))] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <Icon className="w-6 h-6 text-white" />
+                <Card className="h-full overflow-hidden border-[hsl(var(--border))] hover:shadow-xl transition-all group hover-lift">
+                  <div className="relative h-52">
+                    <Image
+                      src={media.image}
+                      alt={service.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      placeholder="blur"
+                      blurDataURL={defaultBlurDataURL}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-tr ${media.accent}`}></div>
+                    <div className="absolute bottom-4 left-4 h-12 w-12 rounded-2xl bg-white/90 backdrop-blur border border-white/60 flex items-center justify-center shadow-lg">
+                      <Icon className="w-6 h-6 text-[hsl(var(--primary))]" />
                     </div>
-                    <CardTitle className="text-xl mb-2">{service.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm mb-4">
+                  </div>
+
+                  <CardContent className="p-6">
+                    <h3 className="font-display text-xl font-semibold text-[hsl(var(--accent))] mb-3">
+                      {service.name}
+                    </h3>
+                    <p className="text-sm text-[hsl(var(--neutral-800))] mb-6">
                       {service.shortDescription}
-                    </CardDescription>
-                    <div className="flex items-center text-[hsl(var(--primary))] text-sm font-medium group-hover:gap-2 transition-all">
+                    </p>
+                    <div className="flex items-center text-[hsl(var(--primary))] text-sm font-semibold group-hover:gap-2 transition-all">
                       Learn more
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>

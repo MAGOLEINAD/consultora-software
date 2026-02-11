@@ -1,106 +1,185 @@
+'use client';
+
+import { useState } from 'react';
 import { Link } from '@/i18n/routing';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Check } from 'lucide-react';
-import SectionHeading from '@/components/shared/SectionHeading';
+import { Check, X, ArrowRight, Search, Database, Workflow, HeadphonesIcon } from 'lucide-react';
 
 interface Package {
   name: string;
   duration: string;
-  priceFrom: string;
-  priceUnit?: string;
-  featured: boolean;
-  badge?: string;
-  features: string[];
+  price: string;
+  includes: string[];
+  excludes?: string[];
+  notes?: string[];
   cta: string;
 }
 
 interface PricingCardsProps {
-  locale: string;
   title: string;
-  subtitle: string;
-  packages: {
-    dataPlatform: Package;
-    automation: Package;
-    managed: Package;
-  };
+  intro: string;
+  packages: Package[];
+  disclaimer: string;
 }
 
-export default function PricingCards({ locale, title, subtitle, packages }: PricingCardsProps) {
-  const packagesArray = [
-    packages.dataPlatform,
-    packages.automation,
-    packages.managed,
-  ];
+const packageIcons = {
+  0: Search,
+  1: Database,
+  2: Workflow,
+  3: HeadphonesIcon,
+};
+
+export default function PricingCards({
+  title,
+  intro,
+  packages,
+  disclaimer,
+}: PricingCardsProps) {
+  const discoveryPackage = packages[0];
+  const selectablePackages = packages.slice(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const selectedPackage = selectablePackages[selectedIndex];
+
+  const DiscoveryIcon = packageIcons[0];
+  const SelectedIcon = packageIcons[selectedIndex + 1];
 
   return (
-    <section id="pricing" className="section-padding bg-[hsl(var(--neutral-50))]">
-      <div className="container mx-auto px-4 md:px-8">
-        <SectionHeading title={title} subtitle={subtitle} />
+    <section id="pricing" className="py-16 md:py-24 bg-neutral-50">
+      <div className="container mx-auto px-4 max-w-4xl">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 mb-3">
+            {title}
+          </h2>
+          <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+            {intro}
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {packagesArray.map((pkg, index) => (
-            <Card
-              key={index}
-              className={`relative ${
-                pkg.featured
-                  ? 'border-[hsl(var(--primary))] shadow-xl scale-105 md:scale-110'
-                  : ''
-              }`}
-            >
-              {pkg.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <Badge variant="accent" className="px-4 py-1">
-                    {pkg.badge}
-                  </Badge>
+        {/* Pricing Card */}
+        <Card className="border-2 border-neutral-200 bg-white shadow-lg overflow-hidden">
+          {/* Tabs */}
+          <div className="bg-neutral-50 border-b-2 border-neutral-200 p-4">
+            <p className="text-xs font-semibold text-neutral-600 uppercase tracking-wide mb-3">
+              Choose Your Package
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {selectablePackages.map((pkg, index) => {
+                const Icon = packageIcons[index + 1];
+                return (
+                  <button
+                    key={pkg.name}
+                    onClick={() => setSelectedIndex(index)}
+                    className={`
+                      flex items-center gap-1.5 px-3 py-2 rounded-lg border-2 transition-all text-sm font-semibold cursor-pointer
+                      ${selectedIndex === index
+                        ? 'border-accent bg-accent text-white'
+                        : 'border-neutral-300 bg-white text-neutral-700 hover:border-accent/40'
+                      }
+                    `}
+                  >
+                    <Icon className="h-3.5 w-3.5" strokeWidth={2.5} />
+                    <span className="hidden sm:inline">{pkg.name}</span>
+                    <span className="sm:hidden">{pkg.name.split(' ')[0]}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <CardContent className="p-5 md:p-6">
+            {/* Package Header */}
+            <div className="flex items-center gap-3 mb-5 pb-4 border-b border-neutral-200">
+              <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <SelectedIcon className="h-5 w-5 text-accent" strokeWidth={2.5} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-display text-lg md:text-xl font-bold text-neutral-900 truncate">
+                  {selectedPackage.name}
+                </h3>
+                <div className="flex items-center gap-3 text-sm">
+                  <span className="text-neutral-600">{selectedPackage.duration}</span>
+                  <span className="font-bold text-accent text-base">{selectedPackage.price}</span>
                 </div>
-              )}
+              </div>
+            </div>
 
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">{pkg.name}</CardTitle>
-                <CardDescription className="text-sm">{pkg.duration}</CardDescription>
-
-                <div className="mt-6">
-                  <div className="flex items-baseline justify-center gap-2">
-                    <span className="text-sm text-[hsl(var(--neutral-800))]">from</span>
-                    <span className="text-4xl md:text-5xl font-bold text-[hsl(var(--foreground))]">
-                      {pkg.priceFrom}
-                    </span>
+            {/* Phases */}
+            <div className="space-y-4 mb-5">
+              {/* Phase 1: Discovery */}
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="h-6 w-6 rounded bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <DiscoveryIcon className="h-3.5 w-3.5 text-primary" strokeWidth={2.5} />
                   </div>
-                  {pkg.priceUnit && (
-                    <p className="text-sm text-[hsl(var(--neutral-800))] mt-1">
-                      {pkg.priceUnit}
-                    </p>
-                  )}
+                  <h4 className="text-sm font-bold text-neutral-900">
+                    Phase 1: Discovery
+                  </h4>
+                  <span className="text-xs text-neutral-500 ml-auto">{discoveryPackage.duration}</span>
                 </div>
-              </CardHeader>
-
-              <CardContent>
-                <ul className="space-y-3">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-[hsl(var(--primary))] shrink-0 mt-0.5" />
-                      <span className="text-sm text-[hsl(var(--neutral-800))]">
-                        {feature}
-                      </span>
+                <ul className="space-y-1 ml-8">
+                  {discoveryPackage.includes.slice(0, 3).map((item) => (
+                    <li key={item} className="flex items-start gap-1.5 text-xs text-neutral-700">
+                      <Check className="h-3 w-3 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-              </CardContent>
+              </div>
 
-              <CardFooter>
-                <Button
-                  asChild
-                  className="w-full"
-                  variant={pkg.featured ? 'default' : 'outline'}
-                >
-                  <Link href="/contact">{pkg.cta}</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+              {/* Phase 2: Implementation */}
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="h-6 w-6 rounded bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <SelectedIcon className="h-3.5 w-3.5 text-accent" strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-sm font-bold text-neutral-900">
+                    Phase 2: Implementation
+                  </h4>
+                  <span className="text-xs text-neutral-500 ml-auto">{selectedPackage.duration}</span>
+                </div>
+                <ul className="space-y-1 ml-8">
+                  {selectedPackage.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-1.5 text-xs text-neutral-700">
+                      <Check className="h-3 w-3 text-accent mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {selectedPackage.excludes && selectedPackage.excludes.length > 0 && (
+                  <div className="ml-8 mt-3 pt-3 border-t border-neutral-100">
+                    <p className="text-xs font-semibold text-neutral-400 uppercase tracking-wide mb-1.5">
+                      Not Included
+                    </p>
+                    <ul className="space-y-1">
+                      {selectedPackage.excludes.map((item) => (
+                        <li key={item} className="flex items-start gap-1.5 text-xs text-neutral-500">
+                          <X className="h-2.5 w-2.5 mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <Button asChild className="w-full h-11 font-semibold">
+              <Link href="/contact">
+                Get Started with {selectedPackage.name.split(' ')[0]}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* Disclaimer */}
+        <p className="text-xs text-neutral-600 text-center mt-6 leading-relaxed">
+          {disclaimer}
+        </p>
       </div>
     </section>
   );

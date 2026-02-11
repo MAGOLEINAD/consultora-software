@@ -1,8 +1,9 @@
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import GradientBlur from '@/components/shared/GradientBlur';
-import { Zap, Shield, Users, FileText } from 'lucide-react';
+import TeamSection from '@/components/home/TeamSection';
+import Image from 'next/image';
+import { defaultBlurDataURL } from '@/lib/image';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -16,15 +17,13 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
   });
 }
 
-const icons = [Zap, Shield, Users, FileText];
-
 export default async function AboutPage(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
   const t = await getTranslations({ locale: params.locale });
 
-  const values = Array.from({ length: 4 }, (_, i) => ({
-    title: t(`about.values.items.${i}.title`),
-    description: t(`about.values.items.${i}.description`),
+  const highlights = Array.from({ length: 6 }, (_, i) => ({
+    title: t(`about.highlights.items.${i}.title`),
+    description: t(`about.highlights.items.${i}.description`),
   }));
 
   return (
@@ -33,46 +32,83 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
         <GradientBlur variant="accent" />
 
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(var(--foreground))] mb-6">
-              {t('about.title')}
-            </h1>
-            <p className="text-lg md:text-xl text-[hsl(var(--neutral-800))] mb-6">
-              {t('about.subtitle')}
-            </p>
-            <p className="text-[hsl(var(--neutral-800))] leading-relaxed">
-              {t('about.description')}
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+            <div className="relative">
+              <div className="relative h-[420px] rounded-[36px] overflow-hidden border border-[hsl(var(--border))] shadow-xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
+                  alt="Team collaborating"
+                  fill
+                  className="object-cover"
+                  placeholder="blur"
+                  blurDataURL={defaultBlurDataURL}
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
+              </div>
+              <div className="absolute -bottom-8 -right-6 h-44 w-44 rounded-3xl overflow-hidden border border-[hsl(var(--border))] shadow-lg">
+                <Image
+                  src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600&q=80"
+                  alt="Team meeting"
+                  fill
+                  className="object-cover"
+                  placeholder="blur"
+                  blurDataURL={defaultBlurDataURL}
+                  sizes="180px"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-[hsl(var(--primary))] mb-4">
+                <span className="h-px w-10 bg-[hsl(var(--primary))]"></span>
+                <span>{t('about.heroEyebrow')}</span>
+              </div>
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[hsl(var(--accent))] mb-6 leading-[1.1]">
+                {t('about.heroTitle')}
+              </h1>
+              <p className="text-[hsl(var(--neutral-800))] leading-relaxed mb-8">
+                {t('about.intro')}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {highlights.map((item) => (
+                  <div key={item.title} className="border border-[hsl(var(--border))] rounded-2xl p-5 bg-white">
+                    <h2 className="font-semibold text-[hsl(var(--accent))] mb-2">{item.title}</h2>
+                    <p className="text-sm text-[hsl(var(--neutral-800))] leading-relaxed">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-[hsl(var(--neutral-50))]">
-        <div className="container mx-auto px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--foreground))] text-center mb-12">
-            {t('about.values.title')}
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {values.map((value, index) => {
-              const Icon = icons[index];
-              return (
-                <Card key={index}>
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(var(--accent))] flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <CardTitle className="text-xl mb-2">{value.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {value.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <TeamSection
+        title={t('about.team.title')}
+        subtitle={t('about.team.subtitle')}
+        members={[
+          {
+            name: t('about.team.members.0.name'),
+            role: t('about.team.members.0.role'),
+            image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
+          },
+          {
+            name: t('about.team.members.1.name'),
+            role: t('about.team.members.1.role'),
+            image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=800&q=80',
+          },
+          {
+            name: t('about.team.members.2.name'),
+            role: t('about.team.members.2.role'),
+            image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+          },
+          {
+            name: t('about.team.members.3.name'),
+            role: t('about.team.members.3.role'),
+            image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
+          },
+        ]}
+      />
     </>
   );
 }

@@ -1,14 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${sora.variable} ${manrope.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased" suppressHydrationWarning>

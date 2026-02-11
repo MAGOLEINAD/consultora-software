@@ -12,6 +12,15 @@ const servicePages = [
   'managed-services',
 ];
 
+const solutionPages = [
+  'fpa-automation',
+  'forecasting-tools',
+  'pricing-analytics',
+  'profitability-models',
+  'spend-cubes',
+  'customer-analytics',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = routing.locales;
 
@@ -35,10 +44,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     });
 
+    // Solutions overview
+    routes.push({
+      url: `${SITE_URL}/${locale}/solutions`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    });
+
     // Service detail pages
     servicePages.forEach((service) => {
       routes.push({
         url: `${SITE_URL}/${locale}/services/${service}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      });
+    });
+
+    // Solution detail pages
+    solutionPages.forEach((solution) => {
+      routes.push({
+        url: `${SITE_URL}/${locale}/solutions/${solution}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,

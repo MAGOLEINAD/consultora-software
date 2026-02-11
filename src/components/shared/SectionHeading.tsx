@@ -19,7 +19,7 @@ export default function SectionHeading({
       centered ? 'text-center' : '',
       className
     )}>
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--foreground))] mb-4">
+      <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[hsl(var(--accent))] mb-4">
         {title}
       </h2>
       {subtitle && (

@@ -56,6 +56,8 @@ export default async function ProcessAutomationPage(props: { params: Promise<{ l
         title={t('services.processAutomation.outcomes.title')}
         items={outcomes}
         ctaText={t('navigation.contact')}
+        cardTitle={t('services.outcomesCtaTitle')}
+        cardDescription={t('services.outcomesCtaDescription')}
       />
     </>
   );

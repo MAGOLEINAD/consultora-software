@@ -2,72 +2,236 @@
   "navigation": {
     "home": "Home",
     "services": "Services",
-    "about": "About",
+    "solutions": "Solutions",
+    "about": "About Us",
     "caseStudies": "Case Studies",
     "contact": "Contact"
   },
   "home": {
     "hero": {
-      "badge": "OUR TRUSTED SUPPORT",
-      "title": "Building the Future with State of the Art IT Solutions",
+      "badge": "EXPERT - DRIVEN",
+      "title": "IT Solutions",
       "subtitle": "We design and deliver data platforms, business intelligence, automation, and AI solutions that replace manual work, unify fragmented systems, and turn information into measurable operational and financial outcomes.",
       "cta1": "Discover More",
-      "cta2": "Watch Demo"
+      "cta2": "Watch Demo",
+      "metricTitle": "870k+",
+      "metricSubtitle": "Brands transformed",
+      "awardLine": "#1 & certified award IT solution & services worldwide"
     },
-    "trustedBy": "Trusted by leading companies",
+    "trustedBy": "Technologies we use",
+    "aboutTabs": {
+      "title": "Building the Future with State of the Art IT Solutions",
+      "subtitle": "OUR TRUSTED SUPPORT",
+      "tabs": [
+        {
+          "label": "Our Mission",
+          "title": "Expert-led delivery with measurable outcomes",
+          "description": "We partner with leadership teams to modernize systems, automate operations, and unlock data-driven decisions with a clear path to ROI."
+        },
+        {
+          "label": "Our Vision",
+          "title": "Modern platforms that scale with your business",
+          "description": "We design systems that grow with your business: secure, modular, and built to deliver fast time-to-value."
+        },
+        {
+          "label": "Our History",
+          "title": "Senior teams with enterprise experience",
+          "description": "Our consultants have led complex transformations across industries, bridging strategy and execution."
+        }
+      ],
+      "points": [
+        "Technology consultancy",
+        "Maintenance and support",
+        "Best-in-class service",
+        "Requirements gathering"
+      ],
+      "cta": "Discover More",
+      "helpLine": "Need Help?"
+    },
     "services": {
       "title": "Transform Your Operations",
       "subtitle": "Productized solutions designed for rapid delivery and measurable results"
     },
-    "pricing": {
-      "title": "Productized Packages",
-      "subtitle": "Fixed scope. Predictable timeline. Measurable outcomes.",
-      "packages": {
-        "dataPlatform": {
-          "name": "Operational Data Hub + BI Sprint",
-          "duration": "8-10 weeks",
-          "priceFrom": "$50,000",
-          "featured": false,
-          "features": [
-            "Centralized data integration from multiple sources",
-            "Real-time dashboards and KPI tracking",
-            "Data quality framework and governance",
-            "Self-service analytics for business users",
-            "Team training and documentation"
-          ],
-          "cta": "Get Started"
+    "solutionTabs": {
+      "title": "Financial & Analytics Solutions",
+      "tabs": [
+        {
+          "label": "FP&A Automation",
+          "title": "FP&A Automation",
+          "description": "Repurpose members of the accounting and FP&A departments to work smarter by replacing routine spreadsheet-based tasks with digital automation."
         },
-        "automation": {
-          "name": "Workflow Automation Sprint",
-          "duration": "6-8 weeks",
-          "priceFrom": "$45,000",
-          "featured": true,
-          "badge": "Most Popular",
-          "features": [
-            "End-to-end process mapping and analysis",
-            "Workflow automation and system integrations",
-            "Exception handling and audit trails",
-            "Change management and training",
-            "Performance monitoring dashboard"
-          ],
-          "cta": "Get Started"
+        {
+          "label": "Forecasting Tools",
+          "title": "Forecasting Tools",
+          "description": "Bottoms up approaches to forecasting based on extensive historical data, assumptions, and predictive analytics have proven to be far more accurate."
         },
-        "managed": {
-          "name": "Managed Improvements",
-          "duration": "Monthly retainer",
-          "priceFrom": "$8,000",
-          "priceUnit": "per month",
-          "featured": false,
-          "features": [
-            "Ongoing optimization of data, BI, or automation",
-            "Feature enhancements and integrations",
-            "Performance monitoring and reporting",
-            "Priority support and SLA guarantees",
-            "Quarterly strategic reviews"
-          ],
-          "cta": "Learn More"
+        {
+          "label": "Pricing Analytics",
+          "title": "Pricing Analytics",
+          "description": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits."
+        },
+        {
+          "label": "Profitability Models",
+          "title": "Profitability Models",
+          "description": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money."
+        },
+        {
+          "label": "Spend Cubes",
+          "title": "Spend Cubes",
+          "description": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types."
+        },
+        {
+          "label": "Customer Analytics",
+          "title": "Customer Analytics",
+          "description": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems."
         }
-      }
+      ]
+    },
+    "team": {
+      "title": "Meet the leadership team",
+      "subtitle": "EXPERT TEAM",
+      "members": [
+        {
+          "name": "Brooklyn Simmons",
+          "role": "President of Sales"
+        },
+        {
+          "name": "Savannah Nguyen",
+          "role": "President of Sales"
+        },
+        {
+          "name": "Leslie Alexander",
+          "role": "President of Sales"
+        },
+        {
+          "name": "Darlene Robertson",
+          "role": "President of Sales"
+        }
+      ]
+    },
+    "packages": {
+      "title": "Packages (fixed-scope, outcome-driven)",
+      "intro": "Start with a paid Discovery so we can scope accurately and provide a fixed proposal. Then choose a build sprint or ongoing support.",
+      "items": [
+        {
+          "name": "Discovery Sprint",
+          "duration": "2-4 weeks",
+          "price": "$3k–$10k",
+          "includesLength": "4",
+          "includes": [
+            "Stakeholder interviews + current-state assessment",
+            "KPI definition + data/process mapping",
+            "Architecture + delivery plan (timeline, risks, dependencies)",
+            "Deliverable: written roadmap + fixed-scope proposal"
+          ],
+          "excludesLength": "0",
+          "notesLength": "1",
+          "notes": [
+            "Optional: Discovery fee credited toward the build phase if you move forward"
+          ],
+          "cta": "Schedule a discovery call"
+        },
+        {
+          "name": "Operational Data Hub + BI Sprint",
+          "duration": "8–10 weeks",
+          "price": "starting at $50k",
+          "includesLength": "5",
+          "includes": [
+            "Up to 5 data sources connected",
+            "KPI workshop + metric governance",
+            "6–10 dashboards (executive + operational)",
+            "Role-based access + audit trail (as needed)",
+            "Documentation + handover"
+          ],
+          "excludesLength": "3",
+          "excludes": [
+            "20+ data sources",
+            "enterprise multi-region warehouse rebuild",
+            "large-scale system migrations without separate scope"
+          ],
+          "notesLength": "0",
+          "notes": [],
+          "cta": "Talk to an expert"
+        },
+        {
+          "name": "Workflow Automation Sprint",
+          "duration": "6–8 weeks",
+          "price": "starting at $45k",
+          "includesLength": "4",
+          "includes": [
+            "Automate 1–2 critical workflows (approvals, reconciliations, onboarding, incident/reporting)",
+            "Integrations + exception handling",
+            "Audit trail + controls",
+            "Training + go-live support"
+          ],
+          "excludesLength": "2",
+          "excludes": [
+            "full org-wide ERP replacement",
+            "more than 2 workflows without additional scope"
+          ],
+          "notesLength": "0",
+          "notes": [],
+          "cta": "Talk to an expert"
+        },
+        {
+          "name": "Managed Improvements",
+          "duration": "monthly",
+          "price": "$8k–$20k / month",
+          "includesLength": "3",
+          "includes": [
+            "Ongoing support + optimization",
+            "Incremental automation + BI enhancements",
+            "SLA options + rolling monthly roadmap"
+          ],
+          "excludesLength": "0",
+          "notesLength": "0",
+          "notes": [],
+          "cta": "Start managed support"
+        }
+      ],
+      "comparison": [
+        {
+          "package": "Discovery Sprint",
+          "bestFor": "Scoping and fixed proposal",
+          "duration": "12 weeks",
+          "outcomes": "Clear roadmap + fixed scope",
+          "pricing": "$3k–$10k"
+        },
+        {
+          "package": "Operational Data Hub + BI Sprint",
+          "bestFor": "Data + dashboards fast",
+          "duration": "8–10 weeks",
+          "outcomes": "Unified KPIs + exec/ops dashboards",
+          "pricing": "starting at $50k"
+        },
+        {
+          "package": "Workflow Automation Sprint",
+          "bestFor": "Replace manual workflows",
+          "duration": "6–8 weeks",
+          "outcomes": "Faster cycles + fewer errors",
+          "pricing": "starting at $45k"
+        },
+        {
+          "package": "Managed Improvements",
+          "bestFor": "Ongoing optimization",
+          "duration": "monthly",
+          "outcomes": "Continuous improvements + SLA",
+          "pricing": "$8k–$20k / month"
+        }
+      ],
+      "whoFor": [
+        "Mid-market operations-heavy companies (100–2000 employees)",
+        "Teams relying on spreadsheets/emails/manual reconciliations",
+        "Companies with multiple disconnected systems needing visibility",
+        "Leaders who want measurable ROI in weeks, not years"
+      ],
+      "notFit": [
+        "You want hourly staff augmentation as the primary engagement",
+        "You need a full custom product with undefined scope and no decision owner",
+        "You’re looking for the cheapest bid over outcome and reliability",
+        "You can’t allocate time for discovery and stakeholder access"
+      ],
+      "disclaimer": "Final investment depends on scope and complexity. We provide a fixed proposal after Discovery. All timelines assume timely access to stakeholders and data sources."
     },
     "approach": {
       "title": "Our Proven Methodology",
@@ -109,7 +273,10 @@
       ]
     },
     "faq": {
-      "title": "Frequently Asked Questions",
+      "subtitle": "FREQUENTLY ASKED QUESTIONS",
+      "title": "Answers to common questions about our IT services.",
+      "description": "This is why having reviews and client testimonials is important for your business. So, in this article, go over some client testimonial examples.",
+      "cta": "Contact Us",
       "items": [
         {
           "question": "How are productized services different from traditional consulting?",
@@ -329,30 +496,127 @@
           "Peace of mind with expert support"
         ]
       }
+    },
+    "outcomesCtaTitle": "Ready to accelerate delivery?",
+    "outcomesCtaDescription": "Talk to our team about timelines, scope, and the fastest path to measurable outcomes."
+  },
+  "solutions": {
+    "title": "Solutions",
+    "subtitle": "FP&A, forecasting, pricing, profitability, spend, and customer analytics solutions.",
+    "commonStrugglesTitle": "Common Struggles",
+    "solutionsTitle": "Solutions to These Challenges",
+    "items": {
+      "fpa-automation": {
+        "name": "FP&A Automation",
+        "description": "Repurpose members of the accounting and FP&A departments to work smarter by replacing routine spreadsheet-based tasks with digital automation.",
+        "intro": "Challenges Companies Have with Labor Intensive Accounting and Reporting Processes. Companies get stuck in the rut of having a large team of people manually closing month end books and preparing the same reports over and over again each month. This antiquated way of going about routine accounting and reporting processes results in untimely information, excessive costs, and employee burnout.",
+        "commonStruggles": [
+          "Time-Consuming and Costly Processes  Manual accounting functions require significant staff hours and higher labor costs.",
+          "Increased Risk of Human Errors  Examples of businesses suffering financial losses with errors from manual spreadsheet work are vast and significant.",
+          "Limited Scalability  As a company grows, manual processes struggle to keep up with increased transaction volumes.",
+          "Difficulty in Generating Real-Time Insights  Labor-intensive processes result in outdated or delayed financial reports thereby lacking access to real-time financial insights for decision-making."
+        ],
+        "solutions": [
+          "Enterprise-wide Data Platform  A centralized data platform integrates financial information across departments, eliminating data silos and enabling seamless access to real-time, accurate reporting.",
+          "Automation  Automating routine accounting tasks and financial reporting reduces manual errors, improves efficiency, and lowers labor costs.",
+          "Standardized Accounting Practices and Enhanced Internal Controls  Establishing uniform accounting standards and robust internal controls ensures consistency, improves compliance with regulations, and minimizes financial discrepancies.",
+          "Data Analytics and Machine Learning  Advanced analytics and machine learning algorithms detect anomalies, enhance forecasting accuracy, and provide valuable insights for strategic decision-making."
+        ],
+        "case": {
+          "title": "Oil & Gas Company With Large Team of Clerical Workers",
+          "description": "A major oil & gas companys finance department previously relied on dozens of employees to manually close the books each month, a labor-intensive process that took several weeks to complete. By implementing automation, the company streamlined data consolidation, reconciliations, and reporting, drastically reducing the time required to close the books to less than one week. As a result, over 80% of the employees who were previously dedicated to this task were repurposed to more strategic, value-added work, improving overall efficiency and driving greater business impact."
+        }
+      },
+      "forecasting-tools": {
+        "name": "Forecasting Tools",
+        "description": "Bottoms up approaches to forecasting based on extensive historical data, assumptions, and predictive analytics have proven to be far more accurate.",
+        "intro": "Challenges Companies Face With Accurate Forecasting When Done With Limited Information and Data Science. Limited or inconsistent historical data reduces forecasting accuracy, while rapidly changing trends can cause sudden demand shifts that past data cannot capture. Small datasets may lead to overfitting or underfitting in models, introduce bias, and hinder companies with limited computational resources or expertise from effectively applying advanced data science techniques.",
+        "commonStruggles": [
+          "Financial Losses  Overestimation leads to excess inventory, wasted resources, and higher carrying costs. Underestimation causes stockouts, missed sales opportunities, and revenue loss.",
+          "Supply Chain Disruptions  Poor demand forecasting can result in supply chain inefficiencies, such as production slowdowns, supplier issues, or excessive lead times.",
+          "Inefficient Resource Allocation  Companies may overstaff or understaff based on flawed demand projections, leading to increased labor costs or workforce shortages.",
+          "Competitive Disadvantage  Poor forecasting makes businesses reactive rather than proactive in adapting to trends."
+        ],
+        "solutions": [
+          "Advanced Forecasting Models  Implement machine learning and historical trend analysis to improve accuracy.",
+          "Dynamic Pricing & Inventory  Use real-time monitoring to balance supply and demand efficiently.",
+          "Predictive Production Optimization  Leverage analytics to refine schedules and reduce excess stock.",
+          "Continuous Model Refinement  Update forecasts using new data sources, customer feedback, and real-time analytics."
+        ]
+      },
+      "pricing-analytics": {
+        "name": "Pricing Analytics",
+        "description": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits.",
+        "intro": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits."
+      },
+      "profitability-models": {
+        "name": "Profitability Models",
+        "description": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money.",
+        "intro": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money."
+      },
+      "spend-cubes": {
+        "name": "Spend Cubes",
+        "description": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types.",
+        "intro": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types."
+      },
+      "customer-analytics": {
+        "name": "Customer Analytics",
+        "description": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems.",
+        "intro": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems."
+      }
     }
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Senior engineers and delivery-focused consultants",
-    "description": "We are a team of senior engineers and delivery-focused consultants passionate about building business-critical platforms. We combine modern software engineering with operational and financial understanding to deliver solutions that are fast, robust, and measurable.",
-    "values": {
-      "title": "What Sets Us Apart",
+    "heroEyebrow": "MORE ABOUT US",
+    "heroTitle": "Empowering Businesses with Innovative IT Solutions",
+    "intro": "We are strong team of former large firm consultants that are passionate about creating comprehensive data platforms designed to help companies better manage their business, automate functional tasks, and improve financial performance.",
+    "highlights": {
       "items": [
         {
-          "title": "Rapid Delivery",
-          "description": "We use a clear, proven methodology that delivers results in weeks, not months."
+          "title": "Unique Mix of Skill Sets",
+          "description": "Business Operations, Accounting, and Technology Expertise"
         },
         {
-          "title": "Automation Mindset",
-          "description": "We replace 'spreadsheet armies' with scalable, automated systems."
+          "title": "Highly Educated and Credentialed",
+          "description": "PhDs, MBAs, Masters IT and Data Science, Certified Public Accountants"
         },
         {
-          "title": "Enterprise Practices",
-          "description": "Security, auditability, and reliability are built in from day one."
+          "title": "Rapid Solutions",
+          "description": "Stand Up Comprehensive Business Intelligence Functions from Scratch in a Few Weeks"
         },
         {
-          "title": "Long-Term Partnership",
-          "description": "We provide clear documentation and ongoing support options so you're never left stranded."
+          "title": "Automation Experts",
+          "description": "Numerous Success Stories Replacing Spreadsheet Armies with Custom Digital Solutions"
+        },
+        {
+          "title": "Provide Managed Services",
+          "description": "We Provide Ongoing Sophisticated Data Management/Analytics Support"
+        },
+        {
+          "title": "Highly Price Competitive",
+          "description": "Effective and Affordable Business Intelligence Solutions Fast"
+        }
+      ]
+    },
+    "team": {
+      "title": "Meet the leadership team",
+      "subtitle": "EXPERT TEAM",
+      "members": [
+        {
+          "name": "Brooklyn Simmons",
+          "role": "President of Sales"
+        },
+        {
+          "name": "Savannah Nguyen",
+          "role": "President of Sales"
+        },
+        {
+          "name": "Leslie Alexander",
+          "role": "President of Sales"
+        },
+        {
+          "name": "Darlene Robertson",
+          "role": "President of Sales"
         }
       ]
     }
@@ -393,8 +657,13 @@
   },
   "footer": {
     "tagline": "Building business-critical platforms that deliver measurable results.",
-    "services": "Services",
+    "services": "Our Services",
     "company": "Company",
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get in Touch",
+    "address": "9550 Bolsa Ave #126, USA",
+    "email": "info@consultora-software.com",
+    "phone": "(+256) 214 203 215",
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
@@ -408,6 +677,10 @@
     "services": {
       "title": "Services | Consultora Software",
       "description": "Specialized solutions for data platforms, process automation, applied AI, forecasting, and managed services."
+    },
+    "solutions": {
+      "title": "Solutions | Consultora Software",
+      "description": "FP&A automation, forecasting tools, pricing analytics, profitability models, spend cubes, and customer analytics."
     },
     "about": {
       "title": "About Us | Consultora Software",

@@ -42,6 +42,8 @@ export default async function SoftwareSelectionPage(props: { params: Promise<{ l
         title={t('services.softwareSelection.outcomes.title')}
         items={Array.from({ length: 4 }, (_, i) => t(`services.softwareSelection.outcomes.items.${i}`))}
         ctaText={t('navigation.contact')}
+        cardTitle={t('services.outcomesCtaTitle')}
+        cardDescription={t('services.outcomesCtaDescription')}
       />
     </>
   );

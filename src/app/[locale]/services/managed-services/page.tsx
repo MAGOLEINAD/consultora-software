@@ -42,6 +42,8 @@ export default async function ManagedServicesPage(props: { params: Promise<{ loc
         title={t('services.managedServices.outcomes.title')}
         items={Array.from({ length: 4 }, (_, i) => t(`services.managedServices.outcomes.items.${i}`))}
         ctaText={t('navigation.contact')}
+        cardTitle={t('services.outcomesCtaTitle')}
+        cardDescription={t('services.outcomesCtaDescription')}
       />
     </>
   );

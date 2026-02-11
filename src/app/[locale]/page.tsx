@@ -2,8 +2,10 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import Hero from '@/components/home/Hero';
 import ClientLogoSlider from '@/components/home/ClientLogoSlider';
+import AboutTabs from '@/components/home/AboutTabs';
 import ServicesGrid from '@/components/home/ServicesGrid';
 import PricingCards from '@/components/home/PricingCards';
+import SolutionTabs from '@/components/home/SolutionTabs';
 import ApproachTimeline from '@/components/home/ApproachTimeline';
 import Testimonials from '@/components/home/Testimonials';
 import FAQSection from '@/components/home/FAQSection';
@@ -59,42 +61,21 @@ export default async function HomePage(props: { params: Promise<{ locale: string
     },
   ];
 
-  const pricingPackages = {
-    dataPlatform: {
-      name: t('home.pricing.packages.dataPlatform.name'),
-      duration: t('home.pricing.packages.dataPlatform.duration'),
-      priceFrom: t('home.pricing.packages.dataPlatform.priceFrom'),
-      priceUnit: undefined,
-      featured: false,
-      features: Array.from({ length: 5 }, (_, i) =>
-        t(`home.pricing.packages.dataPlatform.features.${i}`)
-      ),
-      cta: t('home.pricing.packages.dataPlatform.cta'),
-    },
-    automation: {
-      name: t('home.pricing.packages.automation.name'),
-      duration: t('home.pricing.packages.automation.duration'),
-      priceFrom: t('home.pricing.packages.automation.priceFrom'),
-      priceUnit: undefined,
-      featured: true,
-      badge: t('home.pricing.packages.automation.badge'),
-      features: Array.from({ length: 5 }, (_, i) =>
-        t(`home.pricing.packages.automation.features.${i}`)
-      ),
-      cta: t('home.pricing.packages.automation.cta'),
-    },
-    managed: {
-      name: t('home.pricing.packages.managed.name'),
-      duration: t('home.pricing.packages.managed.duration'),
-      priceFrom: t('home.pricing.packages.managed.priceFrom'),
-      priceUnit: t('home.pricing.packages.managed.priceUnit'),
-      featured: false,
-      features: Array.from({ length: 5 }, (_, i) =>
-        t(`home.pricing.packages.managed.features.${i}`)
-      ),
-      cta: t('home.pricing.packages.managed.cta'),
-    },
-  };
+  const pricingPackages = Array.from({ length: 4 }, (_, i) => ({
+    name: t(`home.packages.items.${i}.name`),
+    duration: t(`home.packages.items.${i}.duration`),
+    price: t(`home.packages.items.${i}.price`),
+    includes: Array.from({ length: Number(t(`home.packages.items.${i}.includesLength`)) }, (_, j) =>
+      t(`home.packages.items.${i}.includes.${j}`)
+    ),
+    excludes: Array.from({ length: Number(t(`home.packages.items.${i}.excludesLength`)) }, (_, j) =>
+      t(`home.packages.items.${i}.excludes.${j}`)
+    ).filter(Boolean),
+    notes: Array.from({ length: Number(t(`home.packages.items.${i}.notesLength`)) }, (_, j) =>
+      t(`home.packages.items.${i}.notes.${j}`)
+    ).filter(Boolean),
+    cta: t(`home.packages.items.${i}.cta`),
+  }));
 
   const approachSteps = Array.from({ length: 4 }, (_, i) => ({
     title: t(`home.approach.steps.${i}.title`),
@@ -119,10 +100,42 @@ export default async function HomePage(props: { params: Promise<{ locale: string
         title={t('home.hero.title')}
         subtitle={t('home.hero.subtitle')}
         cta1={t('home.hero.cta1')}
-        cta2={t('home.hero.cta2')}
+        metricTitle={t('home.hero.metricTitle')}
+        metricSubtitle={t('home.hero.metricSubtitle')}
+        awardLine={t('home.hero.awardLine')}
       />
 
       <ClientLogoSlider title={t('home.trustedBy')} />
+
+      <AboutTabs
+        title={t('home.aboutTabs.title')}
+        subtitle={t('home.aboutTabs.subtitle')}
+        tabs={[
+          {
+            label: t('home.aboutTabs.tabs.0.label'),
+            title: t('home.aboutTabs.tabs.0.title'),
+            description: t('home.aboutTabs.tabs.0.description'),
+          },
+          {
+            label: t('home.aboutTabs.tabs.1.label'),
+            title: t('home.aboutTabs.tabs.1.title'),
+            description: t('home.aboutTabs.tabs.1.description'),
+          },
+          {
+            label: t('home.aboutTabs.tabs.2.label'),
+            title: t('home.aboutTabs.tabs.2.title'),
+            description: t('home.aboutTabs.tabs.2.description'),
+          },
+        ]}
+        points={[
+          t('home.aboutTabs.points.0'),
+          t('home.aboutTabs.points.1'),
+          t('home.aboutTabs.points.2'),
+          t('home.aboutTabs.points.3'),
+        ]}
+        cta={t('home.aboutTabs.cta')}
+        helpLine={t('home.aboutTabs.helpLine')}
+      />
 
       <ServicesGrid
         locale={locale}
@@ -131,17 +144,68 @@ export default async function HomePage(props: { params: Promise<{ locale: string
         services={services}
       />
 
-      <PricingCards
-        locale={locale}
-        title={t('home.pricing.title')}
-        subtitle={t('home.pricing.subtitle')}
-        packages={pricingPackages}
+      <SolutionTabs
+        title={t('home.solutionTabs.title')}
+        tabs={[
+          {
+            slug: 'fpa-automation',
+            label: t('home.solutionTabs.tabs.0.label'),
+            title: t('home.solutionTabs.tabs.0.title'),
+            description: t('home.solutionTabs.tabs.0.description'),
+          },
+          {
+            slug: 'forecasting-tools',
+            label: t('home.solutionTabs.tabs.1.label'),
+            title: t('home.solutionTabs.tabs.1.title'),
+            description: t('home.solutionTabs.tabs.1.description'),
+          },
+          {
+            slug: 'pricing-analytics',
+            label: t('home.solutionTabs.tabs.2.label'),
+            title: t('home.solutionTabs.tabs.2.title'),
+            description: t('home.solutionTabs.tabs.2.description'),
+          },
+          {
+            slug: 'profitability-models',
+            label: t('home.solutionTabs.tabs.3.label'),
+            title: t('home.solutionTabs.tabs.3.title'),
+            description: t('home.solutionTabs.tabs.3.description'),
+          },
+          {
+            slug: 'spend-cubes',
+            label: t('home.solutionTabs.tabs.4.label'),
+            title: t('home.solutionTabs.tabs.4.title'),
+            description: t('home.solutionTabs.tabs.4.description'),
+          },
+          {
+            slug: 'customer-analytics',
+            label: t('home.solutionTabs.tabs.5.label'),
+            title: t('home.solutionTabs.tabs.5.title'),
+            description: t('home.solutionTabs.tabs.5.description'),
+          },
+        ]}
       />
 
       <ApproachTimeline
         title={t('home.approach.title')}
         subtitle={t('home.approach.subtitle')}
         steps={approachSteps}
+      />
+
+      <PricingCards
+        title={t('home.packages.title')}
+        intro={t('home.packages.intro')}
+        packages={pricingPackages}
+        comparison={Array.from({ length: 4 }, (_, i) => ({
+          package: t(`home.packages.comparison.${i}.package`),
+          bestFor: t(`home.packages.comparison.${i}.bestFor`),
+          duration: t(`home.packages.comparison.${i}.duration`),
+          outcomes: t(`home.packages.comparison.${i}.outcomes`),
+          pricing: t(`home.packages.comparison.${i}.pricing`),
+        }))}
+        whoFor={Array.from({ length: 4 }, (_, i) => t(`home.packages.whoFor.${i}`))}
+        notFit={Array.from({ length: 4 }, (_, i) => t(`home.packages.notFit.${i}`))}
+        disclaimer={t('home.packages.disclaimer')}
       />
 
       <Testimonials
@@ -151,6 +215,9 @@ export default async function HomePage(props: { params: Promise<{ locale: string
 
       <FAQSection
         title={t('home.faq.title')}
+        subtitle={t('home.faq.subtitle')}
+        description={t('home.faq.description')}
+        cta={t('home.faq.cta')}
         items={faqItems}
       />
     </>

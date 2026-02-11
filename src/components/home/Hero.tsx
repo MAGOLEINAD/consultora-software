@@ -2,87 +2,97 @@ import { Link } from '@/i18n/routing';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import Image from 'next/image';
+import { defaultBlurDataURL } from '@/lib/image';
 
 interface HeroProps {
   locale: string;
   title: string;
   subtitle: string;
   cta1: string;
-  cta2: string;
   badge: string;
+  metricTitle: string;
+  metricSubtitle: string;
+  awardLine: string;
 }
 
-export default function Hero({ locale, title, subtitle, cta1, cta2, badge }: HeroProps) {
+export default function Hero({ title, subtitle, cta1, badge, metricTitle, metricSubtitle, awardLine }: HeroProps) {
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-[hsl(var(--accent))] via-[hsl(var(--accent-light))] to-[hsl(var(--accent))]">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[hsl(var(--primary))] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[hsl(var(--accent-secondary))] rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative overflow-hidden fexo-hero-dark text-white">
+      <div className="absolute inset-0 fexo-circuit opacity-40"></div>
+      <div className="absolute -top-28 -right-28 h-80 w-80 rounded-full bg-[hsl(var(--primary))] opacity-20 blur-3xl"></div>
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-white">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[hsl(var(--primary))] px-4 py-2 rounded-full mb-6">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium uppercase tracking-wide">{badge}</span>
+      <div className="container mx-auto px-4 md:px-8 relative z-10 py-16 md:py-24 lg:py-28">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+          <div>
+            <div className="flex items-center gap-4 text-sm uppercase tracking-[0.4em] text-white/70 mb-6">
+              <span className="h-px w-14 bg-white/40"></span>
+              <span>{badge}</span>
             </div>
 
-            {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-6 leading-[0.95] tracking-tight">
               {title}
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed max-w-2xl">
               {subtitle}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-dark))] text-white group border-none">
-                <Link href="/contact">
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <Button asChild size="lg" className="bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-dark))] text-white group border-none shadow-lg shadow-[hsl(var(--primary))]/25 hover:-translate-y-0.5 transition-transform">
+                <Link href="/services">
                   {cta1}
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
+            </div>
 
-              <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[hsl(var(--accent))] group">
-                <Link href="/#pricing">
-                  <Play className="mr-2 h-5 w-5" />
-                  {cta2}
-                </Link>
-              </Button>
+            <div className="flex flex-wrap items-center gap-4 text-white/80">
+              <div className="flex -space-x-3">
+                {[
+                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80',
+                  'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80',
+                  'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80',
+                  'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=120&q=80',
+                ].map((src, idx) => (
+                  <div key={idx} className="relative h-10 w-10 rounded-full overflow-hidden border-2 border-[hsl(var(--accent))]">
+                    <Image
+                      src={src}
+                      alt="Team member"
+                      fill
+                      className="object-cover"
+                      placeholder="blur"
+                      blurDataURL={defaultBlurDataURL}
+                      sizes="40px"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div>
+                <p className="text-lg font-semibold text-white">{metricTitle}</p>
+                <p className="text-sm text-white/60">{metricSubtitle}</p>
+              </div>
+              <div className="text-sm text-white/60">
+                {awardLine}
+              </div>
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative h-[400px] lg:h-[600px]">
-            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+          <div className="relative h-[420px] lg:h-[560px]">
+            <div className="absolute inset-0 rounded-[36px] overflow-hidden border border-white/10 shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop"
-                alt="IT Solutions Team"
+                src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
+                alt="Software engineer at work"
                 fill
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL={defaultBlurDataURL}
                 priority
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--accent))]/60 to-transparent"></div>
             </div>
 
-            {/* Floating card */}
-            <div className="absolute bottom-8 left-8 bg-white p-6 rounded-xl shadow-2xl max-w-xs">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[hsl(var(--primary))] rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                  ✓
-                </div>
-                <div>
-                  <h3 className="font-bold text-[hsl(var(--foreground))] mb-1">24/7 Support</h3>
-                  <p className="text-sm text-[hsl(var(--neutral-600))]">Expert assistance anytime</p>
-                </div>
+            <div className="absolute -left-10 top-1/2 -translate-y-1/2 h-20 w-20 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur">
+              <div className="h-12 w-12 rounded-full bg-white/90 text-[hsl(var(--accent))] flex items-center justify-center">
+                <Play className="h-5 w-5" />
               </div>
             </div>
           </div>
