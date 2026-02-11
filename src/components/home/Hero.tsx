@@ -19,7 +19,7 @@ export default function Hero({ title, subtitle, cta1, badge, metricTitle, metric
   return (
     <section className="relative overflow-hidden fexo-hero-dark text-white">
       <div className="absolute inset-0 fexo-circuit opacity-40"></div>
-      <div className="absolute -top-28 -right-28 h-80 w-80 rounded-full bg-[hsl(var(--primary))] opacity-20 blur-3xl"></div>
+      <div className="absolute -top-28 -right-28 h-80 w-80 rounded-full bg-primary opacity-20 blur-3xl"></div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 py-16 md:py-24 lg:py-28">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
@@ -38,7 +38,7 @@ export default function Hero({ title, subtitle, cta1, badge, metricTitle, metric
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button asChild size="lg" className="bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-dark))] text-white group border-none shadow-lg shadow-[hsl(var(--primary))]/25 hover:-translate-y-0.5 transition-transform">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-white group border-none shadow-lg shadow-primary/25 hover:-translate-y-0.5 transition-transform">
                 <Link href="/services">
                   {cta1}
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -54,7 +54,7 @@ export default function Hero({ title, subtitle, cta1, badge, metricTitle, metric
                   'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80',
                   'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=120&q=80',
                 ].map((src, idx) => (
-                  <div key={idx} className="relative h-10 w-10 rounded-full overflow-hidden border-2 border-[hsl(var(--accent))]">
+                  <div key={idx} className="relative h-10 w-10 rounded-full overflow-hidden border-2 border-accent">
                     <Image
                       src={src}
                       alt="Team member"
@@ -91,7 +91,7 @@ export default function Hero({ title, subtitle, cta1, badge, metricTitle, metric
             </div>
 
             <div className="absolute -left-10 top-1/2 -translate-y-1/2 h-20 w-20 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur">
-              <div className="h-12 w-12 rounded-full bg-white/90 text-[hsl(var(--accent))] flex items-center justify-center">
+              <div className="h-12 w-12 rounded-full bg-white/90 text-accent flex items-center justify-center">
                 <Play className="h-5 w-5" />
               </div>
             </div>
@@ -101,3 +101,4 @@ export default function Hero({ title, subtitle, cta1, badge, metricTitle, metric
     </section>
   );
 }
+

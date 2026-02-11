@@ -37,10 +37,10 @@ export default async function SolutionsPage(props: { params: Promise<{ locale: s
     <section className="section-padding bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-[hsl(var(--accent))] mb-4">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-accent mb-4">
             {t('solutions.title')}
           </h1>
-          <p className="text-[hsl(var(--neutral-800))]">
+          <p className="text-neutral-800">
             {t('solutions.subtitle')}
           </p>
         </div>
@@ -48,11 +48,11 @@ export default async function SolutionsPage(props: { params: Promise<{ locale: s
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item) => (
             <Link key={item.slug} href={`/solutions/${item.slug}`}>
-              <div className="rounded-3xl border border-[hsl(var(--border))] bg-[hsl(var(--neutral-50))] p-6 hover-lift">
-                <h3 className="font-display text-xl font-semibold text-[hsl(var(--accent))] mb-3">
+              <div className="rounded-3xl border border-border bg-neutral-50 p-6 hover-lift">
+                <h3 className="font-display text-xl font-semibold text-accent mb-3">
                   {item.name}
                 </h3>
-                <p className="text-sm text-[hsl(var(--neutral-800))]">
+                <p className="text-sm text-neutral-800">
                   {item.description}
                 </p>
               </div>

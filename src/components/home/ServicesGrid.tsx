@@ -67,7 +67,7 @@ export default function ServicesGrid({ title, subtitle, services }: ServicesGrid
 
             return (
               <Link key={service.slug} href={`/services/${service.slug}`}>
-                <Card className="h-full overflow-hidden border-[hsl(var(--border))] hover:shadow-xl transition-all group hover-lift">
+                <Card className="h-full overflow-hidden border-border hover:shadow-xl transition-all group hover-lift">
                   <div className="relative h-52">
                     <Image
                       src={media.image}
@@ -80,18 +80,18 @@ export default function ServicesGrid({ title, subtitle, services }: ServicesGrid
                     />
                     <div className={`absolute inset-0 bg-gradient-to-tr ${media.accent}`}></div>
                     <div className="absolute bottom-4 left-4 h-12 w-12 rounded-2xl bg-white/90 backdrop-blur border border-white/60 flex items-center justify-center shadow-lg">
-                      <Icon className="w-6 h-6 text-[hsl(var(--primary))]" />
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
                   </div>
 
                   <CardContent className="p-6">
-                    <h3 className="font-display text-xl font-semibold text-[hsl(var(--accent))] mb-3">
+                    <h3 className="font-display text-xl font-semibold text-accent mb-3">
                       {service.name}
                     </h3>
-                    <p className="text-sm text-[hsl(var(--neutral-800))] mb-6">
+                    <p className="text-sm text-neutral-800 mb-6">
                       {service.shortDescription}
                     </p>
-                    <div className="flex items-center text-[hsl(var(--primary))] text-sm font-semibold group-hover:gap-2 transition-all">
+                    <div className="flex items-center text-primary text-sm font-semibold group-hover:gap-2 transition-all">
                       Learn more
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -105,3 +105,4 @@ export default function ServicesGrid({ title, subtitle, services }: ServicesGrid
     </section>
   );
 }
+

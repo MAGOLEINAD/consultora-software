@@ -1,7 +1,7 @@
 export default function GradientBlur({ variant = 'primary' }: { variant?: 'primary' | 'accent' }) {
   const gradientClass = variant === 'primary'
-    ? 'from-[hsl(var(--primary))] to-[hsl(var(--accent))]'
-    : 'from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))]';
+    ? 'from-primary to-accent'
+    : 'from-accent to-accent-secondary';
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -14,3 +14,4 @@ export default function GradientBlur({ variant = 'primary' }: { variant?: 'prima
     </div>
   );
 }
+

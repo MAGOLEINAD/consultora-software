@@ -27,7 +27,7 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
           <div>
             <div className="flex items-center space-x-3 mb-5">
-              <div className="h-10 w-10 rounded-xl bg-[hsl(var(--primary))] text-white flex items-center justify-center">
+              <div className="h-10 w-10 rounded-xl bg-primary text-white flex items-center justify-center">
                 <svg viewBox="0 0 40 40" className="h-7 w-7" aria-hidden="true">
                   <defs>
                     <linearGradient id="rw-iso-footer" x1="0" y1="0" x2="1" y2="1">
@@ -70,7 +70,7 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
             <h3 className="font-semibold text-base mb-4">
               {translations.quickLinks}
             </h3>
-            <span className="block h-0.5 w-10 bg-[hsl(var(--primary))] mb-6"></span>
+            <span className="block h-0.5 w-10 bg-primary mb-6"></span>
             <ul className="space-y-3 text-sm text-white/70">
               {navItems.company.map((item) => (
                 <li key={item.href}>
@@ -86,7 +86,7 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
             <h3 className="font-semibold text-base mb-4">
               {translations.services}
             </h3>
-            <span className="block h-0.5 w-10 bg-[hsl(var(--primary))] mb-6"></span>
+            <span className="block h-0.5 w-10 bg-primary mb-6"></span>
             <ul className="space-y-3 text-sm text-white/70">
               {navItems.services.map((item) => (
                 <li key={item.href}>
@@ -102,18 +102,18 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
             <h3 className="font-semibold text-base mb-4">
               {translations.getInTouch}
             </h3>
-            <span className="block h-0.5 w-10 bg-[hsl(var(--primary))] mb-6"></span>
+            <span className="block h-0.5 w-10 bg-primary mb-6"></span>
             <ul className="space-y-4 text-sm text-white/70">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[hsl(var(--primary))] mt-0.5" />
+                <MapPin className="w-4 h-4 text-primary mt-0.5" />
                 <span>{translations.address}</span>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[hsl(var(--primary))] mt-0.5" />
+                <Mail className="w-4 h-4 text-primary mt-0.5" />
                 <span>{translations.email}</span>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[hsl(var(--primary))] mt-0.5" />
+                <Phone className="w-4 h-4 text-primary mt-0.5" />
                 <span>{translations.phone}</span>
               </li>
             </ul>
@@ -131,3 +131,4 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
     </footer>
   );
 }
+

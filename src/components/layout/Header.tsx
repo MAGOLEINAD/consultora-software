@@ -31,11 +31,11 @@ export default function Header({ locale, translations, solutions, services }: He
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[hsl(var(--border))] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-sm">
       <nav className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
-          <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-[hsl(var(--accent))] text-white flex items-center justify-center shadow-lg shadow-[hsl(var(--accent))]/30">
+          <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-accent text-white flex items-center justify-center shadow-lg shadow-accent/30">
             <svg viewBox="0 0 40 40" className="h-7 w-7 md:h-8 md:w-8" aria-hidden="true">
               <defs>
                 <linearGradient id="rw-iso" x1="0" y1="0" x2="1" y2="1">
@@ -53,10 +53,10 @@ export default function Header({ locale, translations, solutions, services }: He
             </svg>
           </div>
           <div className="leading-tight">
-            <span className="block text-xl md:text-2xl font-semibold text-[hsl(var(--accent))]">
+            <span className="block text-xl md:text-2xl font-semibold text-accent">
               RightWay
             </span>
-            <span className="block text-xs md:text-sm text-[hsl(var(--neutral-600))] tracking-[0.2em] uppercase">
+            <span className="block text-xs md:text-sm text-neutral-600 tracking-[0.2em] uppercase">
               Partners
             </span>
           </div>
@@ -69,18 +69,18 @@ export default function Header({ locale, translations, solutions, services }: He
               <div key={item.href} className="relative group">
                 <Link
                   href={item.href}
-                  className="relative text-base md:text-lg font-semibold text-[hsl(var(--neutral-800))] hover:text-[hsl(var(--primary))] transition-colors after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-[hsl(var(--primary))] after:transition-all group-hover:after:w-full"
+                  className="relative text-base md:text-lg font-semibold text-neutral-800 hover:text-primary transition-colors after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all group-hover:after:w-full"
                 >
                   {item.label}
                 </Link>
                 <div className="absolute left-0 top-full pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all">
-                  <div className="w-72 rounded-2xl border border-[hsl(var(--border))] bg-white shadow-xl p-4">
+                  <div className="w-72 rounded-2xl border border-border bg-white shadow-xl p-4">
                     <div className="space-y-2">
                       {(item.href === '/solutions' ? solutions : services).map((sub) => (
                         <Link
                           key={sub.href}
                           href={sub.href}
-                          className="block rounded-xl px-3 py-2 text-sm font-semibold text-[hsl(var(--accent))] hover:bg-[hsl(var(--neutral-100))] transition-colors"
+                          className="block rounded-xl px-3 py-2 text-sm font-semibold text-accent hover:bg-neutral-100 transition-colors"
                         >
                           {sub.label}
                         </Link>
@@ -93,7 +93,7 @@ export default function Header({ locale, translations, solutions, services }: He
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative text-base md:text-lg font-semibold text-[hsl(var(--neutral-800))] hover:text-[hsl(var(--primary))] transition-colors after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-[hsl(var(--primary))] after:transition-all hover:after:w-full"
+                className="relative text-base md:text-lg font-semibold text-neutral-800 hover:text-primary transition-colors after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               >
                 {item.label}
               </Link>
@@ -111,7 +111,7 @@ export default function Header({ locale, translations, solutions, services }: He
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-[hsl(var(--neutral-800))]"
+          className="md:hidden p-2 text-neutral-800"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -121,14 +121,14 @@ export default function Header({ locale, translations, solutions, services }: He
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[hsl(var(--border))] bg-white">
+        <div className="md:hidden border-t border-border bg-white">
           <div className="container mx-auto px-4 py-4 space-y-4">
             {navItems.map((item) => (
               <div key={item.href}>
                 {item.submenu ? (
                   <button
                     type="button"
-                    className="w-full flex items-center justify-between text-sm font-medium text-[hsl(var(--neutral-800))] py-2"
+                    className="w-full flex items-center justify-between text-sm font-medium text-neutral-800 py-2"
                     onClick={() =>
                       setOpenSubmenu((prev) =>
                         prev === (item.href === '/solutions' ? 'solutions' : 'services')
@@ -140,14 +140,14 @@ export default function Header({ locale, translations, solutions, services }: He
                     }
                   >
                     {item.label}
-                    <span className="text-[hsl(var(--neutral-600))]">
+                    <span className="text-neutral-600">
                       {openSubmenu === (item.href === '/solutions' ? 'solutions' : 'services') ? '–' : '+'}
                     </span>
                   </button>
                 ) : (
                   <Link
                     href={item.href}
-                    className="block text-sm font-medium text-[hsl(var(--neutral-800))] hover:text-[hsl(var(--primary))] py-2"
+                    className="block text-sm font-medium text-neutral-800 hover:text-primary py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -159,7 +159,7 @@ export default function Header({ locale, translations, solutions, services }: He
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block text-xs text-[hsl(var(--neutral-600))] hover:text-[hsl(var(--primary))] py-1"
+                        className="block text-xs text-neutral-600 hover:text-primary py-1"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {sub.label}
@@ -169,7 +169,7 @@ export default function Header({ locale, translations, solutions, services }: He
                 )}
               </div>
             ))}
-            <div className="pt-4 border-t border-[hsl(var(--border))] space-y-4">
+            <div className="pt-4 border-t border-border space-y-4">
               <LanguageSwitcher currentLocale={locale} />
               <Button asChild className="w-full">
                 <Link href="/contact">{translations.contact}</Link>
@@ -181,3 +181,4 @@ export default function Header({ locale, translations, solutions, services }: He
     </header>
   );
 }
+

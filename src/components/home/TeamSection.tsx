@@ -18,11 +18,11 @@ export default function TeamSection({ title, subtitle, members }: TeamSectionPro
     <section className="section-padding bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <div className="flex items-center justify-center gap-3 text-sm uppercase tracking-[0.35em] text-[hsl(var(--primary))] mb-4">
-            <span className="h-px w-10 bg-[hsl(var(--primary))]"></span>
+          <div className="flex items-center justify-center gap-3 text-sm uppercase tracking-[0.35em] text-primary mb-4">
+            <span className="h-px w-10 bg-primary"></span>
             <span>{subtitle}</span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[hsl(var(--accent))]">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-accent">
             {title}
           </h2>
         </div>
@@ -31,7 +31,7 @@ export default function TeamSection({ title, subtitle, members }: TeamSectionPro
           {members.map((member) => (
             <div
               key={member.name}
-              className="rounded-3xl border border-[hsl(var(--border))] bg-[hsl(var(--neutral-50))] p-5 hover-lift"
+              className="rounded-3xl border border-border bg-neutral-50 p-5 hover-lift"
             >
               <div className="relative h-48 rounded-2xl overflow-hidden bg-white">
                 <Image
@@ -45,13 +45,13 @@ export default function TeamSection({ title, subtitle, members }: TeamSectionPro
                 />
               </div>
               <div className="pt-5">
-                <p className="text-lg font-semibold text-[hsl(var(--accent))]">{member.name}</p>
-                <p className="text-sm text-[hsl(var(--neutral-600))]">{member.role}</p>
+                <p className="text-lg font-semibold text-accent">{member.name}</p>
+                <p className="text-sm text-neutral-600">{member.role}</p>
                 <div className="flex gap-2 pt-4">
                   {['f', 'in', 'x', 'ig'].map((label) => (
                     <span
                       key={label}
-                      className="h-9 w-9 rounded-full border border-[hsl(var(--border))] text-[hsl(var(--neutral-600))] flex items-center justify-center text-xs font-semibold"
+                      className="h-9 w-9 rounded-full border border-border text-neutral-600 flex items-center justify-center text-xs font-semibold"
                     >
                       {label}
                     </span>
@@ -65,3 +65,4 @@ export default function TeamSection({ title, subtitle, members }: TeamSectionPro
     </section>
   );
 }
+

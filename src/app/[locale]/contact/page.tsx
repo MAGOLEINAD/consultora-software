@@ -41,10 +41,10 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
 
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(var(--foreground))] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               {t('contact.title')}
             </h1>
-            <p className="text-lg md:text-xl text-[hsl(var(--neutral-800))]">
+            <p className="text-lg md:text-xl text-neutral-800">
               {t('contact.subtitle')}
             </p>
           </div>
@@ -57,7 +57,7 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
             <ContactForm translations={formTranslations} />
 
             <div className="mt-8 text-center">
-              <p className="text-[hsl(var(--neutral-800))] mb-4">
+              <p className="text-neutral-800 mb-4">
                 {t('contact.or')}
               </p>
 
@@ -68,7 +68,7 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
                 </Link>
               </Button>
 
-              <p className="text-sm text-[hsl(var(--neutral-800))] mt-8">
+              <p className="text-sm text-neutral-800 mt-8">
                 {t('contact.responseTime')}
               </p>
             </div>

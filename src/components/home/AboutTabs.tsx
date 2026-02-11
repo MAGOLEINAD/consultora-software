@@ -43,7 +43,7 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl border border-border shadow-lg p-4 w-44">
-              <p className="text-xs text-[hsl(var(--neutral-700))]">Revenue growth</p>
+              <p className="text-xs text-neutral-700">Revenue growth</p>
               <p className="text-xl font-semibold text-accent">$120,544</p>
               <div className="mt-2 h-12 w-full rounded-lg bg-neutral-100"></div>
             </div>
@@ -54,7 +54,7 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
               <span className="h-px w-10 bg-primary"></span>
               <span>{subtitle}</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-accent mb-6 leading-[1.25]">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-accent mb-6 leading-tight">
               {title}
             </h2>
 
@@ -65,8 +65,8 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
                   onClick={() => setActive(index)}
                   className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                     index === active
-                      ? 'bg-[hsl(var(--primary))] text-white shadow'
-                      : 'bg-[hsl(var(--neutral-100))] text-[hsl(var(--accent))] hover:bg-[hsl(var(--neutral-200))]'
+                      ? 'bg-primary text-white shadow'
+                      : 'bg-neutral-100 text-accent hover:bg-neutral-200'
                   }`}
                 >
                   {tab.label}
@@ -75,10 +75,10 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
             </div>
 
             <div className="mb-6">
-              <h3 className="font-display text-2xl font-semibold text-[hsl(var(--accent))] mb-3">
+              <h3 className="font-display text-2xl font-semibold text-accent mb-3">
                 {current?.title}
               </h3>
-              <p className="text-[hsl(var(--neutral-800))] leading-relaxed">
+              <p className="text-neutral-800 leading-relaxed">
                 {current?.description}
               </p>
             </div>
@@ -86,10 +86,10 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {points.map((point) => (
                 <div key={point} className="flex items-center gap-3">
-                  <div className="h-6 w-6 rounded-full bg-[hsl(var(--primary))] text-white flex items-center justify-center">
+                  <div className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center">
                     <Check className="h-3.5 w-3.5" />
                   </div>
-                  <span className="text-sm text-[hsl(var(--accent))] font-semibold">
+                  <span className="text-sm text-accent font-semibold">
                     {point}
                   </span>
                 </div>
@@ -97,15 +97,15 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
             </div>
 
             <div className="flex flex-wrap items-center gap-6">
-              <Button asChild className="bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary-dark))] text-white hover:-translate-y-0.5 transition-transform">
+              <Button asChild className="bg-primary hover:bg-primary-dark text-white hover:-translate-y-0.5 transition-transform">
                 <Link href="/contact">{cta}</Link>
               </Button>
-              <div className="flex items-center gap-3 text-[hsl(var(--accent))]">
-                <div className="h-12 w-12 rounded-full border border-[hsl(var(--border))] flex items-center justify-center">
-                  <Phone className="h-5 w-5 text-[hsl(var(--primary))]" />
+              <div className="flex items-center gap-3 text-accent">
+                <div className="h-12 w-12 rounded-full border border-border flex items-center justify-center">
+                  <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <div className="text-sm">
-                  <p className="text-[hsl(var(--neutral-700))]">{helpLine}</p>
+                  <p className="text-neutral-700">{helpLine}</p>
                   <p className="font-semibold">(+480) 123 678 900</p>
                 </div>
               </div>
@@ -116,3 +116,4 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
     </section>
   );
 }
+

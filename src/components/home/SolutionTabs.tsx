@@ -30,14 +30,14 @@ export default function SolutionTabs({ title, tabs }: SolutionTabsProps) {
   const current = tabs[active] ?? tabs[0];
 
   return (
-    <section className="section-padding bg-[hsl(var(--neutral-50))]">
+    <section className="section-padding bg-neutral-50">
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-[hsl(var(--accent))] mb-12">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-accent mb-12">
           {title}
         </h2>
 
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl border border-[hsl(var(--border))] shadow-sm">
-          <div className="p-5 md:p-6 border-b border-[hsl(var(--border))]">
+        <div className="max-w-5xl mx-auto bg-white rounded-2xl border border-border shadow-sm">
+          <div className="p-5 md:p-6 border-b border-border">
             <div className="flex flex-wrap gap-2">
               {tabs.map((tab, index) => (
                 <button
@@ -45,8 +45,8 @@ export default function SolutionTabs({ title, tabs }: SolutionTabsProps) {
                   onClick={() => setActive(index)}
                   className={`px-4 py-2 rounded-full text-sm font-semibold transition-all cursor-pointer ${
                     index === active
-                      ? 'bg-[hsl(var(--primary))] text-white shadow'
-                      : 'bg-[hsl(var(--neutral-50))] text-[hsl(var(--accent))] hover:bg-[hsl(var(--neutral-100))]'
+                      ? 'bg-primary text-white shadow'
+                      : 'bg-neutral-50 text-accent hover:bg-neutral-100'
                   }`}
                 >
                   {tab.label}
@@ -57,22 +57,22 @@ export default function SolutionTabs({ title, tabs }: SolutionTabsProps) {
 
           <div key={current?.label} className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-5 items-center fade-swap p-5 md:p-6">
             <div>
-              <h3 className="font-display text-2xl font-semibold text-[hsl(var(--accent))] mb-2">
+              <h3 className="font-display text-2xl font-semibold text-accent mb-2">
                 {current?.title}
               </h3>
-              <p className="text-sm text-[hsl(var(--neutral-800))] mb-3 leading-relaxed">
+              <p className="text-sm text-neutral-800 mb-3 leading-relaxed">
                 {current?.description}
               </p>
               <Link
                 href={`/solutions/${current?.slug}`}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[hsl(var(--primary))]"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary"
               >
                 View details
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>
 
-            <div className="relative h-[200px] md:h-[230px] rounded-xl overflow-hidden">
+            <div className="relative h-50 md:h-57.5 rounded-xl overflow-hidden">
               <Image
                 src={tabImages[active % tabImages.length]}
                 alt={current?.label ?? 'Solution'}
@@ -89,3 +89,4 @@ export default function SolutionTabs({ title, tabs }: SolutionTabsProps) {
     </section>
   );
 }
+

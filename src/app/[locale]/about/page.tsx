@@ -34,7 +34,7 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
             <div className="relative">
-              <div className="relative h-[420px] rounded-[36px] overflow-hidden border border-[hsl(var(--border))] shadow-xl">
+              <div className="relative h-[420px] rounded-[36px] overflow-hidden border border-border shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80"
                   alt="Team collaborating"
@@ -45,7 +45,7 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-6 h-44 w-44 rounded-3xl overflow-hidden border border-[hsl(var(--border))] shadow-lg">
+              <div className="absolute -bottom-8 -right-6 h-44 w-44 rounded-3xl overflow-hidden border border-border shadow-lg">
                 <Image
                   src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=600&q=80"
                   alt="Team meeting"
@@ -59,22 +59,22 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
             </div>
 
             <div>
-              <div className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-[hsl(var(--primary))] mb-4">
-                <span className="h-px w-10 bg-[hsl(var(--primary))]"></span>
+              <div className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-primary mb-4">
+                <span className="h-px w-10 bg-primary"></span>
                 <span>{t('about.heroEyebrow')}</span>
               </div>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[hsl(var(--accent))] mb-6 leading-[1.1]">
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-accent mb-6 leading-[1.1]">
                 {t('about.heroTitle')}
               </h1>
-              <p className="text-[hsl(var(--neutral-800))] leading-relaxed mb-8">
+              <p className="text-neutral-800 leading-relaxed mb-8">
                 {t('about.intro')}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {highlights.map((item) => (
-                  <div key={item.title} className="border border-[hsl(var(--border))] rounded-2xl p-5 bg-white">
-                    <h2 className="font-semibold text-[hsl(var(--accent))] mb-2">{item.title}</h2>
-                    <p className="text-sm text-[hsl(var(--neutral-800))] leading-relaxed">{item.description}</p>
+                  <div key={item.title} className="border border-border rounded-2xl p-5 bg-white">
+                    <h2 className="font-semibold text-accent mb-2">{item.title}</h2>
+                    <p className="text-sm text-neutral-800 leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>

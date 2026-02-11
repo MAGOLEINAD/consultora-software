@@ -18,17 +18,17 @@ export default function ApproachTimeline({ title, subtitle, steps }: ApproachTim
         <SectionHeading title={title} subtitle={subtitle} />
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="absolute left-6 right-6 top-9 hidden lg:block h-px bg-[hsl(var(--border))]"></div>
+          <div className="absolute left-6 right-6 top-9 hidden lg:block h-px bg-border"></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="relative rounded-2xl border border-[hsl(var(--border))] p-6 bg-[hsl(var(--neutral-50))] shadow-sm">
-                <div className="absolute -top-5 left-6 h-10 w-10 rounded-full bg-[hsl(var(--primary))] text-white flex items-center justify-center font-semibold shadow-lg">
+              <div key={index} className="relative rounded-2xl border border-border p-6 bg-neutral-50 shadow-sm">
+                <div className="absolute -top-5 left-6 h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center font-semibold shadow-lg">
                   {index + 1}
                 </div>
-                <h3 className="font-display text-lg font-semibold text-[hsl(var(--accent))] mb-3 mt-4">
+                <h3 className="font-display text-lg font-semibold text-accent mb-3 mt-4">
                   {step.title}
                 </h3>
-                <p className="text-sm text-[hsl(var(--neutral-800))]">
+                <p className="text-sm text-neutral-800">
                   {step.description}
                 </p>
               </div>
@@ -39,3 +39,4 @@ export default function ApproachTimeline({ title, subtitle, steps }: ApproachTim
     </section>
   );
 }
+

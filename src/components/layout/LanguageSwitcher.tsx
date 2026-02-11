@@ -18,7 +18,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
   return (
     <button
       onClick={switchLocale}
-      className="flex items-center gap-2 px-3 py-2 text-sm rounded-md hover:bg-[hsl(var(--muted))] transition-colors cursor-pointer"
+      className="flex items-center gap-2 px-3 py-2 text-sm rounded-md hover:bg-muted transition-colors cursor-pointer"
       aria-label={`Switch to ${currentLocale === 'en' ? 'Spanish' : 'English'}`}
     >
       <Languages className="w-4 h-4" />
@@ -26,3 +26,4 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
     </button>
   );
 }
+

@@ -17,13 +17,13 @@ export default function ChallengesSection({ title, items }: ChallengesSectionPro
             {items.map((item, index) => (
               <div
                 key={index}
-                className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--neutral-50))] p-6 hover-lift"
+                className="rounded-2xl border border-border bg-neutral-50 p-6 hover-lift"
               >
                 <div className="flex gap-4 items-start">
-                  <div className="h-10 w-10 rounded-xl bg-[hsl(var(--primary))] text-white flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-xl bg-primary text-white flex items-center justify-center">
                     <AlertCircle className="w-5 h-5" />
                   </div>
-                  <p className="text-[hsl(var(--neutral-800))]">{item}</p>
+                  <p className="text-neutral-800">{item}</p>
                 </div>
               </div>
             ))}
@@ -33,3 +33,4 @@ export default function ChallengesSection({ title, items }: ChallengesSectionPro
     </section>
   );
 }
+

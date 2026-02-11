@@ -23,19 +23,19 @@ export default function OutcomesSection({ locale, title, items, ctaText = 'Get S
             <div className="space-y-4">
               {items.map((item, index) => (
                 <div key={index} className="flex gap-4 items-start">
-                  <div className="h-8 w-8 rounded-full bg-[hsl(var(--primary))] text-white flex items-center justify-center">
+                  <div className="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center">
                     <CheckCircle className="w-4 h-4" />
                   </div>
-                  <p className="text-[hsl(var(--neutral-800))]">{item}</p>
+                  <p className="text-neutral-800">{item}</p>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-3xl border border-[hsl(var(--border))] bg-[hsl(var(--neutral-50))] p-8 shadow-lg">
-              <h3 className="font-display text-2xl font-semibold text-[hsl(var(--accent))] mb-3">
+            <div className="rounded-3xl border border-border bg-neutral-50 p-8 shadow-lg">
+              <h3 className="font-display text-2xl font-semibold text-accent mb-3">
                 {cardTitle}
               </h3>
-              <p className="text-[hsl(var(--neutral-800))] mb-6">
+              <p className="text-neutral-800 mb-6">
                 {cardDescription}
               </p>
               <Button asChild size="lg" className="hover:-translate-y-0.5 transition-transform">
@@ -48,3 +48,4 @@ export default function OutcomesSection({ locale, title, items, ctaText = 'Get S
     </section>
   );
 }
+

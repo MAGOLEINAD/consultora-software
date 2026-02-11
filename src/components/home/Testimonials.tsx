@@ -32,32 +32,32 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
   };
 
   return (
-    <section className="section-padding bg-[hsl(var(--neutral-50))]">
+    <section className="section-padding bg-neutral-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-10">
           <div>
-            <div className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-[hsl(var(--primary))] mb-4">
-              <span className="h-px w-10 bg-[hsl(var(--primary))]"></span>
+            <div className="flex items-center gap-3 text-sm uppercase tracking-[0.35em] text-primary mb-4">
+              <span className="h-px w-10 bg-primary"></span>
               <span>OUR CLIENT’S</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-[hsl(var(--accent))]">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-accent">
               {title}
             </h2>
           </div>
 
           <div className="text-left lg:text-right">
-            <div className="text-4xl font-semibold text-[hsl(var(--accent))]">4.9</div>
-            <div className="flex items-center gap-1 justify-start lg:justify-end text-[hsl(var(--primary))]">
+            <div className="text-4xl font-semibold text-accent">4.9</div>
+            <div className="flex items-center gap-1 justify-start lg:justify-end text-primary">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-[hsl(var(--primary))]" />
+                <Star key={i} className="h-4 w-4 fill-primary" />
               ))}
             </div>
-            <p className="text-sm text-[hsl(var(--neutral-700))]">Based on 150 reviews</p>
+            <p className="text-sm text-neutral-700">Based on 150 reviews</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_2.1fr] gap-8 items-stretch">
-          <div className="rounded-3xl bg-[hsl(var(--accent))] text-white p-8 shadow-lg">
+          <div className="rounded-3xl bg-accent text-white p-8 shadow-lg">
             <p className="text-lg font-semibold mb-4">Success stories</p>
             <p className="text-5xl font-semibold mb-4">98%</p>
             <p className="text-sm text-white/70 mb-6">Client Retention Rate</p>
@@ -66,7 +66,7 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 {avatars.map((src, i) => (
-                  <div key={i} className="relative h-8 w-8 rounded-full overflow-hidden border-2 border-[hsl(var(--accent))]">
+                  <div key={i} className="relative h-8 w-8 rounded-full overflow-hidden border-2 border-accent">
                     <Image
                       src={src}
                       alt="Client"
@@ -80,9 +80,9 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
                 ))}
               </div>
               <div>
-                <div className="flex items-center gap-1 text-[hsl(var(--primary))]">
+                <div className="flex items-center gap-1 text-primary">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3 w-3 fill-[hsl(var(--primary))]" />
+                    <Star key={i} className="h-3 w-3 fill-primary" />
                   ))}
                 </div>
                 <p className="text-xs text-white/70">450+ reviews</p>
@@ -94,14 +94,14 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
             <div className="absolute -top-16 right-0 flex items-center gap-3">
               <button
                 onClick={() => scrollByAmount('left')}
-                className="h-10 w-10 rounded-full border border-[hsl(var(--border))] bg-white text-[hsl(var(--accent))] hover:bg-[hsl(var(--neutral-100))] transition-colors"
+                className="h-10 w-10 rounded-full border border-border bg-white text-accent hover:bg-neutral-100 transition-colors"
                 aria-label="Previous reviews"
               >
                 <ChevronLeft className="h-5 w-5 mx-auto" />
               </button>
               <button
                 onClick={() => scrollByAmount('right')}
-                className="h-10 w-10 rounded-full border border-[hsl(var(--border))] bg-white text-[hsl(var(--accent))] hover:bg-[hsl(var(--neutral-100))] transition-colors"
+                className="h-10 w-10 rounded-full border border-border bg-white text-accent hover:bg-neutral-100 transition-colors"
                 aria-label="Next reviews"
               >
                 <ChevronRight className="h-5 w-5 mx-auto" />
@@ -109,20 +109,20 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
             </div>
 
             <div ref={sliderRef} className="overflow-x-auto">
-              <div className="flex gap-6 min-w-[900px] snap-x snap-mandatory pb-2">
+              <div className="flex gap-6 min-w-225 snap-x snap-mandatory pb-2">
               {items.map((testimonial, index) => (
-                <Card key={index} className="bg-white border-[hsl(var(--border))] shadow-sm hover-lift min-w-[280px] snap-start">
+                <Card key={index} className="bg-white border-border shadow-sm min-w-[280px] snap-start rounded-3xl overflow-hidden">
                   <CardContent className="pt-6">
-                    <div className="flex items-center gap-1 text-[hsl(var(--primary))] mb-4">
+                    <div className="flex items-center gap-1 text-primary mb-4">
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-[hsl(var(--primary))]" />
+                        <Star key={i} className="h-4 w-4 fill-primary" />
                       ))}
                     </div>
-                    <p className="text-[hsl(var(--neutral-800))] mb-6">
+                    <p className="text-neutral-800 mb-6">
                       {testimonial.quote}
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="relative h-10 w-10 rounded-full overflow-hidden border border-[hsl(var(--border))]">
+                      <div className="relative h-10 w-10 rounded-full overflow-hidden border border-border">
                         <Image
                           src={avatars[index % avatars.length]}
                           alt={testimonial.author}
@@ -134,10 +134,10 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
                         />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-[hsl(var(--accent))]">
+                        <p className="text-sm font-semibold text-accent">
                           {testimonial.author}
                         </p>
-                        <p className="text-xs text-[hsl(var(--neutral-600))]">UI/UX Designer</p>
+                        <p className="text-xs text-neutral-600">UI/UX Designer</p>
                       </div>
                     </div>
                   </CardContent>
@@ -151,3 +151,4 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
     </section>
   );
 }
+

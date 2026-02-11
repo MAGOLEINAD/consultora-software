@@ -8,7 +8,7 @@ interface DeliverablesSectionProps {
 
 export default function DeliverablesSection({ title, items }: DeliverablesSectionProps) {
   return (
-    <section className="section-padding bg-[hsl(var(--neutral-50))]">
+    <section className="section-padding bg-neutral-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <SectionHeading title={title} centered={false} />
@@ -17,13 +17,13 @@ export default function DeliverablesSection({ title, items }: DeliverablesSectio
             {items.map((item, index) => (
               <div
                 key={index}
-                className="rounded-2xl border border-[hsl(var(--border))] bg-white p-6 hover-lift"
+                className="rounded-2xl border border-border bg-white p-6 hover-lift"
               >
                 <div className="flex gap-4 items-start">
-                  <div className="h-10 w-10 rounded-xl bg-[hsl(var(--accent))] text-white flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-xl bg-accent text-white flex items-center justify-center">
                     <Package className="w-5 h-5" />
                   </div>
-                  <p className="text-[hsl(var(--neutral-800))]">{item}</p>
+                  <p className="text-neutral-800">{item}</p>
                 </div>
               </div>
             ))}
@@ -33,3 +33,4 @@ export default function DeliverablesSection({ title, items }: DeliverablesSectio
     </section>
   );
 }
+

@@ -71,26 +71,26 @@ export default async function SolutionDetailPage(props: { params: Promise<{ loca
   return (
     <section className="section-padding bg-white">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-[hsl(var(--accent))] mb-6">
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-accent mb-6">
           {name}
         </h1>
-        <p className="text-lg text-[hsl(var(--neutral-800))] mb-6">
+        <p className="text-lg text-neutral-800 mb-6">
           {description}
         </p>
         {intro && (
-          <p className="text-[hsl(var(--neutral-800))] leading-relaxed mb-8">
+          <p className="text-neutral-800 leading-relaxed mb-8">
             {intro}
           </p>
         )}
 
         {commonStruggles.length > 0 && (
           <div className="mb-10">
-            <h2 className="font-display text-2xl font-semibold text-[hsl(var(--accent))] mb-4">
+            <h2 className="font-display text-2xl font-semibold text-accent mb-4">
               {t('solutions.commonStrugglesTitle')}
             </h2>
-            <ul className="space-y-3 text-[hsl(var(--neutral-800))]">
+            <ul className="space-y-3 text-neutral-800">
               {commonStruggles.map((item) => (
-                <li key={item} className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--neutral-50))] p-4">
+                <li key={item} className="rounded-2xl border border-border bg-neutral-50 p-4">
                   {item}
                 </li>
               ))}
@@ -100,12 +100,12 @@ export default async function SolutionDetailPage(props: { params: Promise<{ loca
 
         {solutions.length > 0 && (
           <div className="mb-10">
-            <h2 className="font-display text-2xl font-semibold text-[hsl(var(--accent))] mb-4">
+            <h2 className="font-display text-2xl font-semibold text-accent mb-4">
               {t('solutions.solutionsTitle')}
             </h2>
-            <ul className="space-y-3 text-[hsl(var(--neutral-800))]">
+            <ul className="space-y-3 text-neutral-800">
               {solutions.map((item) => (
-                <li key={item} className="rounded-2xl border border-[hsl(var(--border))] bg-white p-4">
+                <li key={item} className="rounded-2xl border border-border bg-white p-4">
                   {item}
                 </li>
               ))}
@@ -114,11 +114,11 @@ export default async function SolutionDetailPage(props: { params: Promise<{ loca
         )}
 
         {caseTitle && caseDescription && (
-          <div className="rounded-3xl border border-[hsl(var(--border))] bg-[hsl(var(--neutral-50))] p-8">
-            <h3 className="font-display text-2xl font-semibold text-[hsl(var(--accent))] mb-3">
+          <div className="rounded-3xl border border-border bg-neutral-50 p-8">
+            <h3 className="font-display text-2xl font-semibold text-accent mb-3">
               {caseTitle}
             </h3>
-            <p className="text-[hsl(var(--neutral-800))] leading-relaxed">
+            <p className="text-neutral-800 leading-relaxed">
               {caseDescription}
             </p>
           </div>

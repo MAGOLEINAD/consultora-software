@@ -39,9 +39,9 @@ export default function ClientLogoSlider({ title }: ClientLogoSliderProps) {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 bg-[hsl(var(--neutral-50))] border-y border-[hsl(var(--border))]">
+    <section className="py-12 md:py-16 bg-neutral-50 border-y border-border">
       <div className="container mx-auto px-4 md:px-8">
-        <p className="text-center text-sm text-[hsl(var(--neutral-800))] mb-8 uppercase tracking-[0.25em]">
+        <p className="text-center text-sm text-neutral-800 mb-8 uppercase tracking-[0.25em]">
           {title}
         </p>
 
@@ -56,8 +56,8 @@ export default function ClientLogoSlider({ title }: ClientLogoSliderProps) {
                 key={index}
                 className="flex-shrink-0 flex items-center justify-center px-4"
               >
-                <div className="flex items-center justify-center rounded-full border border-[hsl(var(--border))] bg-white px-8 py-4 shadow-sm">
-                  <span className="text-xl font-semibold text-[hsl(var(--neutral-600))] hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap">
+                <div className="flex items-center justify-center rounded-full border border-border bg-white px-8 py-4 shadow-sm">
+                  <span className="text-xl font-semibold text-neutral-600 hover:text-accent transition-colors whitespace-nowrap">
                     {technology}
                   </span>
                 </div>
@@ -69,3 +69,4 @@ export default function ClientLogoSlider({ title }: ClientLogoSliderProps) {
     </section>
   );
 }
+

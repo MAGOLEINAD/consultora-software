@@ -34,10 +34,10 @@ export default async function CaseStudiesPage(props: { params: Promise<{ locale:
 
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(var(--foreground))] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               {t('caseStudies.title')}
             </h1>
-            <p className="text-lg md:text-xl text-[hsl(var(--neutral-800))]">
+            <p className="text-lg md:text-xl text-neutral-800">
               {t('caseStudies.subtitle')}
             </p>
           </div>
@@ -54,24 +54,24 @@ export default async function CaseStudiesPage(props: { params: Promise<{ locale:
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-[hsl(var(--foreground))] mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       Problem
                     </h3>
-                    <p className="text-[hsl(var(--neutral-800))]">{caseStudy.problem}</p>
+                    <p className="text-neutral-800">{caseStudy.problem}</p>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-[hsl(var(--foreground))] mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       Approach
                     </h3>
-                    <p className="text-[hsl(var(--neutral-800))]">{caseStudy.approach}</p>
+                    <p className="text-neutral-800">{caseStudy.approach}</p>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-[hsl(var(--foreground))] mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       Results
                     </h3>
-                    <p className="text-[hsl(var(--neutral-800))]">{caseStudy.results}</p>
+                    <p className="text-neutral-800">{caseStudy.results}</p>
                   </div>
                 </CardContent>
               </Card>

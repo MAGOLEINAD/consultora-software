@@ -6,7 +6,6 @@ import AboutTabs from '@/components/home/AboutTabs';
 import ServicesGrid from '@/components/home/ServicesGrid';
 import PricingCards from '@/components/home/PricingCards';
 import SolutionTabs from '@/components/home/SolutionTabs';
-import ApproachTimeline from '@/components/home/ApproachTimeline';
 import Testimonials from '@/components/home/Testimonials';
 import FAQSection from '@/components/home/FAQSection';
 
@@ -75,11 +74,6 @@ export default async function HomePage(props: { params: Promise<{ locale: string
       t(`home.packages.items.${i}.notes.${j}`)
     ).filter(Boolean),
     cta: t(`home.packages.items.${i}.cta`),
-  }));
-
-  const approachSteps = Array.from({ length: 4 }, (_, i) => ({
-    title: t(`home.approach.steps.${i}.title`),
-    description: t(`home.approach.steps.${i}.description`),
   }));
 
   const testimonials = Array.from({ length: 3 }, (_, i) => ({
@@ -184,12 +178,6 @@ export default async function HomePage(props: { params: Promise<{ locale: string
             description: t('home.solutionTabs.tabs.5.description'),
           },
         ]}
-      />
-
-      <ApproachTimeline
-        title={t('home.approach.title')}
-        subtitle={t('home.approach.subtitle')}
-        steps={approachSteps}
       />
 
       <PricingCards

@@ -58,10 +58,10 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
         <GradientBlur />
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(var(--foreground))] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               {t('services.title')}
             </h1>
-            <p className="text-lg md:text-xl text-[hsl(var(--neutral-800))]">
+            <p className="text-lg md:text-xl text-neutral-800">
               {t('services.subtitle')}
             </p>
           </div>
