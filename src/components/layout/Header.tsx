@@ -178,7 +178,3 @@ export default function Header({ locale, translations, solutions, services }: He
     </header>
   );
 }
-
-
-
-
