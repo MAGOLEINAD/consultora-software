@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Premium color palette - Fexo inspired */
+  /* Default theme: Ocean */
   --background: #ffffff;
   --foreground: #0f172a;
 
-  /* Primary - Vibrant Orange/Red */
-  --primary: 14 100% 57%;        /* #FF5722 - Vibrant Orange */
-  --primary-dark: 14 90% 48%;    /* Darker Orange */
+  /* Primary */
+  --primary: 199 89% 48%;        /* Sky Blue */
+  --primary-dark: 199 89% 40%;
   --primary-foreground: 0 0% 100%;
 
-  /* Accent - Deep Navy Blue */
-  --accent: 222 47% 11%;          /* #0B1B3D - Deep Navy */
-  --accent-light: 220 26% 14%;    /* Lighter Navy */
-  --accent-secondary: 25 95% 53%; /* Keep warm orange */
+  /* Accent */
+  --accent: 222 47% 11%;
+  --accent-light: 220 26% 14%;
+  --accent-secondary: 188 94% 43%;
 
   /* Neutral grays */
   --neutral-50: 0 0% 98%;
@@ -28,12 +28,53 @@
   /* Semantic colors */
   --muted: 210 40% 96%;
   --border: 214 32% 91%;
-  --ring: 14 100% 57%;
+  --ring: 199 89% 48%;
+
+  /* Theme glow colors (RGB triplets) */
+  --glow-primary-rgb: 14, 165, 233;
+  --glow-accent-rgb: 11, 27, 61;
+  --glow-secondary-rgb: 20, 184, 166;
 
   /* Typography */
   --font-display: var(--font-sora);
   --font-body: var(--font-manrope);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+[data-theme="emerald"] {
+  --primary: 158 64% 42%;
+  --primary-dark: 158 67% 34%;
+  --accent: 160 84% 10%;
+  --accent-light: 161 60% 16%;
+  --accent-secondary: 173 80% 40%;
+  --ring: 158 64% 42%;
+  --glow-primary-rgb: 16, 185, 129;
+  --glow-accent-rgb: 6, 78, 59;
+  --glow-secondary-rgb: 13, 148, 136;
+}
+
+[data-theme="indigo"] {
+  --primary: 238 83% 67%;
+  --primary-dark: 239 84% 59%;
+  --accent: 231 44% 12%;
+  --accent-light: 232 31% 19%;
+  --accent-secondary: 267 84% 66%;
+  --ring: 238 83% 67%;
+  --glow-primary-rgb: 99, 102, 241;
+  --glow-accent-rgb: 30, 41, 59;
+  --glow-secondary-rgb: 168, 85, 247;
+}
+
+[data-theme="slate"] {
+  --primary: 200 18% 46%;
+  --primary-dark: 200 18% 36%;
+  --accent: 215 28% 17%;
+  --accent-light: 215 25% 27%;
+  --accent-secondary: 190 25% 45%;
+  --ring: 200 18% 46%;
+  --glow-primary-rgb: 100, 116, 139;
+  --glow-accent-rgb: 30, 41, 59;
+  --glow-secondary-rgb: 71, 85, 105;
 }
 
 @theme inline {
@@ -85,8 +126,8 @@ body {
 
 .fexo-hero-bg {
   background:
-    radial-gradient(900px 500px at 90% -10%, rgba(255, 87, 34, 0.18), transparent 60%),
-    radial-gradient(800px 500px at -10% 30%, rgba(11, 27, 61, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 90% -10%, rgba(var(--glow-primary-rgb), 0.18), transparent 60%),
+    radial-gradient(800px 500px at -10% 30%, rgba(var(--glow-accent-rgb), 0.18), transparent 55%),
     linear-gradient(180deg, #fff 0%, #f8fafc 100%);
 }
 
@@ -99,8 +140,8 @@ body {
 
 .fexo-hero-dark {
   background:
-    radial-gradient(900px 500px at 80% 0%, rgba(255, 87, 34, 0.18), transparent 60%),
-    radial-gradient(800px 500px at 0% 40%, rgba(11, 27, 61, 0.9), transparent 55%),
+    radial-gradient(900px 500px at 80% 0%, rgba(var(--glow-primary-rgb), 0.18), transparent 60%),
+    radial-gradient(800px 500px at 0% 40%, rgba(var(--glow-accent-rgb), 0.9), transparent 55%),
     linear-gradient(135deg, #0b1430 0%, #0a1a3d 45%, #07152f 100%);
 }
 
@@ -129,7 +170,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: radial-gradient(400px 120px at 50% -10%, rgba(255, 87, 34, 0.18), transparent 60%);
+  background: radial-gradient(400px 120px at 50% -10%, rgba(var(--glow-primary-rgb), 0.18), transparent 60%);
   opacity: 0;
   transition: opacity 200ms ease;
   pointer-events: none;
@@ -186,8 +227,8 @@ body {
 
 .fexo-footer {
   background:
-    radial-gradient(900px 400px at 80% 120%, rgba(138, 64, 255, 0.25), transparent 60%),
-    radial-gradient(900px 400px at 0% 120%, rgba(255, 87, 34, 0.2), transparent 55%),
+    radial-gradient(900px 400px at 80% 120%, rgba(var(--glow-secondary-rgb), 0.25), transparent 60%),
+    radial-gradient(900px 400px at 0% 120%, rgba(var(--glow-primary-rgb), 0.2), transparent 55%),
     linear-gradient(180deg, #0b1430 0%, #08122b 100%);
 }
 

@@ -23,6 +23,7 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
   const t = await getTranslations({ locale: params.locale });
 
   const formTranslations = {
+    title: t('contact.form.title'),
     name: t('contact.form.name'),
     email: t('contact.form.email'),
     company: t('contact.form.company'),
@@ -30,6 +31,8 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
     submit: t('contact.form.submit'),
     success: t('contact.form.success'),
     error: t('contact.form.error'),
+    interestLabel: t('contact.form.interestLabel'),
+    interestNote: t('contact.form.interestNote'),
   };
 
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/';
@@ -37,14 +40,21 @@ export default async function ContactPage(props: { params: Promise<{ locale: str
   return (
     <>
       <section className="relative py-16 md:py-24 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "linear-gradient(120deg, rgba(8,17,38,0.86) 0%, rgba(8,17,38,0.62) 55%, rgba(8,17,38,0.3) 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2400&auto=format&fit=crop')",
+          }}
+        />
         <GradientBlur variant="accent" />
 
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+        <div className="relative container mx-auto px-4 md:px-8">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               {t('contact.title')}
             </h1>
-            <p className="text-lg md:text-xl text-neutral-800">
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl">
               {t('contact.subtitle')}
             </p>
           </div>

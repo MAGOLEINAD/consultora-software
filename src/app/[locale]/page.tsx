@@ -5,8 +5,6 @@ import ClientLogoSlider from '@/components/home/ClientLogoSlider';
 import AboutTabs from '@/components/home/AboutTabs';
 import ServicesGrid from '@/components/home/ServicesGrid';
 import PricingCards from '@/components/home/PricingCards';
-import SolutionTabs from '@/components/home/SolutionTabs';
-import Testimonials from '@/components/home/Testimonials';
 import FAQSection from '@/components/home/FAQSection';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
@@ -76,11 +74,6 @@ export default async function HomePage(props: { params: Promise<{ locale: string
     cta: t(`home.packages.items.${i}.cta`),
   }));
 
-  const testimonials = Array.from({ length: 3 }, (_, i) => ({
-    quote: t(`home.testimonials.items.${i}.quote`),
-    author: t(`home.testimonials.items.${i}.author`),
-  }));
-
   const faqItems = Array.from({ length: 5 }, (_, i) => ({
     question: t(`home.faq.items.${i}.question`),
     answer: t(`home.faq.items.${i}.answer`),
@@ -138,67 +131,14 @@ export default async function HomePage(props: { params: Promise<{ locale: string
         services={services}
       />
 
-      <SolutionTabs
-        title={t('home.solutionTabs.title')}
-        tabs={[
-          {
-            slug: 'fpa-automation',
-            label: t('home.solutionTabs.tabs.0.label'),
-            title: t('home.solutionTabs.tabs.0.title'),
-            description: t('home.solutionTabs.tabs.0.description'),
-          },
-          {
-            slug: 'forecasting-tools',
-            label: t('home.solutionTabs.tabs.1.label'),
-            title: t('home.solutionTabs.tabs.1.title'),
-            description: t('home.solutionTabs.tabs.1.description'),
-          },
-          {
-            slug: 'pricing-analytics',
-            label: t('home.solutionTabs.tabs.2.label'),
-            title: t('home.solutionTabs.tabs.2.title'),
-            description: t('home.solutionTabs.tabs.2.description'),
-          },
-          {
-            slug: 'profitability-models',
-            label: t('home.solutionTabs.tabs.3.label'),
-            title: t('home.solutionTabs.tabs.3.title'),
-            description: t('home.solutionTabs.tabs.3.description'),
-          },
-          {
-            slug: 'spend-cubes',
-            label: t('home.solutionTabs.tabs.4.label'),
-            title: t('home.solutionTabs.tabs.4.title'),
-            description: t('home.solutionTabs.tabs.4.description'),
-          },
-          {
-            slug: 'customer-analytics',
-            label: t('home.solutionTabs.tabs.5.label'),
-            title: t('home.solutionTabs.tabs.5.title'),
-            description: t('home.solutionTabs.tabs.5.description'),
-          },
-        ]}
-      />
-
       <PricingCards
         title={t('home.packages.title')}
         intro={t('home.packages.intro')}
+        selectionPrompt={t('home.packages.selectionPrompt')}
+        selectionHint={t('home.packages.selectionHint')}
+        selectedLabel={t('home.packages.selectedLabel')}
         packages={pricingPackages}
-        comparison={Array.from({ length: 4 }, (_, i) => ({
-          package: t(`home.packages.comparison.${i}.package`),
-          bestFor: t(`home.packages.comparison.${i}.bestFor`),
-          duration: t(`home.packages.comparison.${i}.duration`),
-          outcomes: t(`home.packages.comparison.${i}.outcomes`),
-          pricing: t(`home.packages.comparison.${i}.pricing`),
-        }))}
-        whoFor={Array.from({ length: 4 }, (_, i) => t(`home.packages.whoFor.${i}`))}
-        notFit={Array.from({ length: 4 }, (_, i) => t(`home.packages.notFit.${i}`))}
         disclaimer={t('home.packages.disclaimer')}
-      />
-
-      <Testimonials
-        title={t('home.testimonials.title')}
-        items={testimonials}
       />
 
       <FAQSection

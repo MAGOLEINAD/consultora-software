@@ -112,6 +112,9 @@
     "packages": {
       "title": "Paquetes (alcance claro, orientados a resultados)",
       "intro": "Arrancamos con un Discovery pago para definir alcance con precisión y cotizar en forma fija. Luego elegís un sprint de implementación o soporte continuo.",
+      "selectionPrompt": "¿Qué tipo de solución estás buscando?",
+      "selectionHint": "Seleccioná un paquete para continuar.",
+      "selectedLabel": "Seleccionado",
       "items": [
         {
           "name": "Discovery Sprint",
@@ -643,13 +646,16 @@
     "title": "Ponete en Contacto",
     "subtitle": "Conversemos sobre cómo podemos ayudar a transformar tus operaciones",
     "form": {
+      "title": "Enviar un mensaje",
       "name": "Nombre Completo",
       "email": "Email",
       "company": "Nombre de la Empresa",
       "message": "Contanos sobre tus desafíos y objetivos",
       "submit": "Enviar Mensaje",
       "success": "¡Gracias! Nos pondremos en contacto en 24 horas.",
-      "error": "Algo salió mal. Por favor intentá de nuevo o envianos un email directamente."
+      "error": "Algo salió mal. Por favor intentá de nuevo o envianos un email directamente.",
+      "interestLabel": "Interés",
+      "interestNote": "Vamos a adaptar la conversación según el paquete que elegiste."
     },
     "or": "O",
     "schedule": "Agendá una Sesión de Discovery",

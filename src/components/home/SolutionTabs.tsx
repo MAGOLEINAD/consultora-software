@@ -16,6 +16,7 @@ interface SolutionTab {
 interface SolutionTabsProps {
   title: string;
   tabs: SolutionTab[];
+  sectionClassName?: string;
 }
 
 const tabImages = [
@@ -25,12 +26,12 @@ const tabImages = [
   'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
 ];
 
-export default function SolutionTabs({ title, tabs }: SolutionTabsProps) {
+export default function SolutionTabs({ title, tabs, sectionClassName = 'section-padding bg-neutral-50' }: SolutionTabsProps) {
   const [active, setActive] = useState(0);
   const current = tabs[active] ?? tabs[0];
 
   return (
-    <section className="section-padding bg-neutral-50">
+    <section className={sectionClassName}>
       <div className="container mx-auto px-4 md:px-8">
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-accent mb-12">
           {title}

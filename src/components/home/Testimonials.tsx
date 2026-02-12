@@ -91,22 +91,7 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
           </div>
 
           <div className="relative">
-            <div className="absolute -top-16 right-0 flex items-center gap-3">
-              <button
-                onClick={() => scrollByAmount('left')}
-                className="h-10 w-10 rounded-full border border-border bg-white text-accent hover:bg-neutral-100 transition-colors"
-                aria-label="Previous reviews"
-              >
-                <ChevronLeft className="h-5 w-5 mx-auto" />
-              </button>
-              <button
-                onClick={() => scrollByAmount('right')}
-                className="h-10 w-10 rounded-full border border-border bg-white text-accent hover:bg-neutral-100 transition-colors"
-                aria-label="Next reviews"
-              >
-                <ChevronRight className="h-5 w-5 mx-auto" />
-              </button>
-            </div>
+       
 
             <div ref={sliderRef} className="overflow-x-auto">
               <div className="flex gap-6 min-w-225 snap-x snap-mandatory pb-2">

@@ -5,6 +5,7 @@ import { Link } from '@/i18n/routing';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Check, ArrowRight, ArrowLeft, Search, Database, Workflow, HeadphonesIcon, Lightbulb, Pencil, Hammer, Rocket } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 interface Package {
   name: string;
@@ -19,6 +20,9 @@ interface Package {
 interface PricingCardsProps {
   title: string;
   intro: string;
+  selectionPrompt: string;
+  selectionHint: string;
+  selectedLabel: string;
   packages: Package[];
   disclaimer: string;
 }
@@ -50,7 +54,7 @@ const steps = [
   },
 ];
 
-const packageIcons = {
+const packageIcons: Record<number, LucideIcon> = {
   0: Search,
   1: Database,
   2: Workflow,
@@ -60,11 +64,14 @@ const packageIcons = {
 export default function PricingCards({
   title,
   intro,
+  selectionPrompt,
+  selectionHint,
+  selectedLabel,
   packages,
   disclaimer,
 }: PricingCardsProps) {
   const [selectedStep, setSelectedStep] = useState(0);
-  const [selectedPackageIndex, setSelectedPackageIndex] = useState(0);
+  const [selectedPackageIndex, setSelectedPackageIndex] = useState<number | null>(null);
 
   const discoveryPackage = packages[0];
   const buildPackages = packages.slice(1, 4);
@@ -84,6 +91,9 @@ export default function PricingCards({
           selectedIndex: selectedPackageIndex,
         };
       case 2: // Build - Show details
+        if (selectedPackageIndex === null) {
+          return null;
+        }
         return {
           type: 'build',
           package: buildPackages[selectedPackageIndex],
@@ -104,6 +114,9 @@ export default function PricingCards({
   const currentStep = steps[selectedStep];
 
   const handleNext = () => {
+    if (selectedStep === 1 && selectedPackageIndex === null) {
+      return;
+    }
     if (selectedStep < steps.length - 1) {
       setSelectedStep(selectedStep + 1);
     }
@@ -115,6 +128,14 @@ export default function PricingCards({
     }
   };
 
+  const selectedInterest =
+    selectedPackageIndex !== null ? buildPackages[selectedPackageIndex]?.name : undefined;
+  const contactHref = selectedInterest
+    ? `/contact?interest=${encodeURIComponent(selectedInterest)}`
+    : '/contact';
+  const formatPackageName = (name: string) =>
+    name.replace(/\bSprint\b/gi, '').replace(/\s{2,}/g, ' ').trim();
+
   return (
     <section id="pricing" className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-4 max-w-5xl">
@@ -124,55 +145,82 @@ export default function PricingCards({
             {title}
           </h2>
           <p className="text-base text-neutral-600 max-w-2xl mx-auto">
-            Start with a paid Discovery to scope accurately and provide a fixed proposal. Then choose your implementation sprint or ongoing support.
+            {intro}
           </p>
         </div>
 
         {/* Visual Stepper */}
         <div className="mb-8">
-          <div className="flex items-center justify-between max-w-3xl mx-auto relative">
-            {steps.map((step, index) => {
-              const isActive = selectedStep === index;
-              const isCompleted = selectedStep > index;
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-[auto,1fr,auto,1fr,auto,1fr,auto] grid-rows-[auto,auto] items-center gap-x-3 sm:gap-x-4 md:gap-x-6">
+              {steps.map((step, index) => {
+                const isActive = selectedStep === index;
+                const isCompleted = selectedStep > index;
+                const circleCol = 1 + index * 2;
+                const arrowCol = circleCol + 1;
 
-              return (
-                <div key={step.number} className="flex items-center flex-1">
-                  {/* Circle */}
-                  <div className="relative flex flex-col items-center z-10">
+                return (
+                  <div key={step.number} className="contents">
                     <div
-                      className={`
-                        h-12 w-12 md:h-16 md:w-16 rounded-full flex items-center justify-center text-lg md:text-xl font-bold transition-all duration-300
-                        ${isActive
-                          ? 'bg-neutral-900 text-white border-4 border-neutral-900 scale-110 shadow-xl'
-                          : isCompleted
-                          ? 'bg-primary text-white border-4 border-primary'
-                          : 'bg-white text-neutral-400 border-4 border-neutral-300'
-                        }
-                      `}
+                      className="flex items-center justify-center"
+                      style={{ gridColumn: circleCol, gridRow: 1 }}
                     >
-                      {step.number < 10 ? `0${step.number}` : step.number}
-                    </div>
-                    <span className={`text-[10px] md:text-xs mt-1 md:mt-2 font-semibold ${isActive ? 'text-neutral-900' : 'text-neutral-500'}`}>
-                      {step.title}
-                    </span>
-                  </div>
-
-                  {/* Arrow between steps */}
-                  {index < steps.length - 1 && (
-                    <div className="flex-1 h-1 mx-2 md:mx-4 relative">
-                      <div className="absolute inset-0 bg-neutral-200 right-4"></div>
                       <div
-                        className={`absolute inset-0 right-4 transition-all duration-500 ${
-                          selectedStep > index ? 'bg-primary' : 'bg-transparent'
-                        }`}
-                        style={{ width: selectedStep > index ? '100%' : '0%' }}
-                      ></div>
-                      <ArrowRight className={`absolute right-0 top-1/2 -translate-y-1/2 h-3 w-3 md:h-4 md:w-4 z-10 bg-white rounded-full ${selectedStep > index ? 'text-primary' : 'text-neutral-300'}`} />
+                        className={`
+                          h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 rounded-full flex items-center justify-center text-sm sm:text-lg md:text-xl font-bold transition-all duration-300
+                          ${isActive
+                            ? 'bg-neutral-900 text-white border-4 border-neutral-900 scale-110 shadow-xl'
+                            : isCompleted
+                            ? 'bg-primary text-white border-4 border-primary'
+                            : 'bg-white text-neutral-400 border-4 border-neutral-300'
+                          }
+                        `}
+                      >
+                        {step.number < 10 ? `0${step.number}` : step.number}
+                      </div>
                     </div>
-                  )}
-                </div>
-              );
-            })}
+
+                    <div
+                      className="flex items-center justify-center"
+                      style={{ gridColumn: circleCol, gridRow: 2 }}
+                    >
+                      <span className={`text-[9px] sm:text-[10px] md:text-xs mt-2 font-semibold ${isActive ? 'text-neutral-900' : 'text-neutral-500'}`}>
+                        {step.title}
+                      </span>
+                    </div>
+
+                    {index < steps.length - 1 && (
+                      <div
+                        className="flex items-center h-12 md:h-16"
+                        style={{ gridColumn: arrowCol, gridRow: 1 }}
+                      >
+                        <svg
+                          className="w-full h-2.5 sm:h-3 md:h-4"
+                          viewBox="0 0 100 10"
+                          preserveAspectRatio="none"
+                        >
+                        <line
+                          x1="0"
+                          y1="5"
+                          x2="94"
+                          y2="5"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          className={selectedStep > index ? 'text-primary' : 'text-neutral-300'}
+                        />
+                        <polygon
+                          points="94,2 100,5 94,8"
+                          fill="currentColor"
+                          className={selectedStep > index ? 'text-primary' : 'text-neutral-300'}
+                        />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
 
@@ -181,8 +229,8 @@ export default function PricingCards({
           <CardContent className="p-6 md:p-8">
             {/* Step Title & Description with Navigation */}
             <div className="mb-6 pb-6 border-b border-neutral-200">
-              <div className="flex items-start justify-between gap-6">
-                <div className="flex-1 min-w-0">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-6">
+                  <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="h-10 w-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0">
                       <currentStep.icon className="h-5 w-5 text-white" strokeWidth={2.5} />
@@ -191,7 +239,7 @@ export default function PricingCards({
                       {currentStep.title}
                     </h3>
                   </div>
-                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-2xl">
+                  <p className="text-sm md:text-base text-neutral-600 leading-relaxed max-w-none md:max-w-2xl">
                     {currentStep.description}
                   </p>
                 </div>
@@ -213,6 +261,7 @@ export default function PricingCards({
                     <Button
                       size="sm"
                       onClick={handleNext}
+                      disabled={selectedStep === 1 && selectedPackageIndex === null}
                       className="h-9 px-4 cursor-pointer"
                     >
                       Next
@@ -220,7 +269,7 @@ export default function PricingCards({
                     </Button>
                   ) : (
                     <Button asChild size="sm" className="h-9 px-5 cursor-pointer">
-                      <Link href="/contact" className="flex items-center cursor-pointer">
+                      <Link href={contactHref} className="flex items-center cursor-pointer">
                         Get Started
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
@@ -255,31 +304,33 @@ export default function PricingCards({
                       <ul className="grid sm:grid-cols-2 gap-3">
                         {stepContent.package.includes.map((item) => (
                           <li key={item} className="flex items-start gap-2 text-sm text-neutral-700">
-                            <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                            <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" strokeWidth={2.5} />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {stepContent.package.notes && stepContent.package.notes.length > 0 && (
-                      <div className="bg-primary/10 rounded-lg px-4 py-3 border border-primary/20 mt-4">
-                        {stepContent.package.notes.map((note) => (
-                          <p key={note} className="text-xs text-neutral-700 italic">{note}</p>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 )}
 
                 {/* Selection Step (Design) */}
                 {stepContent.type === 'selection' && stepContent.packages && (
                   <div className="text-center">
-                    <p className="text-base md:text-lg font-semibold text-neutral-800 mb-4 md:mb-6">
-                      What type of solution are you looking for?
+                    <p className="text-base md:text-lg font-semibold text-neutral-800 mb-2">
+                      {selectionPrompt}
                     </p>
+                    {stepContent.selectedIndex === null ? (
+                      <p className="text-sm text-neutral-600 mb-4 md:mb-6">
+                        {selectionHint}
+                      </p>
+                    ) : (
+                      <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full px-3 py-1 mb-4 md:mb-6">
+                        {selectedLabel}: {formatPackageName(buildPackages[stepContent.selectedIndex]?.name ?? '')}
+                      </div>
+                    )}
 
-                    <div className="grid grid-cols-3 gap-2 md:gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4">
                       {stepContent.packages.map((pkg, index) => {
                         const Icon = packageIcons[index + 1];
                         const isSelected = stepContent.selectedIndex === index;
@@ -305,18 +356,22 @@ export default function PricingCards({
                               </div>
                             </div>
                             <h5 className="font-display font-bold text-xs md:text-base text-neutral-900 mb-1 md:mb-2">
-                              {pkg.name}
+                              {formatPackageName(pkg.name)}
                             </h5>
                             <p className="text-[10px] md:text-sm text-neutral-600">
                               {pkg.duration}
                             </p>
-                            <p className="text-[10px] md:text-sm text-neutral-600 font-semibold">
+                            <p className="text-base md:text-xl text-primary font-bold leading-tight">
                               {pkg.price}
                             </p>
                           </button>
                         );
                       })}
                     </div>
+
+                    <p className="text-sm text-neutral-600 text-center leading-relaxed mt-4 md:mt-6">
+                      {disclaimer}
+                    </p>
                   </div>
                 )}
 
@@ -386,10 +441,6 @@ export default function PricingCards({
           </CardContent>
         </Card>
 
-        {/* Disclaimer */}
-        <p className="text-sm text-neutral-600 text-center leading-relaxed">
-          {disclaimer}
-        </p>
       </div>
     </section>
   );

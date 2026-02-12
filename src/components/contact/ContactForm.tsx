@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -8,6 +9,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 interface ContactFormProps {
   translations: {
+    title: string;
     name: string;
     email: string;
     company: string;
@@ -15,10 +17,14 @@ interface ContactFormProps {
     submit: string;
     success: string;
     error: string;
+    interestLabel: string;
+    interestNote: string;
   };
 }
 
 export default function ContactForm({ translations }: ContactFormProps) {
+  const searchParams = useSearchParams();
+  const interest = searchParams?.get('interest') || '';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,12 +33,14 @@ export default function ContactForm({ translations }: ContactFormProps) {
   });
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     // Simple mailto fallback
     const subject = `Contact from ${formData.name} - ${formData.company}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`;
+    const interestLine = interest ? `Interest: ${interest}\n` : '';
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n${interestLine}\nMessage:\n${formData.message}`;
     const mailtoLink = `mailto:contact@consultora-software.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
@@ -46,9 +54,26 @@ export default function ContactForm({ translations }: ContactFormProps) {
   };
 
   return (
-    <Card>
-      <CardContent className="pt-6">
+    <Card className="border border-neutral-200 shadow-lg bg-white/90 backdrop-blur">
+      <CardHeader className="pb-2">
+        <CardTitle className="text-xl font-semibold text-neutral-900">
+          {translations.title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="pt-2">
         <form onSubmit={handleSubmit} className="space-y-6">
+          {interest && (
+            <div className="rounded-lg border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-neutral-700">
+              <div className="font-semibold text-neutral-900">
+                {translations.interestLabel}: {interest}
+              </div>
+              <div className="text-xs text-neutral-600 mt-1">
+                {translations.interestNote}
+              </div>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2">
               {translations.name}
@@ -72,6 +97,7 @@ export default function ContactForm({ translations }: ContactFormProps) {
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
             />
+          </div>
           </div>
 
           <div>

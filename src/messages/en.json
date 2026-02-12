@@ -112,6 +112,9 @@
     "packages": {
       "title": "Packages (fixed-scope, outcome-driven)",
       "intro": "Start with a paid Discovery so we can scope accurately and provide a fixed proposal. Then choose a build sprint or ongoing support.",
+      "selectionPrompt": "What type of solution are you looking for?",
+      "selectionHint": "Select a package to continue.",
+      "selectedLabel": "Selected",
       "items": [
         {
           "name": "Discovery Sprint",
@@ -643,13 +646,16 @@
     "title": "Get in Touch",
     "subtitle": "Let's discuss how we can help transform your operations",
     "form": {
+      "title": "Send a message",
       "name": "Full Name",
       "email": "Email Address",
       "company": "Company Name",
       "message": "Tell us about your challenges and goals",
       "submit": "Send Message",
       "success": "Thank you! We'll be in touch within 24 hours.",
-      "error": "Something went wrong. Please try again or email us directly."
+      "error": "Something went wrong. Please try again or email us directly.",
+      "interestLabel": "Interest",
+      "interestNote": "We’ll tailor the conversation based on your selected package."
     },
     "or": "Or",
     "schedule": "Schedule a Discovery Call",
