@@ -501,13 +501,23 @@
       }
     },
     "outcomesCtaTitle": "¿Listos para acelerar la entrega?",
-    "outcomesCtaDescription": "Hablemos de tiempos, alcance y el camino más rápido hacia resultados medibles."
+    "outcomesCtaDescription": "Hablemos de tiempos, alcance y el camino más rápido hacia resultados medibles.",
+    "tabsLabels": {
+      "challenges": "Desafíos",
+      "deliverables": "Qué Entregamos",
+      "outcomes": "Resultados"
+    }
   },
   "solutions": {
     "title": "Solutions",
     "subtitle": "FP&A, forecasting, pricing, profitability, spend, and customer analytics solutions.",
     "commonStrugglesTitle": "Common Struggles",
     "solutionsTitle": "Solutions to These Challenges",
+    "tabsLabels": {
+      "struggles": "Desafíos",
+      "solutions": "Nuestras Soluciones",
+      "case": "Caso de Estudio"
+    },
     "items": {
       "fpa-automation": {
         "name": "FP&A Automation",

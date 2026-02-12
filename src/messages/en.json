@@ -3,7 +3,7 @@
     "home": "Home",
     "services": "Services",
     "solutions": "Solutions",
-    "about": "About Us",
+    "about": "About",
     "caseStudies": "Case Studies",
     "contact": "Contact"
   },
@@ -130,7 +130,7 @@
           "excludesLength": "0",
           "notesLength": "1",
           "notes": [
-            "Optional: Discovery fee credited toward the build phase if you move forward"
+            "Discovery fee credited toward the build phase if you move forward"
           ],
           "cta": "Schedule a discovery call"
         },
@@ -234,7 +234,7 @@
         "You’re looking for the cheapest bid over outcome and reliability",
         "You can’t allocate time for discovery and stakeholder access"
       ],
-      "disclaimer": "Final investment depends on scope and complexity. We provide a fixed proposal after Discovery. All timelines assume timely access to stakeholders and data sources."
+      "disclaimer": "Final investment depends on scope and complexity. We provide a fixed proposal after Discovery"
     },
     "approach": {
       "title": "Our Proven Methodology",
@@ -501,13 +501,23 @@
       }
     },
     "outcomesCtaTitle": "Ready to accelerate delivery?",
-    "outcomesCtaDescription": "Talk to our team about timelines, scope, and the fastest path to measurable outcomes."
+    "outcomesCtaDescription": "Talk to our team about timelines, scope, and the fastest path to measurable outcomes.",
+    "tabsLabels": {
+      "challenges": "Challenges",
+      "deliverables": "What We Deliver",
+      "outcomes": "Outcomes"
+    }
   },
   "solutions": {
     "title": "Solutions",
     "subtitle": "FP&A, forecasting, pricing, profitability, spend, and customer analytics solutions.",
     "commonStrugglesTitle": "Common Struggles",
     "solutionsTitle": "Solutions to These Challenges",
+    "tabsLabels": {
+      "struggles": "Challenges",
+      "solutions": "Our Solutions",
+      "case": "Case Study"
+    },
     "items": {
       "fpa-automation": {
         "name": "FP&A Automation",

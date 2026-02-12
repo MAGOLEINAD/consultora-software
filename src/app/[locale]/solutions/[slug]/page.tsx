@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { notFound } from 'next/navigation';
+import SolutionHero from '@/components/solutions/SolutionHero';
+import SolutionDetailLayout from '@/components/solutions/SolutionDetailLayout';
 
 const solutionSlugs = [
   'fpa-automation',
@@ -69,61 +71,27 @@ export default async function SolutionDetailPage(props: { params: Promise<{ loca
   }
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-accent mb-6">
-          {name}
-        </h1>
-        <p className="text-lg text-neutral-800 mb-6">
-          {description}
-        </p>
-        {intro && (
-          <p className="text-neutral-800 leading-relaxed mb-8">
-            {intro}
-          </p>
-        )}
+    <>
+      <SolutionHero
+        name={name}
+        description={description}
+      />
 
-        {commonStruggles.length > 0 && (
-          <div className="mb-10">
-            <h2 className="font-display text-2xl font-semibold text-accent mb-4">
-              {t('solutions.commonStrugglesTitle')}
-            </h2>
-            <ul className="space-y-3 text-neutral-800">
-              {commonStruggles.map((item) => (
-                <li key={item} className="rounded-2xl border border-border bg-neutral-50 p-4">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {solutions.length > 0 && (
-          <div className="mb-10">
-            <h2 className="font-display text-2xl font-semibold text-accent mb-4">
-              {t('solutions.solutionsTitle')}
-            </h2>
-            <ul className="space-y-3 text-neutral-800">
-              {solutions.map((item) => (
-                <li key={item} className="rounded-2xl border border-border bg-white p-4">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {caseTitle && caseDescription && (
-          <div className="rounded-3xl border border-border bg-neutral-50 p-8">
-            <h3 className="font-display text-2xl font-semibold text-accent mb-3">
-              {caseTitle}
-            </h3>
-            <p className="text-neutral-800 leading-relaxed">
-              {caseDescription}
-            </p>
-          </div>
-        )}
-      </div>
-    </section>
+      <SolutionDetailLayout
+        intro={intro}
+        strugglesTitle={t('solutions.commonStrugglesTitle')}
+        struggles={commonStruggles}
+        solutionsTitle={t('solutions.solutionsTitle')}
+        solutions={solutions}
+        caseTitle={caseTitle}
+        caseDescription={caseDescription}
+        ctaButtonText={t('navigation.contact')}
+        tabsLabels={{
+          struggles: t('solutions.tabsLabels.struggles'),
+          solutions: t('solutions.tabsLabels.solutions'),
+          case: t('solutions.tabsLabels.case'),
+        }}
+      />
+    </>
   );
 }

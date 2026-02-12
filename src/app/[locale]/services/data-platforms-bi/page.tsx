@@ -2,9 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Database } from 'lucide-react';
 import ServiceHero from '@/components/services/ServiceHero';
-import ChallengesSection from '@/components/services/ChallengesSection';
-import DeliverablesSection from '@/components/services/DeliverablesSection';
-import OutcomesSection from '@/components/services/OutcomesSection';
+import ServiceDetailLayout from '@/components/services/ServiceDetailLayout';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -44,23 +42,21 @@ export default async function DataPlatformsBiPage(props: { params: Promise<{ loc
         shortDescription={t('services.dataPlatformsBi.shortDescription')}
       />
 
-      <ChallengesSection
-        title={t('services.dataPlatformsBi.challenges.title')}
-        items={challenges}
-      />
-
-      <DeliverablesSection
-        title={t('services.dataPlatformsBi.deliverables.title')}
-        items={deliverables}
-      />
-
-      <OutcomesSection
-        locale={locale}
-        title={t('services.dataPlatformsBi.outcomes.title')}
-        items={outcomes}
-        ctaText={t('navigation.contact')}
-        cardTitle={t('services.outcomesCtaTitle')}
-        cardDescription={t('services.outcomesCtaDescription')}
+      <ServiceDetailLayout
+        challengesTitle={t('services.dataPlatformsBi.challenges.title')}
+        challenges={challenges}
+        deliverablesTitle={t('services.dataPlatformsBi.deliverables.title')}
+        deliverables={deliverables}
+        outcomesTitle={t('services.dataPlatformsBi.outcomes.title')}
+        outcomes={outcomes}
+        ctaTitle={t('services.outcomesCtaTitle')}
+        ctaDescription={t('services.outcomesCtaDescription')}
+        ctaButtonText={t('navigation.contact')}
+        tabsLabels={{
+          challenges: t('services.tabsLabels.challenges'),
+          deliverables: t('services.tabsLabels.deliverables'),
+          outcomes: t('services.tabsLabels.outcomes'),
+        }}
       />
     </>
   );

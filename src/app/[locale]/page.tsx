@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import Hero from '@/components/home/Hero';
-import ClientLogoSlider from '@/components/home/ClientLogoSlider';
+import TechnologySlider from '@/components/home/TechnologySlider';
 import AboutTabs from '@/components/home/AboutTabs';
 import ServicesGrid from '@/components/home/ServicesGrid';
 import PricingCards from '@/components/home/PricingCards';
@@ -92,7 +92,7 @@ export default async function HomePage(props: { params: Promise<{ locale: string
         awardLine={t('home.hero.awardLine')}
       />
 
-      <ClientLogoSlider title={t('home.trustedBy')} />
+      <TechnologySlider title={t('home.trustedBy')} />
 
       <AboutTabs
         title={t('home.aboutTabs.title')}

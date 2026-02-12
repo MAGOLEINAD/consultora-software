@@ -62,8 +62,21 @@ export default async function LocaleLayout(props: {
     ],
   };
 
+  const themeBootstrapScript = `
+    (function () {
+      try {
+        var key = 'site-theme';
+        var allowed = ['ocean', 'emerald', 'indigo', 'slate', 'teal-navy', 'graphite-cyan'];
+        var saved = localStorage.getItem(key);
+        var theme = allowed.indexOf(saved) >= 0 ? saved : 'ocean';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  `;
+
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <script dangerouslySetInnerHTML={{ __html: themeBootstrapScript }} />
       <HtmlLangSetter />
       <script
         type="application/ld+json"

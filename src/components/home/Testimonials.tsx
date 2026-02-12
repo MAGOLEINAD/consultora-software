@@ -96,7 +96,7 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
             <div ref={sliderRef} className="overflow-x-auto">
               <div className="flex gap-6 min-w-225 snap-x snap-mandatory pb-2">
               {items.map((testimonial, index) => (
-                <Card key={index} className="bg-white border-border shadow-sm min-w-[280px] snap-start rounded-3xl overflow-hidden">
+                <Card key={index} className="bg-white border-border shadow-sm min-w-70 snap-start rounded-3xl overflow-hidden">
                   <CardContent className="pt-6">
                     <div className="flex items-center gap-1 text-primary mb-4">
                       {Array.from({ length: 5 }).map((_, i) => (

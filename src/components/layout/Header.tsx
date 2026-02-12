@@ -3,8 +3,10 @@
 import { Link } from '@/i18n/routing';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
+import ThemeSwitcher from '@/components/shared/ThemeSwitcher';
 
 interface HeaderProps {
   locale: string;
@@ -35,22 +37,15 @@ export default function Header({ locale, translations, solutions, services }: He
       <nav className="container mx-auto flex h-20 md:h-24 items-center justify-between px-4 md:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
-          <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl bg-accent text-white flex items-center justify-center shadow-lg shadow-accent/30">
-            <svg viewBox="0 0 40 40" className="h-7 w-7 md:h-8 md:w-8" aria-hidden="true">
-              <defs>
-                <linearGradient id="rw-iso" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#ffffff" />
-                  <stop offset="100%" stopColor="#ffd1c2" />
-                </linearGradient>
-              </defs>
-              <circle cx="20" cy="20" r="18" fill="url(#rw-iso)" opacity="0.22" />
-              <path
-                d="M12 28 V12 H21 C25 12 28 15 28 19 C28 22 26 24 23 25 L28 28 H22 L18 24 H16 V28 Z
-                   M16 16 V20 H20 C22 20 23 19 23 18 C23 17 22 16 20 16 Z"
-                fill="#ffffff"
-              />
-              <circle cx="28" cy="12" r="3" fill="#ffffff" />
-            </svg>
+          <div className="h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-xl shadow-lg shadow-accent/30">
+            <Image
+              src="/images/logos/rightwaylogo.png"
+              alt="RightWay logo"
+              width={48}
+              height={48}
+              className="h-full w-full object-cover"
+              priority
+            />
           </div>
           <div className="leading-tight">
             <span className="block text-xl md:text-2xl font-semibold text-accent">
@@ -103,6 +98,7 @@ export default function Header({ locale, translations, solutions, services }: He
 
         {/* CTA and Language Switcher */}
         <div className="hidden md:flex md:items-center md:gap-4">
+          <ThemeSwitcher />
           <LanguageSwitcher currentLocale={locale} />
           <Button asChild size="sm" className="hover:-translate-y-0.5 transition-transform">
             <Link href="/contact">{translations.contact}</Link>
@@ -170,6 +166,7 @@ export default function Header({ locale, translations, solutions, services }: He
               </div>
             ))}
             <div className="pt-4 border-t border-border space-y-4">
+              <ThemeSwitcher />
               <LanguageSwitcher currentLocale={locale} />
               <Button asChild className="w-full">
                 <Link href="/contact">{translations.contact}</Link>

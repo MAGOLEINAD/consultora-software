@@ -2,9 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Workflow } from 'lucide-react';
 import ServiceHero from '@/components/services/ServiceHero';
-import ChallengesSection from '@/components/services/ChallengesSection';
-import DeliverablesSection from '@/components/services/DeliverablesSection';
-import OutcomesSection from '@/components/services/OutcomesSection';
+import ServiceDetailLayout from '@/components/services/ServiceDetailLayout';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -43,21 +41,21 @@ export default async function ProcessAutomationPage(props: { params: Promise<{ l
         name={t('services.processAutomation.name')}
         shortDescription={t('services.processAutomation.shortDescription')}
       />
-      <ChallengesSection
-        title={t('services.processAutomation.challenges.title')}
-        items={challenges}
-      />
-      <DeliverablesSection
-        title={t('services.processAutomation.deliverables.title')}
-        items={deliverables}
-      />
-      <OutcomesSection
-        locale={locale}
-        title={t('services.processAutomation.outcomes.title')}
-        items={outcomes}
-        ctaText={t('navigation.contact')}
-        cardTitle={t('services.outcomesCtaTitle')}
-        cardDescription={t('services.outcomesCtaDescription')}
+      <ServiceDetailLayout
+        challengesTitle={t('services.processAutomation.challenges.title')}
+        challenges={challenges}
+        deliverablesTitle={t('services.processAutomation.deliverables.title')}
+        deliverables={deliverables}
+        outcomesTitle={t('services.processAutomation.outcomes.title')}
+        outcomes={outcomes}
+        ctaTitle={t('services.outcomesCtaTitle')}
+        ctaDescription={t('services.outcomesCtaDescription')}
+        ctaButtonText={t('navigation.contact')}
+        tabsLabels={{
+          challenges: t('services.tabsLabels.challenges'),
+          deliverables: t('services.tabsLabels.deliverables'),
+          outcomes: t('services.tabsLabels.outcomes'),
+        }}
       />
     </>
   );

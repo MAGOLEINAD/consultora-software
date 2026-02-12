@@ -2,9 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { TrendingUp } from 'lucide-react';
 import ServiceHero from '@/components/services/ServiceHero';
-import ChallengesSection from '@/components/services/ChallengesSection';
-import DeliverablesSection from '@/components/services/DeliverablesSection';
-import OutcomesSection from '@/components/services/OutcomesSection';
+import ServiceDetailLayout from '@/components/services/ServiceDetailLayout';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -29,21 +27,21 @@ export default async function MlForecastingPage(props: { params: Promise<{ local
         name={t('services.mlForecasting.name')}
         shortDescription={t('services.mlForecasting.shortDescription')}
       />
-      <ChallengesSection
-        title={t('services.mlForecasting.challenges.title')}
-        items={Array.from({ length: 4 }, (_, i) => t(`services.mlForecasting.challenges.items.${i}`))}
-      />
-      <DeliverablesSection
-        title={t('services.mlForecasting.deliverables.title')}
-        items={Array.from({ length: 5 }, (_, i) => t(`services.mlForecasting.deliverables.items.${i}`))}
-      />
-      <OutcomesSection
-        locale={params.locale}
-        title={t('services.mlForecasting.outcomes.title')}
-        items={Array.from({ length: 4 }, (_, i) => t(`services.mlForecasting.outcomes.items.${i}`))}
-        ctaText={t('navigation.contact')}
-        cardTitle={t('services.outcomesCtaTitle')}
-        cardDescription={t('services.outcomesCtaDescription')}
+      <ServiceDetailLayout
+        challengesTitle={t('services.mlForecasting.challenges.title')}
+        challenges={Array.from({ length: 4 }, (_, i) => t(`services.mlForecasting.challenges.items.${i}`))}
+        deliverablesTitle={t('services.mlForecasting.deliverables.title')}
+        deliverables={Array.from({ length: 5 }, (_, i) => t(`services.mlForecasting.deliverables.items.${i}`))}
+        outcomesTitle={t('services.mlForecasting.outcomes.title')}
+        outcomes={Array.from({ length: 4 }, (_, i) => t(`services.mlForecasting.outcomes.items.${i}`))}
+        ctaTitle={t('services.outcomesCtaTitle')}
+        ctaDescription={t('services.outcomesCtaDescription')}
+        ctaButtonText={t('navigation.contact')}
+        tabsLabels={{
+          challenges: t('services.tabsLabels.challenges'),
+          deliverables: t('services.tabsLabels.deliverables'),
+          outcomes: t('services.tabsLabels.outcomes'),
+        }}
       />
     </>
   );

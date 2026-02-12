@@ -2,9 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { Brain } from 'lucide-react';
 import ServiceHero from '@/components/services/ServiceHero';
-import ChallengesSection from '@/components/services/ChallengesSection';
-import DeliverablesSection from '@/components/services/DeliverablesSection';
-import OutcomesSection from '@/components/services/OutcomesSection';
+import ServiceDetailLayout from '@/components/services/ServiceDetailLayout';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -29,21 +27,21 @@ export default async function AppliedAiPage(props: { params: Promise<{ locale: s
         name={t('services.appliedAi.name')}
         shortDescription={t('services.appliedAi.shortDescription')}
       />
-      <ChallengesSection
-        title={t('services.appliedAi.challenges.title')}
-        items={Array.from({ length: 4 }, (_, i) => t(`services.appliedAi.challenges.items.${i}`))}
-      />
-      <DeliverablesSection
-        title={t('services.appliedAi.deliverables.title')}
-        items={Array.from({ length: 5 }, (_, i) => t(`services.appliedAi.deliverables.items.${i}`))}
-      />
-      <OutcomesSection
-        locale={params.locale}
-        title={t('services.appliedAi.outcomes.title')}
-        items={Array.from({ length: 4 }, (_, i) => t(`services.appliedAi.outcomes.items.${i}`))}
-        ctaText={t('navigation.contact')}
-        cardTitle={t('services.outcomesCtaTitle')}
-        cardDescription={t('services.outcomesCtaDescription')}
+      <ServiceDetailLayout
+        challengesTitle={t('services.appliedAi.challenges.title')}
+        challenges={Array.from({ length: 4 }, (_, i) => t(`services.appliedAi.challenges.items.${i}`))}
+        deliverablesTitle={t('services.appliedAi.deliverables.title')}
+        deliverables={Array.from({ length: 5 }, (_, i) => t(`services.appliedAi.deliverables.items.${i}`))}
+        outcomesTitle={t('services.appliedAi.outcomes.title')}
+        outcomes={Array.from({ length: 4 }, (_, i) => t(`services.appliedAi.outcomes.items.${i}`))}
+        ctaTitle={t('services.outcomesCtaTitle')}
+        ctaDescription={t('services.outcomesCtaDescription')}
+        ctaButtonText={t('navigation.contact')}
+        tabsLabels={{
+          challenges: t('services.tabsLabels.challenges'),
+          deliverables: t('services.tabsLabels.deliverables'),
+          outcomes: t('services.tabsLabels.outcomes'),
+        }}
       />
     </>
   );

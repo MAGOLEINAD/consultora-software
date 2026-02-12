@@ -77,6 +77,30 @@
   --glow-secondary-rgb: 71, 85, 105;
 }
 
+[data-theme="teal-navy"] {
+  --primary: 174 84% 37%;
+  --primary-dark: 174 84% 30%;
+  --accent: 221 60% 16%;
+  --accent-light: 221 45% 24%;
+  --accent-secondary: 191 91% 36%;
+  --ring: 174 84% 37%;
+  --glow-primary-rgb: 14, 165, 142;
+  --glow-accent-rgb: 30, 58, 138;
+  --glow-secondary-rgb: 8, 145, 178;
+}
+
+[data-theme="graphite-cyan"] {
+  --primary: 188 95% 43%;
+  --primary-dark: 188 95% 35%;
+  --accent: 217 33% 17%;
+  --accent-light: 215 20% 26%;
+  --accent-secondary: 190 95% 39%;
+  --ring: 188 95% 43%;
+  --glow-primary-rgb: 6, 182, 212;
+  --glow-accent-rgb: 31, 41, 55;
+  --glow-secondary-rgb: 8, 145, 178;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

@@ -78,7 +78,7 @@ export default function ServicesGrid({ title, subtitle, services }: ServicesGrid
                       blurDataURL={defaultBlurDataURL}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-tr ${media.accent}`}></div>
+                    <div className={`absolute inset-0 bg-linear-to-tr ${media.accent}`}></div>
                     <div className="absolute bottom-4 left-4 h-12 w-12 rounded-2xl bg-white/90 backdrop-blur border border-white/60 flex items-center justify-center shadow-lg">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>

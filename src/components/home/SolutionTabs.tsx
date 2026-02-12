@@ -73,7 +73,7 @@ export default function SolutionTabs({ title, tabs, sectionClassName = 'section-
               </Link>
             </div>
 
-            <div className="relative h-50 md:h-57.5 rounded-xl overflow-hidden">
+            <div className="relative h-50 md:h-57-5 rounded-xl overflow-hidden">
               <Image
                 src={tabImages[active % tabImages.length]}
                 alt={current?.label ?? 'Solution'}

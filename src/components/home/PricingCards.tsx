@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, ArrowRight, ArrowLeft, Search, Database, Workflow, HeadphonesIcon, Lightbulb, Pencil, Hammer, Rocket } from 'lucide-react';
+import { Check, ArrowRight, ArrowLeft, Search, Database, Workflow, HeadphonesIcon, Lightbulb, Pencil, Hammer, Rocket, Info, DollarSign } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface Package {
@@ -133,6 +133,11 @@ export default function PricingCards({
   const contactHref = selectedInterest
     ? `/contact?interest=${encodeURIComponent(selectedInterest)}`
     : '/contact';
+  const disclaimerParts = disclaimer.split('. All timelines assume ');
+  const disclaimerMain = disclaimerParts[0] ? `${disclaimerParts[0]}.` : disclaimer;
+  const disclaimerSecondary = disclaimerParts[1]
+    ? `All timelines assume ${disclaimerParts[1]}`
+    : null;
   const formatPackageName = (name: string) =>
     name.replace(/\bSprint\b/gi, '').replace(/\s{2,}/g, ' ').trim();
 
@@ -311,6 +316,17 @@ export default function PricingCards({
                       </ul>
                     </div>
 
+                    {stepContent.package.notes && stepContent.package.notes.length > 0 && (
+                      <div className="bg-green-50 rounded-lg px-4 py-3 border border-green-200 mt-4">
+                        {stepContent.package.notes.map((note) => (
+                          <p key={note} className="text-sm text-green-900 font-medium leading-relaxed flex items-center gap-2">
+                            <DollarSign className="h-4 w-4 shrink-0 text-green-700" aria-hidden="true" />
+                            <span>{note}</span>
+                          </p>
+                        ))}
+                      </div>
+                    )}
+
                   </div>
                 )}
 
@@ -330,7 +346,7 @@ export default function PricingCards({
                       </div>
                     )}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4">
+                    <div className="grid grid-cols-3 gap-2 md:gap-4">
                       {stepContent.packages.map((pkg, index) => {
                         const Icon = packageIcons[index + 1];
                         const isSelected = stepContent.selectedIndex === index;
@@ -361,7 +377,7 @@ export default function PricingCards({
                             <p className="text-[10px] md:text-sm text-neutral-600">
                               {pkg.duration}
                             </p>
-                            <p className="text-base md:text-xl text-primary font-bold leading-tight">
+                            <p className="mt-1.5 md:mt-2 text-base md:text-xl text-primary font-bold leading-tight">
                               {pkg.price}
                             </p>
                           </button>
@@ -369,9 +385,20 @@ export default function PricingCards({
                       })}
                     </div>
 
-                    <p className="text-sm text-neutral-600 text-center leading-relaxed mt-4 md:mt-6">
-                      {disclaimer}
-                    </p>
+                    <div className="mt-4 md:mt-6 rounded-lg border border-primary/25 bg-primary/10 px-4 py-3">
+                      <p className="flex items-center justify-center gap-2 text-sm text-accent leading-relaxed">
+                        <Info className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                        <span>
+                          {disclaimerMain}
+                          {disclaimerSecondary && (
+                            <>
+                              <br />
+                              {disclaimerSecondary}
+                            </>
+                          )}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 )}
 

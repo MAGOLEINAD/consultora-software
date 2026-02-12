@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/routing';
 import { Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react';
+import Image from 'next/image';
 
 interface FooterProps {
   locale: string;
@@ -27,22 +28,14 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
           <div>
             <div className="flex items-center space-x-3 mb-5">
-              <div className="h-10 w-10 rounded-xl bg-primary text-white flex items-center justify-center">
-                <svg viewBox="0 0 40 40" className="h-7 w-7" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="rw-iso-footer" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#ffffff" />
-                      <stop offset="100%" stopColor="#ffd1c2" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="20" cy="20" r="18" fill="url(#rw-iso-footer)" opacity="0.22" />
-                  <path
-                    d="M12 28 V12 H21 C25 12 28 15 28 19 C28 22 26 24 23 25 L28 28 H22 L18 24 H16 V28 Z
-                       M16 16 V20 H20 C22 20 23 19 23 18 C23 17 22 16 20 16 Z"
-                    fill="#ffffff"
-                  />
-                  <circle cx="28" cy="12" r="3" fill="#ffffff" />
-                </svg>
+              <div className="h-10 w-10 overflow-hidden rounded-xl">
+                <Image
+                  src="/images/logos/rightwaylogo.png"
+                  alt="RightWay logo"
+                  width={40}
+                  height={40}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-lg font-semibold">RightWay</p>
