@@ -124,7 +124,7 @@ export default function Header({ locale, translations, solutions, services }: He
                 {item.submenu ? (
                   <button
                     type="button"
-                    className="w-full flex items-center justify-between text-sm font-medium text-neutral-800 py-2"
+                    className="w-full flex items-center justify-between rounded-xl px-2 py-3 text-base font-semibold text-neutral-900 transition-colors hover:bg-neutral-100"
                     onClick={() =>
                       setOpenSubmenu((prev) =>
                         prev === (item.href === '/solutions' ? 'solutions' : 'services')
@@ -136,26 +136,26 @@ export default function Header({ locale, translations, solutions, services }: He
                     }
                   >
                     {item.label}
-                    <span className="text-neutral-600">
-                      {openSubmenu === (item.href === '/solutions' ? 'solutions' : 'services') ? '–' : '+'}
+                    <span className="text-lg leading-none text-neutral-600">
+                      {openSubmenu === (item.href === '/solutions' ? 'solutions' : 'services') ? '-' : '+'}
                     </span>
                   </button>
                 ) : (
                   <Link
                     href={item.href}
-                    className="block text-sm font-medium text-neutral-800 hover:text-primary py-2"
+                    className="block rounded-xl px-2 py-3 text-base font-semibold text-neutral-900 transition-colors hover:bg-neutral-100 hover:text-primary"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                 )}
                 {item.submenu && openSubmenu === (item.href === '/solutions' ? 'solutions' : 'services') && (
-                  <div className="pl-4 pb-2">
+                  <div className="mt-1 space-y-1 pl-3 pb-2">
                     {(item.href === '/solutions' ? solutions : services).map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block text-xs text-neutral-600 hover:text-primary py-1"
+                        className="block rounded-lg px-2 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {sub.label}
@@ -178,4 +178,7 @@ export default function Header({ locale, translations, solutions, services }: He
     </header>
   );
 }
+
+
+
 

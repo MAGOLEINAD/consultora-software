@@ -157,7 +157,7 @@
           "cta": "Hablá con un especialista"
         },
         {
-          "name": "Automatización de Workflows Sprint",
+          "name": "Automatiza Workflows",
           "duration": "6–8 semanas",
           "price": "desde USD 45k",
           "includesLength": "4",
@@ -177,7 +177,7 @@
           "cta": "Hablá con un especialista"
         },
         {
-          "name": "Mejora continua (Managed Improvements)",
+          "name": "Mejora continua",
           "duration": "mensual",
           "price": "USD 8k–20k / mes",
           "includesLength": "3",
@@ -234,7 +234,7 @@
         "Priorizás el presupuesto más barato por encima de resultados y confiabilidad",
         "No podés asignar tiempo a discovery ni dar acceso a stakeholders/datos"
       ],
-      "disclaimer": "El valor final depende del alcance y complejidad. Cotizamos fijo luego del Discovery. Los tiempos asumen acceso oportuno a stakeholders y fuentes de datos."
+      "disclaimer": "El valor final depende del alcance y complejidad. Cotizamos fijo luego del Discovery"
     },
     "approach": {
       "title": "Nuestra Metodología Comprobada",

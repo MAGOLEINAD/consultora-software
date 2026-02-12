@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { type TouchEvent, useEffect, useRef } from 'react';
 
 interface TechnologySliderProps {
   title: string;
@@ -8,6 +8,11 @@ interface TechnologySliderProps {
 
 export default function TechnologySlider({ title }: TechnologySliderProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<number | null>(null);
+  const scrollPositionRef = useRef(0);
+  const isTouchInteractingRef = useRef(false);
+  const touchStartXRef = useRef<number | null>(null);
+  const startScrollLeftRef = useRef(0);
 
   // Technologies used
   const technologies = [
@@ -47,22 +52,66 @@ export default function TechnologySlider({ title }: TechnologySliderProps) {
     },
   ];
 
+  const normalizeScrollPosition = (position: number, loopWidth: number) => {
+    if (loopWidth <= 0) return 0;
+    let normalized = position % loopWidth;
+    if (normalized < 0) normalized += loopWidth;
+    return normalized;
+  };
+
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    let scrollPosition = 0;
-    const scroll = () => {
-      scrollPosition += 0.5;
-      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-        scrollPosition = 0;
-      }
-      scrollContainer.scrollLeft = scrollPosition;
+    const startAutoScroll = () => {
+      if (intervalRef.current !== null) return;
+
+      intervalRef.current = window.setInterval(() => {
+        if (isTouchInteractingRef.current) return;
+
+        const loopWidth = scrollContainer.scrollWidth / 2;
+        const nextPosition = normalizeScrollPosition(scrollPositionRef.current + 0.5, loopWidth);
+        scrollPositionRef.current = nextPosition;
+        scrollContainer.scrollLeft = nextPosition;
+      }, 20);
     };
 
-    const intervalId = setInterval(scroll, 20);
-    return () => clearInterval(intervalId);
+    startAutoScroll();
+
+    return () => {
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
   }, []);
+
+  const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    isTouchInteractingRef.current = true;
+    touchStartXRef.current = event.touches[0].clientX;
+    startScrollLeftRef.current = scrollContainer.scrollLeft;
+  };
+
+  const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer || touchStartXRef.current === null) return;
+
+    const currentX = event.touches[0].clientX;
+    const deltaX = touchStartXRef.current - currentX;
+    const loopWidth = scrollContainer.scrollWidth / 2;
+    const nextPosition = normalizeScrollPosition(startScrollLeftRef.current + deltaX, loopWidth);
+
+    scrollPositionRef.current = nextPosition;
+    scrollContainer.scrollLeft = nextPosition;
+  };
+
+  const handleTouchEnd = () => {
+    touchStartXRef.current = null;
+    isTouchInteractingRef.current = false;
+  };
 
   return (
     <section className="py-12 md:py-12 bg-neutral-50 border-y border-border">
@@ -73,8 +122,12 @@ export default function TechnologySlider({ title }: TechnologySliderProps) {
 
         <div
           ref={scrollRef}
-          className="overflow-hidden"
+          className="overflow-x-auto md:overflow-hidden touch-pan-x"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
         >
           <div className="flex gap-10 md:gap-14">
             {[...technologies, ...technologies].map((technology, index) => (
