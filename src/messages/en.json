@@ -20,7 +20,7 @@
     },
     "trustedBy": "Technologies we use",
     "aboutTabs": {
-      "title": "Building the Future with State of the Art IT Solutions",
+      "title": "Building the Future",
       "subtitle": "OUR TRUSTED SUPPORT",
       "tabs": [
         {
@@ -524,20 +524,20 @@
         "description": "Repurpose members of the accounting and FP&A departments to work smarter by replacing routine spreadsheet-based tasks with digital automation.",
         "intro": "Challenges Companies Have with Labor Intensive Accounting and Reporting Processes. Companies get stuck in the rut of having a large team of people manually closing month end books and preparing the same reports over and over again each month. This antiquated way of going about routine accounting and reporting processes results in untimely information, excessive costs, and employee burnout.",
         "commonStruggles": [
-          "Time-Consuming and Costly Processes  Manual accounting functions require significant staff hours and higher labor costs.",
-          "Increased Risk of Human Errors  Examples of businesses suffering financial losses with errors from manual spreadsheet work are vast and significant.",
-          "Limited Scalability  As a company grows, manual processes struggle to keep up with increased transaction volumes.",
-          "Difficulty in Generating Real-Time Insights  Labor-intensive processes result in outdated or delayed financial reports thereby lacking access to real-time financial insights for decision-making."
+          "Time-Consuming and Costly Processes: Manual accounting functions require significant staff hours and higher labor costs.",
+          "Increased Risk of Human Errors: Examples of businesses suffering financial losses with errors from manual spreadsheet work are vast and significant.",
+          "Limited Scalability: As a company grows, manual processes struggle to keep up with increased transaction volumes.",
+          "Difficulty in Generating Real-Time Insights: Labor-intensive processes result in outdated or delayed financial reports thereby lacking access to real-time financial insights for decision-making."
         ],
         "solutions": [
-          "Enterprise-wide Data Platform  A centralized data platform integrates financial information across departments, eliminating data silos and enabling seamless access to real-time, accurate reporting.",
-          "Automation  Automating routine accounting tasks and financial reporting reduces manual errors, improves efficiency, and lowers labor costs.",
-          "Standardized Accounting Practices and Enhanced Internal Controls  Establishing uniform accounting standards and robust internal controls ensures consistency, improves compliance with regulations, and minimizes financial discrepancies.",
-          "Data Analytics and Machine Learning  Advanced analytics and machine learning algorithms detect anomalies, enhance forecasting accuracy, and provide valuable insights for strategic decision-making."
+          "Enterprise-wide Data Platform: A centralized data platform integrates financial information across departments, eliminating data silos and enabling seamless access to real-time, accurate reporting.",
+          "Automation: Automating routine accounting tasks and financial reporting reduces manual errors, improves efficiency, and lowers labor costs.",
+          "Standardized Accounting Practices and Enhanced Internal Controls: Establishing uniform accounting standards and robust internal controls ensures consistency, improves compliance with regulations, and minimizes financial discrepancies.",
+          "Data Analytics and Machine Learning: Advanced analytics and machine learning algorithms detect anomalies, enhance forecasting accuracy, and provide valuable insights for strategic decision-making."
         ],
         "case": {
-          "title": "Oil & Gas Company With Large Team of Clerical Workers",
-          "description": "A major oil & gas companys finance department previously relied on dozens of employees to manually close the books each month, a labor-intensive process that took several weeks to complete. By implementing automation, the company streamlined data consolidation, reconciliations, and reporting, drastically reducing the time required to close the books to less than one week. As a result, over 80% of the employees who were previously dedicated to this task were repurposed to more strategic, value-added work, improving overall efficiency and driving greater business impact."
+          "title": "Case: company with manual finance processes",
+          "description": "A company with heavy finance operations automated consolidation, reconciliations, and reporting. The team reduced closing-cycle effort and shifted capacity to higher-value work."
         }
       },
       "forecasting-tools": {
@@ -545,37 +545,105 @@
         "description": "Bottoms up approaches to forecasting based on extensive historical data, assumptions, and predictive analytics have proven to be far more accurate.",
         "intro": "Challenges Companies Face With Accurate Forecasting When Done With Limited Information and Data Science. Limited or inconsistent historical data reduces forecasting accuracy, while rapidly changing trends can cause sudden demand shifts that past data cannot capture. Small datasets may lead to overfitting or underfitting in models, introduce bias, and hinder companies with limited computational resources or expertise from effectively applying advanced data science techniques.",
         "commonStruggles": [
-          "Financial Losses  Overestimation leads to excess inventory, wasted resources, and higher carrying costs. Underestimation causes stockouts, missed sales opportunities, and revenue loss.",
-          "Supply Chain Disruptions  Poor demand forecasting can result in supply chain inefficiencies, such as production slowdowns, supplier issues, or excessive lead times.",
-          "Inefficient Resource Allocation  Companies may overstaff or understaff based on flawed demand projections, leading to increased labor costs or workforce shortages.",
-          "Competitive Disadvantage  Poor forecasting makes businesses reactive rather than proactive in adapting to trends."
+          "Financial Losses: Overestimation leads to excess inventory, wasted resources, and higher carrying costs. Underestimation causes stockouts, missed sales opportunities, and revenue loss.",
+          "Supply Chain Disruptions: Poor demand forecasting can result in supply chain inefficiencies, such as production slowdowns, supplier issues, or excessive lead times.",
+          "Inefficient Resource Allocation: Companies may overstaff or understaff based on flawed demand projections, leading to increased labor costs or workforce shortages.",
+          "Competitive Disadvantage: Poor forecasting makes businesses reactive rather than proactive in adapting to trends."
         ],
         "solutions": [
-          "Advanced Forecasting Models  Implement machine learning and historical trend analysis to improve accuracy.",
-          "Dynamic Pricing & Inventory  Use real-time monitoring to balance supply and demand efficiently.",
-          "Predictive Production Optimization  Leverage analytics to refine schedules and reduce excess stock.",
-          "Continuous Model Refinement  Update forecasts using new data sources, customer feedback, and real-time analytics."
-        ]
+          "Advanced Forecasting Models: Implement machine learning and historical trend analysis to improve accuracy.",
+          "Dynamic Pricing & Inventory: Use real-time monitoring to balance supply and demand efficiently.",
+          "Predictive Production Optimization: Leverage analytics to refine schedules and reduce excess stock.",
+          "Continuous Model Refinement: Update forecasts using new data sources, customer feedback, and real-time analytics."
+        ],
+        "case": {
+          "title": "Case: improved demand accuracy with forecasting",
+          "description": "A company implemented forecasting models using historical data and real-time operational signals. This improved inventory planning and reduced projection errors in key decisions."
+        }
       },
       "pricing-analytics": {
         "name": "Pricing Analytics",
         "description": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits.",
-        "intro": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits."
+        "intro": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits.",
+        "commonStruggles": [
+          "Margin Erosion: Prices are set without clear visibility into elasticity, discounts, and channel effects.",
+          "Slow Reaction to Competitors: Teams cannot respond fast enough to competitor price changes and promotions.",
+          "Inconsistent Pricing Rules: Different regions and sales teams apply pricing criteria unevenly.",
+          "Low Offer Performance Visibility: It is hard to measure which promotions truly increase profit."
+        ],
+        "solutions": [
+          "Elasticity Models by Segment: Estimate willingness to pay by product, customer, and channel.",
+          "Competitive Price Intelligence: Monitor market prices and promotion signals in near real time.",
+          "Pricing Governance Engine: Standardize guardrails, approval workflows, and discount policies.",
+          "Promotion Profitability Analytics: Track lift, cannibalization, and margin impact per campaign."
+        ],
+        "case": {
+          "title": "Case: margin improvement through pricing",
+          "description": "A company unified pricing, promotion, and market data to improve commercial decisions. With governance rules and continuous monitoring, it increased profitability and reduced inefficient discounting."
+        }
       },
       "profitability-models": {
         "name": "Profitability Models",
         "description": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money.",
-        "intro": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money."
+        "intro": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money.",
+        "commonStruggles": [
+          "Hidden Profit Leaks: Overhead and indirect costs are not allocated accurately across products and customers.",
+          "Misleading Revenue Focus: High-revenue accounts may destroy margin once service and logistics costs are included.",
+          "Unclear Portfolio Priorities: Teams cannot identify which offerings should be scaled, fixed, or discontinued.",
+          "Weak Decision Support: Pricing and commercial decisions are made without true unit economics."
+        ],
+        "solutions": [
+          "Cost-to-Serve Modeling: Allocate direct and indirect costs at SKU, customer, and channel level.",
+          "Product-Customer Profitability Views: Show gross-to-net margin waterfalls and net contribution.",
+          "Scenario and Sensitivity Analysis: Simulate price, volume, and cost changes before execution.",
+          "Actionable Profit Playbooks: Prioritize account strategy, assortment, and contract renegotiation."
+        ],
+        "case": {
+          "title": "Case: commercial focus on true profitability",
+          "description": "A company implemented customer and product profitability models to reallocate sales effort. This enabled prioritization of high-contribution segments and improved operating margin."
+        }
       },
       "spend-cubes": {
         "name": "Spend Cubes",
         "description": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types.",
-        "intro": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types."
+        "intro": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types.",
+        "commonStruggles": [
+          "Fragmented Procurement Data: Spend data is dispersed across ERPs, AP systems, and manual files.",
+          "Limited Negotiation Leverage: Teams lack consolidated views by category, vendor, and contract.",
+          "Maverick Spending: Off-contract purchases increase costs and reduce compliance.",
+          "Slow Savings Tracking: It is difficult to verify realized savings versus negotiated savings."
+        ],
+        "solutions": [
+          "Unified Spend Cube Model: Consolidate spend by supplier, category, business unit, and period.",
+          "Supplier and Category Dashboards: Surface concentration risks and top savings opportunities.",
+          "Contract Compliance Monitoring: Detect off-contract transactions and policy exceptions.",
+          "Savings Realization Analytics: Track pipeline, approved initiatives, and realized value over time."
+        ],
+        "case": {
+          "title": "Case: cost reduction through spend analytics",
+          "description": "A company consolidated procurement data from multiple systems into a unified spend model. It identified off-contract leakage and negotiation opportunities to drive sustained savings."
+        }
       },
       "customer-analytics": {
         "name": "Customer Analytics",
         "description": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems.",
-        "intro": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems."
+        "intro": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems.",
+        "commonStruggles": [
+          "Low Segmentation Precision: Broad segments fail to capture behavior, value, and lifecycle differences.",
+          "High Churn Risk: Teams identify churn signals too late to prevent attrition.",
+          "Inefficient Campaign Spend: Messages and offers are not personalized to customer intent.",
+          "Disconnected Customer View: Sales, marketing, and service data are not unified."
+        ],
+        "solutions": [
+          "Behavioral Segmentation Models: Group customers using value, frequency, and engagement patterns.",
+          "Churn and Propensity Scoring: Predict churn and next-best-action opportunities per account.",
+          "Personalized Offer Orchestration: Match channels, timing, and offers to segment-level intent.",
+          "360 Customer Intelligence Layer: Unify CRM, support, and transaction data for consistent decisions."
+        ],
+        "case": {
+          "title": "Case: retention and growth with customer analytics",
+          "description": "A company integrated CRM, support, and billing data to anticipate churn. With segment-level personalized actions, it improved retention and increased revenue per customer."
+        }
       }
     }
   },

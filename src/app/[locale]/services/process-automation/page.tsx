@@ -40,6 +40,7 @@ export default async function ProcessAutomationPage(props: { params: Promise<{ l
         icon={Workflow}
         name={t('services.processAutomation.name')}
         shortDescription={t('services.processAutomation.shortDescription')}
+        locale={locale}
       />
       <ServiceDetailLayout
         challengesTitle={t('services.processAutomation.challenges.title')}
@@ -56,6 +57,7 @@ export default async function ProcessAutomationPage(props: { params: Promise<{ l
           deliverables: t('services.tabsLabels.deliverables'),
           outcomes: t('services.tabsLabels.outcomes'),
         }}
+        locale={locale}
       />
     </>
   );

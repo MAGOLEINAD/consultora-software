@@ -20,6 +20,48 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
 export default async function AboutPage(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
   const t = await getTranslations({ locale: params.locale });
+  const teamMembers = [
+    {
+      name: 'Mario Ruiz',
+      role: 'Software Architect',
+      image: '/images/staff/staff1.jpg',
+    },
+    {
+      name: 'Sergio Adan',
+      role: 'Principal Frontend Engineer',
+      image: '/images/staff/staff2.jpg',
+    },
+    {
+      name: 'Guillermo Martin',
+      role: 'Product Manager',
+      image: '/images/staff/staff3.jpg',
+    },
+    {
+      name: 'Maximiliano Sigmund',
+      role: 'Oracle Certified APEX Cloud Developer',
+      image: '/images/staff/staff4.jpg',
+    },
+    {
+      name: 'Mauro Leuzzi',
+      role: 'Head of Data & Analytics',
+      image: '/images/staff/staff5.jpg',
+    },
+    {
+      name: 'Juan Martin Kecskemeti',
+      role: 'Digital Payments Technology Manager',
+      image: '/images/staff/staff6.jpg',
+    },
+    {
+      name: 'Ariel Adan',
+      role: 'Oracle APEX Senior Developer',
+      image: '/images/staff/staff7.jpg',
+    },
+    {
+      name: 'Christian Oscar',
+      role: 'Full Stack',
+      image: '/images/staff/staff8.jpg',
+    },
+  ];
 
   const highlights = Array.from({ length: 6 }, (_, i) => ({
     title: t(`about.highlights.items.${i}.title`),
@@ -86,28 +128,7 @@ export default async function AboutPage(props: { params: Promise<{ locale: strin
       <TeamSection
         title={t('about.team.title')}
         subtitle={t('about.team.subtitle')}
-        members={[
-          {
-            name: t('about.team.members.0.name'),
-            role: t('about.team.members.0.role'),
-            image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            name: t('about.team.members.1.name'),
-            role: t('about.team.members.1.role'),
-            image: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            name: t('about.team.members.2.name'),
-            role: t('about.team.members.2.role'),
-            image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            name: t('about.team.members.3.name'),
-            role: t('about.team.members.3.role'),
-            image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80',
-          },
-        ]}
+        members={teamMembers}
       />
     </>
   );

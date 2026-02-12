@@ -13,6 +13,8 @@ interface FooterProps {
     address: string;
     email: string;
     phone: string;
+    terms: string;
+    privacy: string;
     copyright: string;
   };
   navItems: {
@@ -22,6 +24,7 @@ interface FooterProps {
 }
 
 export default function Footer({ locale, translations, navItems }: FooterProps) {
+  const socialAriaLabel = locale === 'es' ? 'Enlace social' : 'Social link';
   return (
     <footer className="fexo-footer text-white">
       <div className="container mx-auto px-4 md:px-8 py-12 md:py-16">
@@ -51,7 +54,7 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
                   key={index}
                   href="#"
                   className="h-10 w-10 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white/50 transition-colors"
-                  aria-label="Social link"
+                  aria-label={socialAriaLabel}
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -116,8 +119,8 @@ export default function Footer({ locale, translations, navItems }: FooterProps) 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
           <p>{translations.copyright}</p>
           <div className="flex gap-6">
-            <Link href="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">{translations.terms}</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">{translations.privacy}</Link>
           </div>
         </div>
       </div>

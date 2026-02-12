@@ -5,12 +5,15 @@ interface SolutionHeroProps {
   name: string;
   description: string;
   imageSrc?: string;
+  locale?: string;
 }
 
-export default function SolutionHero({ name, description, imageSrc }: SolutionHeroProps) {
+export default function SolutionHero({ name, description, imageSrc, locale = 'en' }: SolutionHeroProps) {
   const heroImage =
     imageSrc ||
     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80';
+  const detailLabel = locale === 'es' ? 'Detalle de la solucion' : 'Solution detail';
+  const tags = locale === 'es' ? ['Analisis', 'Implementacion', 'Soporte'] : ['Analysis', 'Implementation', 'Support'];
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary via-accent to-accent-secondary text-white">
@@ -20,7 +23,7 @@ export default function SolutionHero({ name, description, imageSrc }: SolutionHe
           <div>
             <div className="inline-flex items-center gap-3 mb-6 text-sm uppercase tracking-[0.35em] text-white/70">
               <span className="h-px w-10 bg-white/40"></span>
-              <span>Solution detail</span>
+              <span>{detailLabel}</span>
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
@@ -31,7 +34,7 @@ export default function SolutionHero({ name, description, imageSrc }: SolutionHe
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {['Analysis', 'Implementation', 'Support'].map((item) => (
+              {tags.map((item) => (
                 <span
                   key={item}
                   className="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest bg-white/10 border border-white/20"

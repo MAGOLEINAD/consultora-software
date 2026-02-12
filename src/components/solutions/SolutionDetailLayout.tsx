@@ -1,56 +1,50 @@
 'use client';
 
-import { useState } from 'react';
-import Image from 'next/image';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 import { Link } from '@/i18n/routing';
-import { defaultBlurDataURL } from '@/lib/image';
 import {
   AlertTriangle,
-  Lightbulb,
-  FileCheck,
   TrendingDown,
-  DollarSign,
-  Users,
   Clock,
-  BarChart3,
-  Target,
-  Zap,
+  Users,
+  DollarSign,
   Shield,
+  BarChart3,
   Settings,
-  ArrowRight,
+  Lightbulb,
+  Zap,
+  Target,
   Sparkles,
   CheckCircle2,
-  MoveRight,
-  X,
-  Check,
+  ArrowRight,
+  Rocket,
+  TrendingUp,
   LucideIcon
 } from 'lucide-react';
 
-// Iconos para common struggles
+// Iconos para common struggles (problemas)
 const struggleIcons: LucideIcon[] = [
-  TrendingDown,    // Pérdidas / problemas financieros
-  Clock,           // Tiempo / delays
-  Users,           // Recursos / equipo
-  AlertTriangle,   // Riesgos / problemas
-  DollarSign,      // Costos
-  Shield,          // Cumplimiento / seguridad
-  BarChart3,       // Métricas / datos
-  Settings,        // Complejidad / configuración
+  TrendingDown,
+  Clock,
+  Users,
+  AlertTriangle,
+  DollarSign,
+  Shield,
+  BarChart3,
+  Settings,
 ];
 
 // Iconos para solutions
 const solutionIcons: LucideIcon[] = [
-  Lightbulb,       // Ideas / soluciones
-  Zap,             // Automatización / velocidad
-  Target,          // Objetivos / precisión
-  BarChart3,       // Analytics / datos
-  Shield,          // Seguridad / confiabilidad
-  Settings,        // Optimización / sistemas
-  Sparkles,        // Innovación / mejoras
-  CheckCircle2,    // Entregables / completado
+  Lightbulb,
+  Zap,
+  Target,
+  CheckCircle2,
+  BarChart3,
+  Shield,
+  Sparkles,
+  Settings,
 ];
 
 interface SolutionDetailLayoutProps {
@@ -62,11 +56,7 @@ interface SolutionDetailLayoutProps {
   caseTitle?: string;
   caseDescription?: string;
   ctaButtonText: string;
-  tabsLabels: {
-    struggles: string;
-    solutions: string;
-    case: string;
-  };
+  locale?: string;
 }
 
 export default function SolutionDetailLayout({
@@ -78,287 +68,265 @@ export default function SolutionDetailLayout({
   caseTitle,
   caseDescription,
   ctaButtonText,
-  tabsLabels,
+  locale = 'en',
 }: SolutionDetailLayoutProps) {
-  const [activeTab, setActiveTab] = useState('struggles');
-
-  const wizardSteps = [
-    { id: 'struggles', letter: 'A', label: tabsLabels.struggles, icon: AlertTriangle },
-    { id: 'solutions', letter: 'B', label: tabsLabels.solutions, icon: Lightbulb },
-    { id: 'case', letter: 'C', label: tabsLabels.case, icon: FileCheck },
-  ];
+  const copy = locale === 'es'
+    ? {
+        strugglesBadge: 'Desafios comunes',
+        strugglesDescription: 'Las organizaciones enfrentan estos desafios criticos sin las soluciones adecuadas',
+        solutionsBadge: 'Nuestro enfoque',
+        solutionsDescription: 'Soluciones estrategicas disenadas para transformar desafios en oportunidades',
+        caseBadge: 'Exito real',
+        caseTitle: 'Caso de estudio',
+        caseCtaTitle: 'Listo para resultados similares?',
+        caseCtaDescription: 'Conversemos sobre como podemos ayudar a tu organizacion',
+        finalCtaTitle: 'Listo para transformar tu negocio?',
+        finalCtaDescription: 'Conversemos sobre como implementar estas soluciones para generar resultados reales en tu organizacion',
+      }
+    : {
+        strugglesBadge: 'Common Challenges',
+        strugglesDescription: 'Organizations face these critical challenges without the right solutions',
+        solutionsBadge: 'Our Approach',
+        solutionsDescription: 'Strategic solutions designed to transform challenges into opportunities',
+        caseBadge: 'Real-World Success',
+        caseTitle: 'Case Study',
+        caseCtaTitle: 'Ready for similar results?',
+        caseCtaDescription: "Let's discuss how we can help your organization",
+        finalCtaTitle: 'Ready to Transform Your Business?',
+        finalCtaDescription: "Let's discuss how we can implement these solutions to drive real results for your organization",
+      };
 
   return (
-    <section className="py-8 md:py-24 bg-gradient-to-b from-white via-neutral-50 to-white">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
-
-          {/* Intro text (optional) */}
-          {intro && (
-            <div className="mb-12 text-center max-w-4xl mx-auto">
-              <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
+    <div className="bg-white">
+      {/* Intro Section */}
+      {intro && (
+        <section className="py-12 md:py-20 bg-linear-to-b from-neutral-50 to-white">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center justify-center gap-3 mb-8">
+                <div className="h-px w-12 bg-linear-to-r from-transparent to-primary"></div>
+                <Sparkles className="w-5 h-5 text-primary" />
+                <div className="h-px w-12 bg-linear-to-l from-transparent to-primary"></div>
+              </div>
+              <p className="text-lg md:text-xl text-neutral-700 leading-relaxed text-center">
                 {intro}
               </p>
             </div>
-          )}
+          </div>
+        </section>
+      )}
 
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            {/* Mobile: Sticky Tabs with Icons + Text */}
-            <div className="md:hidden sticky top-0 z-20 bg-white/95 backdrop-blur-lg border-b border-neutral-200 -mx-4 px-4 py-3 mb-6">
-              <div className="flex justify-center">
-                <TabsList className="inline-flex h-auto rounded-xl bg-neutral-100 p-1 gap-0.5 w-full">
-                  {wizardSteps.map((step) => {
-                    const Icon = step.icon;
-                    return (
-                      <TabsTrigger
-                        key={step.id}
-                        value={step.id}
-                        className="flex-1 flex flex-col items-center gap-1 rounded-lg px-2 py-2 text-xs font-semibold data-[state=active]:bg-white data-[state=active]:shadow-md transition-all cursor-pointer"
-                      >
-                        <Icon className="w-4 h-4" />
-                        <span className="text-[10px] leading-tight text-center">{step.label}</span>
-                      </TabsTrigger>
-                    );
-                  })}
-                </TabsList>
+      {/* Struggles Section - Problemas Comunes */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-700 text-sm font-semibold mb-4">
+                <AlertTriangle className="w-4 h-4" />
+                {copy.strugglesBadge}
               </div>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-neutral-900 mb-4">
+                {strugglesTitle}
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                {copy.strugglesDescription}
+              </p>
             </div>
 
-            {/* Desktop: Wizard Style Navigation */}
-            <div className="hidden md:block mb-12">
-              <div className="max-w-4xl mx-auto">
-                {/* Helper text */}
-                <p className="text-center text-sm text-neutral-600 mb-6 font-semibold">
-                  Click on each step to explore the information
-                </p>
-
-                <div className="relative">
-                  {/* Progress line */}
-                  <div className="absolute top-10 left-0 right-0 h-1 bg-neutral-200 -z-0" style={{ left: '15%', right: '15%' }}></div>
+            {/* Grid de Struggles */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {struggles.map((item, index) => {
+                const Icon = struggleIcons[index % struggleIcons.length];
+                return (
                   <div
-                    className="absolute top-10 left-0 h-1 bg-primary transition-all duration-500 -z-0"
-                    style={{
-                      left: '15%',
-                      width: activeTab === 'struggles' ? '0%' : activeTab === 'solutions' ? '35%' : '70%'
-                    }}
-                  ></div>
+                    key={index}
+                    className="group relative bg-linear-to-br from-white to-neutral-50 rounded-2xl p-8 border-2 border-neutral-200 hover:border-red-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  >
+                    {/* Decorative corner */}
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-linear-to-br from-red-500/5 to-transparent rounded-bl-full"></div>
 
-                  {/* Wizard steps */}
-                  <div className="relative grid grid-cols-3 gap-4">
-                    {wizardSteps.map((step, index) => {
-                      const Icon = step.icon;
-                      const isActive = activeTab === step.id;
-                      const isPassed = wizardSteps.findIndex(s => s.id === activeTab) > index;
-
-                      return (
-                        <button
-                          key={step.id}
-                          onClick={() => setActiveTab(step.id)}
-                          className="flex flex-col items-center gap-3 group cursor-pointer relative z-10"
-                        >
-                          {/* Circle with icon */}
-                          <div className="relative">
-                            {/* Background circle to hide line */}
-                            <div className="absolute inset-0 w-20 h-20 rounded-full bg-white -z-10"></div>
-
-                            <div className={`
-                              relative w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300
-                              ${isActive
-                                ? 'bg-primary text-white shadow-lg scale-110 ring-4 ring-primary/20'
-                                : isPassed
-                                ? 'bg-primary/80 text-white shadow-md'
-                                : 'bg-white border-2 border-neutral-300 text-neutral-500 group-hover:border-primary/50 group-hover:text-primary'
-                              }
-                            `}>
-                              <Icon className="w-9 h-9" strokeWidth={2} />
-
-                              {/* Letter badge in corner */}
-                              <div className={`
-                                absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center shadow-md transition-all text-sm font-bold
-                                ${isActive
-                                  ? 'bg-accent text-white'
-                                  : isPassed
-                                  ? 'bg-[hsl(var(--primary-dark))] text-white'
-                                  : 'bg-neutral-100 text-neutral-600'
-                                }
-                              `}>
-                                {step.letter}
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Label */}
-                          <div className="text-center">
-                            <p className={`
-                              text-sm font-semibold transition-colors
-                              ${isActive
-                                ? 'text-neutral-900'
-                                : 'text-neutral-600 group-hover:text-neutral-900'
-                              }
-                            `}>
-                              {step.label}
-                            </p>
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Struggles Tab */}
-            <TabsContent value="struggles" className="mt-0">
-              <div className="text-center mb-6 md:mb-8">
-                <Badge variant="outline" className="mb-2 md:mb-3 text-xs md:text-sm px-3 md:px-4 py-1 md:py-1.5 border-red-600/30 text-red-700">
-                  Common Pain Points
-                </Badge>
-                <h2 className="font-display text-2xl md:text-4xl font-bold text-neutral-900 mb-2 md:mb-3">
-                  {strugglesTitle}
-                </h2>
-                <p className="text-sm md:text-base text-neutral-600 max-w-2xl mx-auto">
-                  These are the typical challenges organizations face without proper solutions
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-                {struggles.map((item, index) => {
-                  const Icon = struggleIcons[index % struggleIcons.length];
-                  return (
-                    <div
-                      key={index}
-                      className="group relative rounded-xl md:rounded-2xl border-2 border-neutral-200 bg-white p-4 md:p-6 hover:border-red-500/50 hover:shadow-lg transition-all duration-300"
-                    >
-                      {/* Number Badge */}
-                      <div className="absolute -top-2 -left-2 md:-top-3 md:-left-3 h-6 w-6 md:h-8 md:w-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white flex items-center justify-center text-xs md:text-sm font-bold shadow-md">
+                    {/* Icon */}
+                    <div className="relative mb-6">
+                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-linear-to-br from-red-500 to-red-600 shadow-lg shadow-red-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-8 h-8 text-white" strokeWidth={2} />
+                      </div>
+                      {/* Number badge */}
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-sm font-bold shadow-md">
                         {index + 1}
                       </div>
+                    </div>
 
-                      <div className="flex gap-3 md:gap-4 items-start">
-                        <div className="shrink-0 h-10 w-10 md:h-12 md:w-12 rounded-lg md:rounded-xl bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Icon className="w-5 h-5 md:w-6 md:h-6 text-red-600" strokeWidth={2} />
+                    {/* Content */}
+                    <p className="text-base md:text-lg text-neutral-700 leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Separator className="container mx-auto" />
+
+      {/* Solutions Section */}
+      <section className="py-16 md:py-24 bg-linear-to-b from-white via-primary/5 to-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-6xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+                <Rocket className="w-4 h-4" />
+                {copy.solutionsBadge}
+              </div>
+              <h2 className="font-display text-3xl md:text-5xl font-bold text-neutral-900 mb-4">
+                {solutionsTitle}
+              </h2>
+              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                {copy.solutionsDescription}
+              </p>
+            </div>
+
+            {/* Grid de Solutions */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {solutions.map((item, index) => {
+                const Icon = solutionIcons[index % solutionIcons.length];
+                return (
+                  <div
+                    key={index}
+                    className="group relative bg-white rounded-2xl p-8 border-2 border-neutral-200 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 overflow-hidden"
+                  >
+                    {/* Animated background gradient */}
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    {/* Content wrapper */}
+                    <div className="relative">
+                      {/* Icon and number */}
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-linear-to-br from-primary to-accent shadow-lg shadow-primary/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                          <Icon className="w-7 h-7 text-white" strokeWidth={2} />
                         </div>
-                        <p className="text-sm md:text-base text-neutral-800 leading-relaxed pt-0.5 md:pt-1">{item}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </TabsContent>
-
-            {/* Solutions Tab */}
-            <TabsContent value="solutions" className="mt-0">
-              <div className="text-center mb-6 md:mb-8">
-                <Badge variant="outline" className="mb-2 md:mb-3 text-xs md:text-sm px-3 md:px-4 py-1 md:py-1.5 border-accent/30 text-accent">
-                  Our Approach
-                </Badge>
-                <h2 className="font-display text-2xl md:text-4xl font-bold text-neutral-900 mb-2 md:mb-3">
-                  {solutionsTitle}
-                </h2>
-                <p className="text-sm md:text-base text-neutral-600 max-w-2xl mx-auto">
-                  Strategic solutions designed to address these challenges effectively
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-                {solutions.map((item, index) => {
-                  const Icon = solutionIcons[index % solutionIcons.length];
-                  return (
-                    <div
-                      key={index}
-                      className="group relative rounded-xl md:rounded-2xl border-2 border-neutral-200 bg-gradient-to-br from-white to-neutral-50 p-4 md:p-6 hover:border-accent/50 hover:shadow-lg transition-all duration-300"
-                    >
-                      {/* Check Icon Badge */}
-                      <div className="absolute -top-2 -left-2 md:-top-3 md:-left-3 h-6 w-6 md:h-8 md:w-8 rounded-full bg-gradient-to-br from-accent to-accent-secondary text-white flex items-center justify-center shadow-md">
-                        <CheckCircle2 className="w-3 h-3 md:w-4 md:h-4" strokeWidth={3} />
-                      </div>
-
-                      <div className="flex gap-3 md:gap-4 items-start">
-                        <div className="shrink-0 h-10 w-10 md:h-12 md:w-12 rounded-lg md:rounded-xl bg-gradient-to-br from-accent/10 to-accent-secondary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <Icon className="w-5 h-5 md:w-6 md:h-6 text-accent" strokeWidth={2} />
+                        <div className="flex-1 flex justify-end">
+                          <span className="text-6xl font-bold text-neutral-100 group-hover:text-primary/20 transition-colors">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
                         </div>
-                        <p className="text-sm md:text-base text-neutral-800 leading-relaxed pt-0.5 md:pt-1 font-medium">{item}</p>
+                      </div>
+
+                      {/* Text */}
+                      <p className="text-base md:text-lg text-neutral-800 leading-relaxed font-medium">
+                        {item}
+                      </p>
+
+                      {/* Decorative check mark */}
+                      <div className="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <CheckCircle2 className="w-12 h-12 text-primary/20" strokeWidth={1.5} />
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </TabsContent>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Case Study Tab */}
-            <TabsContent value="case" className="mt-0">
-              <div className="text-center mb-6 md:mb-8">
-                <Badge variant="outline" className="mb-2 md:mb-3 text-xs md:text-sm px-3 md:px-4 py-1 md:py-1.5 border-green-600/30 text-green-700">
-                  Real-World Example
-                </Badge>
-                <h2 className="font-display text-2xl md:text-4xl font-bold text-neutral-900 mb-2 md:mb-3">
-                  {caseTitle || 'Case Study'}
+      {/* Case Study Section */}
+      {caseTitle && caseDescription && (
+        <section className="py-16 md:py-24 bg-linear-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <div className="max-w-5xl mx-auto">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-semibold mb-4 border border-white/20">
+                  <TrendingUp className="w-4 h-4" />
+                  {copy.caseBadge}
+                </div>
+                <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
+                  {copy.caseTitle}
                 </h2>
-                <p className="text-sm md:text-base text-neutral-600 max-w-2xl mx-auto">
-                  See how we've helped organizations implement this solution successfully
-                </p>
               </div>
 
-              {caseTitle && caseDescription ? (
-                <div className="max-w-4xl mx-auto">
-                  <div className="rounded-2xl md:rounded-3xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 via-white to-accent/5 p-6 md:p-10 shadow-xl">
-                    <div className="flex items-start gap-4 mb-6">
-                      <div className="h-12 w-12 md:h-16 md:w-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shrink-0">
-                        <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-white" strokeWidth={2} />
-                      </div>
-                      <div>
-                        <h3 className="font-display text-xl md:text-2xl font-bold text-neutral-900 mb-2">
-                          {caseTitle}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <p className="text-sm md:text-base text-neutral-700 leading-relaxed whitespace-pre-line">
+              {/* Case content */}
+              <div className="bg-white/5 backdrop-blur-lg rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl">
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="hidden md:flex items-center justify-center w-20 h-20 rounded-2xl bg-linear-to-br from-primary to-accent shadow-2xl shadow-primary/50 shrink-0">
+                    <Sparkles className="w-10 h-10 text-white" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
+                      {caseTitle}
+                    </h3>
+                    <p className="text-lg text-white/90 leading-relaxed whitespace-pre-line">
                       {caseDescription}
                     </p>
-
-                    <div className="mt-8 pt-6 border-t border-neutral-200">
-                      <Button
-                        asChild
-                        size="lg"
-                        className="w-full md:w-auto group shadow-lg hover:shadow-xl transition-all"
-                      >
-                        <Link href="/contact" className="flex items-center justify-center">
-                          {ctaButtonText}
-                          <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </Button>
-                    </div>
                   </div>
                 </div>
-              ) : (
-                <div className="max-w-2xl mx-auto">
-                  <div className="rounded-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5 p-8 text-center">
-                    <FileCheck className="w-16 h-16 text-primary mx-auto mb-4" strokeWidth={1.5} />
-                    <h3 className="font-display text-xl font-bold text-neutral-900 mb-3">
-                      Want to see this in action?
-                    </h3>
-                    <p className="text-neutral-700 mb-6">
-                      Contact us to learn more about real implementations and results
+
+                <Separator className="my-8 bg-white/20" />
+
+                {/* CTA */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+                  <div>
+                    <p className="text-white/80 text-lg font-semibold mb-1">
+                      {copy.caseCtaTitle}
                     </p>
-                    <Button
-                      asChild
-                      size="lg"
-                      className="group shadow-lg hover:shadow-xl transition-all"
-                    >
-                      <Link href="/contact" className="flex items-center justify-center">
-                        {ctaButtonText}
-                        <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
+                    <p className="text-white/60 text-sm">
+                      {copy.caseCtaDescription}
+                    </p>
                   </div>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-white text-neutral-900 hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all group whitespace-nowrap"
+                  >
+                    <Link href="/contact" className="flex items-center gap-2">
+                      {ctaButtonText}
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
                 </div>
-              )}
-            </TabsContent>
-          </Tabs>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
-        </div>
-      </div>
-    </section>
+      {/* CTA alternativo si no hay case study */}
+      {(!caseTitle || !caseDescription) && (
+        <section className="py-16 md:py-24 bg-linear-to-br from-primary via-accent to-accent-secondary text-white">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <Rocket className="w-16 h-16 mx-auto mb-6 opacity-90" strokeWidth={1.5} />
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                {copy.finalCtaTitle}
+              </h2>
+              <p className="text-lg text-white/90 mb-8 leading-relaxed">
+                {copy.finalCtaDescription}
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-neutral-900 hover:bg-white/90 shadow-xl hover:shadow-2xl transition-all group"
+              >
+                <Link href="/contact" className="flex items-center gap-2">
+                  {ctaButtonText}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
   );
 }
+

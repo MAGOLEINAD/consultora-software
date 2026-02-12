@@ -2,16 +2,16 @@
   "navigation": {
     "home": "Inicio",
     "services": "Servicios",
-    "solutions": "Solutions",
-    "about": "About Us",
+    "solutions": "Soluciones",
+    "about": "Nosotros",
     "caseStudies": "Casos de Éxito",
     "contact": "Contacto"
   },
   "home": {
     "hero": {
-      "badge": "EXPERT - DRIVEN",
-      "title": "IT Solutions",
-      "subtitle": "We design and deliver data platforms, business intelligence, automation, and AI solutions that replace manual work, unify fragmented systems, and turn information into measurable operational and financial outcomes.",
+      "badge": "LIDERADO POR EXPERTOS",
+      "title": "Soluciones IT",
+      "subtitle": "Disenamos e implementamos plataformas de datos, inteligencia de negocio, automatizacion e IA para reemplazar trabajo manual, unificar sistemas fragmentados y convertir informacion en resultados operativos y financieros medibles.",
       "cta1": "Descubrir Más",
       "cta2": "Ver Demo",
       "metricTitle": "870k+",
@@ -20,8 +20,8 @@
     },
     "trustedBy": "Tecnologías que usamos",
     "aboutTabs": {
-      "title": "Building the Future with State of the Art IT Solutions",
-      "subtitle": "OUR TRUSTED SUPPORT",
+      "title": "Construimos el futuro",
+      "subtitle": "NUESTRO SOPORTE DE CONFIANZA",
       "tabs": [
         {
           "label": "Nuestra Misión",
@@ -56,34 +56,34 @@
       "title": "Soluciones Financieras y Analíticas",
       "tabs": [
         {
-          "label": "FP&A Automation",
-          "title": "FP&A Automation",
-          "description": "Repurpose members of the accounting and FP&A departments to work smarter by replacing routine spreadsheet-based tasks with digital automation."
+          "label": "Automatizacion FP&A",
+          "title": "Automatizacion FP&A",
+          "description": "Reasigna al equipo de Contabilidad y Planificacion y Analisis Financiero (FP&A) a tareas de mayor valor reemplazando planillas repetitivas con automatizacion digital."
         },
         {
-          "label": "Forecasting Tools",
-          "title": "Forecasting Tools",
-          "description": "Bottoms up approaches to forecasting based on extensive historical data, assumptions, and predictive analytics have proven to be far more accurate."
+          "label": "Herramientas de Forecasting",
+          "title": "Herramientas de Forecasting",
+          "description": "Los enfoques de forecasting basados en datos historicos, supuestos y analitica predictiva logran una precision significativamente mayor."
         },
         {
-          "label": "Pricing Analytics",
-          "title": "Pricing Analytics",
-          "description": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits."
+          "label": "Analitica de Precios",
+          "title": "Analitica de Precios",
+          "description": "Modelos de elasticidad de precios combinados con datos de competencia y promociones para definir precios que maximicen rentabilidad."
         },
         {
-          "label": "Profitability Models",
-          "title": "Profitability Models",
-          "description": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money."
+          "label": "Modelos de Rentabilidad",
+          "title": "Modelos de Rentabilidad",
+          "description": "Modelos de rentabilidad por producto y cliente que asignan costos totales para identificar que segmentos generan ganancia real."
         },
         {
-          "label": "Spend Cubes",
-          "title": "Spend Cubes",
-          "description": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types."
+          "label": "Análisis de gastos",
+          "title": "Análisis de gastos",
+          "description": "Sistema de costos detallado para identificar rapidamente oportunidades de reduccion por proveedor y tipo de suministro."
         },
         {
-          "label": "Customer Analytics",
-          "title": "Customer Analytics",
-          "description": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems."
+          "label": "Analitica de Clientes",
+          "title": "Analitica de Clientes",
+          "description": "Analitica para perfilar clientes, segmentar audiencias y construir sistemas CRM inteligentes."
         }
       ]
     },
@@ -194,7 +194,7 @@
       ],
       "comparison": [
         {
-          "package": "Discovery Sprint",
+          "package": "Sprint de Discovery",
           "bestFor": "Definir alcance y cotización fija",
           "duration": "12 semanas",
           "outcomes": "Roadmap + scope fijo",
@@ -276,10 +276,10 @@
       ]
     },
     "faq": {
-      "subtitle": "FREQUENTLY ASKED QUESTIONS",
-      "title": "Answers to common questions about our IT services.",
-      "description": "This is why having reviews and client testimonials is important for your business. So, in this article, go over some client testimonial examples.",
-      "cta": "Contact Us",
+      "subtitle": "PREGUNTAS FRECUENTES",
+      "title": "Respuestas a preguntas comunes sobre nuestros servicios IT.",
+      "description": "Estas respuestas sintetizan las dudas mas comunes sobre alcance, tiempos, soporte y tecnologia para que puedas decidir con claridad.",
+      "cta": "Contactanos",
       "items": [
         {
           "question": "¿En qué se diferencian los servicios productizados de la consultoría tradicional?",
@@ -509,10 +509,10 @@
     }
   },
   "solutions": {
-    "title": "Solutions",
-    "subtitle": "FP&A, forecasting, pricing, profitability, spend, and customer analytics solutions.",
-    "commonStrugglesTitle": "Common Struggles",
-    "solutionsTitle": "Solutions to These Challenges",
+    "title": "Soluciones",
+    "subtitle": "Soluciones de FP&A, forecasting, pricing, rentabilidad, gasto y analitica de clientes.",
+    "commonStrugglesTitle": "Desafios Comunes",
+    "solutionsTitle": "Soluciones a Estos Desafios",
     "tabsLabels": {
       "struggles": "Desafíos",
       "solutions": "Nuestras Soluciones",
@@ -520,116 +520,184 @@
     },
     "items": {
       "fpa-automation": {
-        "name": "FP&A Automation",
-        "description": "Repurpose members of the accounting and FP&A departments to work smarter by replacing routine spreadsheet-based tasks with digital automation.",
-        "intro": "Challenges Companies Have with Labor Intensive Accounting and Reporting Processes. Companies get stuck in the rut of having a large team of people manually closing month end books and preparing the same reports over and over again each month. This antiquated way of going about routine accounting and reporting processes results in untimely information, excessive costs, and employee burnout.",
+        "name": "Automatizacion FP&A",
+        "description": "Reasigna al equipo de Contabilidad y Planificacion y Analisis Financiero (FP&A) a tareas de mayor valor reemplazando procesos repetitivos en planillas con automatizacion digital.",
+        "intro": "Muchas empresas mantienen cierres contables y reportes mensuales con procesos manuales intensivos. Este enfoque genera demoras, costos altos y desgaste del equipo.",
         "commonStruggles": [
-          "Time-Consuming and Costly Processes  Manual accounting functions require significant staff hours and higher labor costs.",
-          "Increased Risk of Human Errors  Examples of businesses suffering financial losses with errors from manual spreadsheet work are vast and significant.",
-          "Limited Scalability  As a company grows, manual processes struggle to keep up with increased transaction volumes.",
-          "Difficulty in Generating Real-Time Insights  Labor-intensive processes result in outdated or delayed financial reports thereby lacking access to real-time financial insights for decision-making."
+          "Procesos lentos y costosos: las tareas contables manuales demandan muchas horas y elevan costos laborales.",
+          "Mayor riesgo de error humano: los errores en planillas pueden provocar perdidas financieras significativas.",
+          "Escalabilidad limitada: al crecer el volumen de transacciones, el proceso manual se vuelve cuello de botella.",
+          "Sin visibilidad en tiempo real: los reportes llegan tarde y dificultan decisiones oportunas."
         ],
         "solutions": [
-          "Enterprise-wide Data Platform  A centralized data platform integrates financial information across departments, eliminating data silos and enabling seamless access to real-time, accurate reporting.",
-          "Automation  Automating routine accounting tasks and financial reporting reduces manual errors, improves efficiency, and lowers labor costs.",
-          "Standardized Accounting Practices and Enhanced Internal Controls  Establishing uniform accounting standards and robust internal controls ensures consistency, improves compliance with regulations, and minimizes financial discrepancies.",
-          "Data Analytics and Machine Learning  Advanced analytics and machine learning algorithms detect anomalies, enhance forecasting accuracy, and provide valuable insights for strategic decision-making."
+          "Plataforma de datos unificada: integra informacion financiera entre areas y elimina silos.",
+          "Automatizacion de tareas contables: reduce errores, mejora eficiencia y baja costos operativos.",
+          "Estandares y controles internos robustos: mejora consistencia, cumplimiento y trazabilidad.",
+          "Analitica avanzada y ML: detecta anomalias, mejora forecast y aporta insights estrategicos."
         ],
         "case": {
-          "title": "Oil & Gas Company With Large Team of Clerical Workers",
-          "description": "A major oil & gas companys finance department previously relied on dozens of employees to manually close the books each month, a labor-intensive process that took several weeks to complete. By implementing automation, the company streamlined data consolidation, reconciliations, and reporting, drastically reducing the time required to close the books to less than one week. As a result, over 80% of the employees who were previously dedicated to this task were repurposed to more strategic, value-added work, improving overall efficiency and driving greater business impact."
+          "title": "Caso: empresa con procesos financieros manuales",
+          "description": "Una empresa con alta carga operativa en finanzas automatizo consolidacion, conciliaciones y reporting. El equipo redujo tiempos de cierre y pudo enfocarse en tareas de mayor valor."
         }
       },
       "forecasting-tools": {
-        "name": "Forecasting Tools",
-        "description": "Bottoms up approaches to forecasting based on extensive historical data, assumptions, and predictive analytics have proven to be far more accurate.",
-        "intro": "Challenges Companies Face With Accurate Forecasting When Done With Limited Information and Data Science. Limited or inconsistent historical data reduces forecasting accuracy, while rapidly changing trends can cause sudden demand shifts that past data cannot capture. Small datasets may lead to overfitting or underfitting in models, introduce bias, and hinder companies with limited computational resources or expertise from effectively applying advanced data science techniques.",
+        "name": "Herramientas de Forecasting",
+        "description": "Los enfoques de forecasting basados en datos historicos, supuestos y analitica predictiva logran una precision significativamente mayor.",
+        "intro": "Cuando hay datos historicos limitados o inconsistentes, el forecasting pierde precision. Ademas, los cambios rapidos del mercado pueden volver obsoletos los supuestos tradicionales.",
         "commonStruggles": [
-          "Financial Losses  Overestimation leads to excess inventory, wasted resources, and higher carrying costs. Underestimation causes stockouts, missed sales opportunities, and revenue loss.",
-          "Supply Chain Disruptions  Poor demand forecasting can result in supply chain inefficiencies, such as production slowdowns, supplier issues, or excessive lead times.",
-          "Inefficient Resource Allocation  Companies may overstaff or understaff based on flawed demand projections, leading to increased labor costs or workforce shortages.",
-          "Competitive Disadvantage  Poor forecasting makes businesses reactive rather than proactive in adapting to trends."
+          "Perdidas financieras: sobreestimar genera exceso de inventario y subestimar causa quiebres de stock y ventas perdidas.",
+          "Disrupciones en supply chain: un mal forecast afecta produccion, proveedores y tiempos de entrega.",
+          "Asignacion ineficiente de recursos: se sobrecarga o subutiliza personal por proyecciones incorrectas.",
+          "Desventaja competitiva: la empresa reacciona tarde en lugar de anticiparse a tendencias."
         ],
         "solutions": [
-          "Advanced Forecasting Models  Implement machine learning and historical trend analysis to improve accuracy.",
-          "Dynamic Pricing & Inventory  Use real-time monitoring to balance supply and demand efficiently.",
-          "Predictive Production Optimization  Leverage analytics to refine schedules and reduce excess stock.",
-          "Continuous Model Refinement  Update forecasts using new data sources, customer feedback, and real-time analytics."
-        ]
+          "Modelos avanzados de forecasting con ML y analisis de tendencias historicas.",
+          "Pricing e inventario dinamicos con monitoreo en tiempo real.",
+          "Optimizacion predictiva de produccion para reducir exceso de stock.",
+          "Refinamiento continuo de modelos con nuevas fuentes de datos y feedback operativo."
+        ],
+        "case": {
+          "title": "Caso: mejor precision de demanda con forecasting",
+          "description": "Una empresa implemento modelos de forecasting con datos historicos y señales operativas en tiempo real. Esto mejoro la planificacion de inventario y redujo errores de proyeccion en decisiones clave."
+        }
       },
       "pricing-analytics": {
-        "name": "Pricing Analytics",
-        "description": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits.",
-        "intro": "Price elasticity models complemented with web-scraped competitor price data and promotion impacts identify where to price that yields the highest profits."
+        "name": "Analitica de Precios",
+        "description": "Modelos de elasticidad de precios combinados con datos de competencia y promociones para definir precios que maximicen rentabilidad.",
+        "intro": "Modelos de elasticidad de precios combinados con datos de competencia y promociones para definir precios que maximicen rentabilidad.",
+        "commonStruggles": [
+          "Erosion de margen: los precios se definen sin visibilidad clara de elasticidad, descuentos y efecto por canal.",
+          "Reaccion lenta a la competencia: el equipo no responde a tiempo a cambios de precios y promociones del mercado.",
+          "Reglas de precio inconsistentes: distintas regiones y equipos aplican criterios diferentes.",
+          "Baja visibilidad de promociones: cuesta medir que campañas realmente aumentan la rentabilidad."
+        ],
+        "solutions": [
+          "Modelos de elasticidad por segmento: estiman disposicion a pagar por producto, cliente y canal.",
+          "Inteligencia competitiva de precios: monitorea precios y promociones del mercado casi en tiempo real.",
+          "Motor de gobierno de precios: estandariza guardrails, aprobaciones y politicas de descuento.",
+          "Analitica de rentabilidad promocional: mide lift, canibalizacion e impacto en margen por campaña."
+        ],
+        "case": {
+          "title": "Caso: mejora de margen con pricing",
+          "description": "Una empresa unifico datos de precios, promociones y mercado para optimizar decisiones comerciales. Con reglas y monitoreo continuo, mejoro rentabilidad y redujo descuentos ineficientes."
+        }
       },
       "profitability-models": {
-        "name": "Profitability Models",
-        "description": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money.",
-        "intro": "Product and Customer profitability models are built by applying total costs across each product/customer to determine what product/customers make money and do not make money."
+        "name": "Modelos de Rentabilidad",
+        "description": "Modelos de rentabilidad por producto y cliente que asignan costos totales para identificar que segmentos generan ganancia real.",
+        "intro": "Modelos de rentabilidad por producto y cliente que asignan costos totales para identificar que segmentos generan ganancia real.",
+        "commonStruggles": [
+          "Fugas ocultas de rentabilidad: overhead y costos indirectos no se asignan correctamente por producto y cliente.",
+          "Foco engañoso en ingresos: cuentas de alta facturacion pueden destruir margen al incluir costos de servicio y logistica.",
+          "Prioridades de portafolio poco claras: no se identifica que ofertas escalar, corregir o discontinuar.",
+          "Decisiones con poca base economica: pricing y estrategia comercial se definen sin unit economics reales."
+        ],
+        "solutions": [
+          "Modelado de costo de servir: asigna costos directos e indirectos por SKU, cliente y canal.",
+          "Vistas de rentabilidad producto-cliente: muestra waterfalls de margen desde bruto a neto.",
+          "Analisis de escenarios y sensibilidad: simula cambios de precio, volumen y costo antes de ejecutar.",
+          "Playbooks de accion sobre margen: prioriza estrategia de cuentas, surtido y renegociacion contractual."
+        ],
+        "case": {
+          "title": "Caso: foco comercial en rentabilidad real",
+          "description": "Una empresa implemento modelos de rentabilidad por cliente y producto para reasignar esfuerzo comercial. Esto permitio priorizar segmentos de mayor contribucion y mejorar margen operativo."
+        }
       },
       "spend-cubes": {
-        "name": "Spend Cubes",
-        "description": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types.",
-        "intro": "Data system of total cost detail with ability to quickly determine where there are cost reduction opportunities across vendor and supply types."
+        "name": "Análisis de gastos",
+        "description": "Sistema de costos detallado para identificar rapidamente oportunidades de reduccion por proveedor y tipo de suministro.",
+        "intro": "Sistema de costos detallado para identificar rapidamente oportunidades de reduccion por proveedor y tipo de suministro.",
+        "commonStruggles": [
+          "Datos de compras fragmentados: el gasto esta disperso entre ERP, cuentas a pagar y archivos manuales.",
+          "Poca palanca de negociacion: faltan vistas consolidadas por categoria, proveedor y contrato.",
+          "Gasto fuera de contrato: compras no homologadas aumentan costos y reducen cumplimiento.",
+          "Seguimiento lento de ahorros: cuesta validar ahorros realizados versus ahorros negociados."
+        ],
+        "solutions": [
+          "Modelo unificado de análisis de gastos: consolida gasto por proveedor, categoria, unidad y periodo.",
+          "Dashboards por proveedor y categoria: detecta riesgos de concentracion y oportunidades de ahorro.",
+          "Monitoreo de cumplimiento contractual: identifica transacciones fuera de politica y excepciones.",
+          "Analitica de realizacion de ahorros: sigue pipeline, iniciativas aprobadas y valor capturado."
+        ],
+        "case": {
+          "title": "Caso: reduccion de costos con analisis de gasto",
+          "description": "Una empresa consolido compras de multiples sistemas en un analisis de gasto unificado. Detecto fugas fuera de contrato y oportunidades de negociacion para capturar ahorros sostenidos."
+        }
       },
       "customer-analytics": {
-        "name": "Customer Analytics",
-        "description": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems.",
-        "intro": "Data analytics used to profile customers and understand how to target different customer types are used to build Smart CRM Systems."
+        "name": "Analitica de Clientes",
+        "description": "Analitica para perfilar clientes, segmentar audiencias y construir sistemas CRM inteligentes.",
+        "intro": "Analitica para perfilar clientes, segmentar audiencias y construir sistemas CRM inteligentes.",
+        "commonStruggles": [
+          "Segmentacion poco precisa: segmentos amplios no capturan comportamiento, valor y etapa de ciclo de vida.",
+          "Riesgo alto de tasa de abandono: las señales de fuga se detectan tarde y se pierde capacidad de retencion.",
+          "Inversion ineficiente en campañas: mensajes y ofertas no se personalizan segun intencion del cliente.",
+          "Vista de cliente desconectada: ventas, marketing y servicio no comparten una misma fuente."
+        ],
+        "solutions": [
+          "Modelos de segmentacion conductual: agrupan clientes por valor, frecuencia y engagement.",
+          "Scoring de tasa de abandono y propension: predice fuga y sugiere next-best-action por cuenta.",
+          "Orquestacion de ofertas personalizadas: alinea canal, momento y oferta con cada segmento.",
+          "Capa 360 de inteligencia de cliente: integra CRM, soporte y transacciones para decisiones consistentes."
+        ],
+        "case": {
+          "title": "Caso: retencion y crecimiento con analitica de clientes",
+          "description": "Una empresa integro datos de CRM, soporte y facturacion para anticipar tasas de abandono. Con acciones personalizadas por segmento, mejoro retencion y crecimiento de ingresos por cliente."
+        }
       }
     }
   },
   "about": {
-    "heroEyebrow": "MORE ABOUT US",
-    "heroTitle": "Empowering Businesses with Innovative IT Solutions",
-    "intro": "We are strong team of former large firm consultants that are passionate about creating comprehensive data platforms designed to help companies better manage their business, automate functional tasks, and improve financial performance.",
+    "heroEyebrow": "MAS SOBRE NOSOTROS",
+    "heroTitle": "Impulsamos negocios con soluciones IT innovadoras",
+    "intro": "Somos un equipo senior de ex consultores de firmas lideres, enfocado en crear plataformas de datos integrales para gestionar mejor el negocio, automatizar funciones clave y mejorar el rendimiento financiero.",
     "highlights": {
       "items": [
         {
-          "title": "Unique Mix of Skill Sets",
-          "description": "Business Operations, Accounting, and Technology Expertise"
+          "title": "Combinacion unica de capacidades",
+          "description": "Experiencia en operaciones, contabilidad y tecnologia"
         },
         {
-          "title": "Highly Educated and Credentialed",
-          "description": "PhDs, MBAs, Masters IT and Data Science, Certified Public Accountants"
+          "title": "Alta formacion y certificaciones",
+          "description": "PhD, MBA, maestrias en IT y Data Science, y CPA"
         },
         {
-          "title": "Rapid Solutions",
-          "description": "Stand Up Comprehensive Business Intelligence Functions from Scratch in a Few Weeks"
+          "title": "Implementaciones rapidas",
+          "description": "Montamos funciones completas de BI en pocas semanas"
         },
         {
-          "title": "Automation Experts",
-          "description": "Numerous Success Stories Replacing Spreadsheet Armies with Custom Digital Solutions"
+          "title": "Especialistas en automatizacion",
+          "description": "Casos reales reemplazando ejercitos de planillas por soluciones digitales"
         },
         {
-          "title": "Provide Managed Services",
-          "description": "We Provide Ongoing Sophisticated Data Management/Analytics Support"
+          "title": "Servicios gestionados",
+          "description": "Soporte continuo avanzado en gestion de datos y analitica"
         },
         {
-          "title": "Highly Price Competitive",
-          "description": "Effective and Affordable Business Intelligence Solutions Fast"
+          "title": "Precios competitivos",
+          "description": "Soluciones de BI efectivas y accesibles en tiempos cortos"
         }
       ]
     },
     "team": {
-      "title": "Meet the leadership team",
-      "subtitle": "EXPERT TEAM",
+      "title": "Conoce al equipo",
+      "subtitle": "EQUIPO EXPERTO",
       "members": [
         {
           "name": "Brooklyn Simmons",
-          "role": "President of Sales"
+          "role": "Director Comercial"
         },
         {
           "name": "Savannah Nguyen",
-          "role": "President of Sales"
+          "role": "Directora Comercial"
         },
         {
           "name": "Leslie Alexander",
-          "role": "President of Sales"
+          "role": "Directora Comercial"
         },
         {
           "name": "Darlene Robertson",
-          "role": "President of Sales"
+          "role": "Directora Comercial"
         }
       ]
     }
@@ -680,7 +748,7 @@
     "address": "9550 Bolsa Ave #126, USA",
     "email": "info@consultora-software.com",
     "phone": "(+256) 214 203 215",
-    "legal": "Legal",
+    "legal": "Aviso legal",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
     "copyright": "© 2026 Consultora Software. Todos los derechos reservados."
@@ -695,8 +763,8 @@
       "description": "Soluciones especializadas para plataformas de datos, automatización de procesos, IA aplicada, forecasting y servicios gestionados."
     },
     "solutions": {
-      "title": "Solutions | Consultora Software",
-      "description": "FP&A automation, forecasting tools, pricing analytics, profitability models, spend cubes, and customer analytics."
+      "title": "Soluciones | Consultora Software",
+      "description": "Automatizacion FP&A, herramientas de forecasting, analitica de precios, modelos de rentabilidad, análisis de gasto y analitica de clientes."
     },
     "about": {
       "title": "Nosotros | Consultora Software",

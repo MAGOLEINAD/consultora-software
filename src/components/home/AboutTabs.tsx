@@ -20,9 +20,10 @@ interface AboutTabsProps {
   points: string[];
   cta: string;
   helpLine: string;
+  locale?: string;
 }
 
-export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine }: AboutTabsProps) {
+export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine, locale = 'en' }: AboutTabsProps) {
   const [active, setActive] = useState(0);
   const current = tabs[active] ?? tabs[0];
 
@@ -43,7 +44,7 @@ export default function AboutTabs({ title, subtitle, tabs, points, cta, helpLine
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl border border-border shadow-lg p-4 w-44">
-              <p className="text-xs text-neutral-700">Revenue growth</p>
+              <p className="text-xs text-neutral-700">{locale === 'es' ? 'Crecimiento de ingresos' : 'Revenue growth'}</p>
               <p className="text-xl font-semibold text-accent">$120,544</p>
               <div className="mt-2 h-12 w-full rounded-lg bg-neutral-100"></div>
             </div>

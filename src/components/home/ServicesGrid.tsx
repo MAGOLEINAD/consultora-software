@@ -105,4 +105,3 @@ export default function ServicesGrid({ title, subtitle, services }: ServicesGrid
     </section>
   );
 }
-

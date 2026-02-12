@@ -40,6 +40,7 @@ export default async function DataPlatformsBiPage(props: { params: Promise<{ loc
         icon={Database}
         name={t('services.dataPlatformsBi.name')}
         shortDescription={t('services.dataPlatformsBi.shortDescription')}
+        locale={locale}
       />
 
       <ServiceDetailLayout
@@ -57,6 +58,7 @@ export default async function DataPlatformsBiPage(props: { params: Promise<{ loc
           deliverables: t('services.tabsLabels.deliverables'),
           outcomes: t('services.tabsLabels.outcomes'),
         }}
+        locale={locale}
       />
     </>
   );

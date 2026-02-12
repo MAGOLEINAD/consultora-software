@@ -77,6 +77,7 @@ interface ServiceDetailLayoutProps {
   ctaTitle: string;
   ctaDescription: string;
   ctaButtonText: string;
+  locale?: string;
   tabsLabels: {
     challenges: string;
     deliverables: string;
@@ -95,8 +96,33 @@ export default function ServiceDetailLayout({
   ctaDescription,
   ctaButtonText,
   tabsLabels,
+  locale = 'en',
 }: ServiceDetailLayoutProps) {
   const [activeTab, setActiveTab] = useState('challenges');
+
+  const copy = locale === 'es'
+    ? {
+        helperText: 'Hace clic en cada paso para explorar la informacion',
+        challengesBadge: 'Puntos de Dolor Comunes',
+        challengesDescription: 'Estos son los obstaculos mas frecuentes antes de trabajar con nosotros',
+        deliverablesBadge: 'Nuestra Solucion',
+        deliverablesDescription: 'Entregables concretos para resolver desafios y generar resultados',
+        outcomesBadge: 'Resultados Esperados',
+        outcomesDescription: 'Impacto medible que podes esperar despues de la implementacion',
+        typicalDelivery: 'Entrega tipica',
+        typicalDeliveryDuration: '4-12 semanas',
+      }
+    : {
+        helperText: 'Click on each step to explore the information',
+        challengesBadge: 'Common Pain Points',
+        challengesDescription: 'These are the most common obstacles our clients face before working with us',
+        deliverablesBadge: 'Our Solution',
+        deliverablesDescription: 'Concrete deliverables that solve your challenges and drive results',
+        outcomesBadge: 'Expected Results',
+        outcomesDescription: 'Measurable business outcomes you can expect after implementation',
+        typicalDelivery: 'Typical delivery',
+        typicalDeliveryDuration: '4-12 weeks',
+      };
 
   const wizardSteps = [
     { id: 'challenges', letter: 'A', label: tabsLabels.challenges, icon: AlertCircle },
@@ -136,7 +162,7 @@ export default function ServiceDetailLayout({
               <div className="max-w-4xl mx-auto">
                 {/* Helper text */}
                 <p className="text-center text-sm text-neutral-600 mb-6 font-semibold">
-                  Click on each step to explore the information
+                  {copy.helperText}
                 </p>
 
                 <div className="relative">
@@ -218,13 +244,13 @@ export default function ServiceDetailLayout({
             <TabsContent value="challenges" className="mt-0">
               <div className="text-center mb-6 md:mb-8">
                 <Badge variant="outline" className="mb-2 md:mb-3 text-xs md:text-sm px-3 md:px-4 py-1 md:py-1.5 border-primary/30 text-primary">
-                  Common Pain Points
+                  {copy.challengesBadge}
                 </Badge>
                 <h2 className="font-display text-2xl md:text-4xl font-bold text-neutral-900 mb-2 md:mb-3">
                   {challengesTitle}
                 </h2>
                 <p className="text-sm md:text-base text-neutral-600 max-w-2xl mx-auto">
-                  These are the most common obstacles our clients face before working with us
+                  {copy.challengesDescription}
                 </p>
               </div>
 
@@ -257,13 +283,13 @@ export default function ServiceDetailLayout({
             <TabsContent value="deliverables" className="mt-0">
               <div className="text-center mb-6 md:mb-8">
                 <Badge variant="outline" className="mb-2 md:mb-3 text-xs md:text-sm px-3 md:px-4 py-1 md:py-1.5 border-accent/30 text-accent">
-                  Our Solution
+                  {copy.deliverablesBadge}
                 </Badge>
                 <h2 className="font-display text-2xl md:text-4xl font-bold text-neutral-900 mb-2 md:mb-3">
                   {deliverablesTitle}
                 </h2>
                 <p className="text-sm md:text-base text-neutral-600 max-w-2xl mx-auto">
-                  Concrete deliverables that solve your challenges and drive results
+                  {copy.deliverablesDescription}
                 </p>
               </div>
 
@@ -296,13 +322,13 @@ export default function ServiceDetailLayout({
             <TabsContent value="outcomes" className="mt-0">
               <div className="text-center mb-6 md:mb-8">
                 <Badge variant="outline" className="mb-2 md:mb-3 text-xs md:text-sm px-3 md:px-4 py-1 md:py-1.5 border-green-600/30 text-green-700">
-                  Expected Results
+                  {copy.outcomesBadge}
                 </Badge>
                 <h2 className="font-display text-2xl md:text-4xl font-bold text-neutral-900 mb-2 md:mb-3">
                   {outcomesTitle}
                 </h2>
                 <p className="text-sm md:text-base text-neutral-600 max-w-2xl mx-auto">
-                  Measurable business outcomes you can expect after implementation
+                  {copy.outcomesDescription}
                 </p>
               </div>
 
@@ -352,8 +378,8 @@ export default function ServiceDetailLayout({
 
                     <div className="mt-5 md:mt-6 pt-5 md:pt-6 border-t border-neutral-200">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-neutral-600">Typical delivery</span>
-                        <span className="font-semibold text-neutral-900">4-12 weeks</span>
+                        <span className="text-neutral-600">{copy.typicalDelivery}</span>
+                        <span className="font-semibold text-neutral-900">{copy.typicalDeliveryDuration}</span>
                       </div>
                     </div>
                   </div>

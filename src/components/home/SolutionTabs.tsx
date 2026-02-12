@@ -90,4 +90,3 @@ export default function SolutionTabs({ title, tabs, sectionClassName = 'section-
     </section>
   );
 }
-

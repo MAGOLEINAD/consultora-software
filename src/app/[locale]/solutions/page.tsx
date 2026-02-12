@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
-import SolutionTabs from '@/components/home/SolutionTabs';
+import SolutionTabs from '@/components/home/SolutionTabsVerticalTimeline';
 
 const solutionSlugs = [
   'fpa-automation',
@@ -38,7 +38,8 @@ export default async function SolutionsPage(props: { params: Promise<{ locale: s
     <SolutionTabs
       title={t('home.solutionTabs.title')}
       tabs={tabs}
-      sectionClassName="pt-0 pb-16 md:pb-20 bg-neutral-50"
+      sectionClassName="pt-10 pb-16 md:pb-20 bg-neutral-50"
+      locale={params.locale}
     />
   );
 }

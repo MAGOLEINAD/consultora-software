@@ -136,4 +136,3 @@ export default function Testimonials({ title, items }: TestimonialsProps) {
     </section>
   );
 }
-

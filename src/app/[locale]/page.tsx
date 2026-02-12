@@ -122,6 +122,7 @@ export default async function HomePage(props: { params: Promise<{ locale: string
         ]}
         cta={t('home.aboutTabs.cta')}
         helpLine={t('home.aboutTabs.helpLine')}
+        locale={locale}
       />
 
       <ServicesGrid

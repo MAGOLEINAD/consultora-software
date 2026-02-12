@@ -23,8 +23,10 @@ const THEMES: Array<{ value: ThemeName; label: string }> = [
 
 const THEME_STORAGE_KEY = 'site-theme';
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher({ locale = 'en' }: { locale?: string }) {
   const [theme, setTheme] = useState<ThemeName>('ocean');
+  const label = locale === 'es' ? 'Tema' : 'Theme';
+  const selectLabel = locale === 'es' ? 'Seleccionar tema' : 'Select theme';
 
   useEffect(() => {
     const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) as ThemeName | null;
@@ -45,10 +47,10 @@ export default function ThemeSwitcher() {
   return (
     <div className="inline-flex items-center gap-2 text-neutral-700">
       <Palette className="h-4 w-4" aria-hidden="true" />
-      <span className="sr-only">Theme</span>
+      <span className="sr-only">{label}</span>
       <Select value={theme} onValueChange={(value) => handleChange(value as ThemeName)}>
-        <SelectTrigger className="h-9 w-[170px]" aria-label="Select theme">
-          <SelectValue placeholder="Theme" />
+        <SelectTrigger className="h-9 w-42.5" aria-label={selectLabel}>
+          <SelectValue placeholder={label} />
         </SelectTrigger>
         <SelectContent>
           {THEMES.map((themeOption) => (

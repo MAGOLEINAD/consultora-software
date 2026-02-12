@@ -19,7 +19,7 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
     <button
       onClick={switchLocale}
       className="flex items-center gap-2 px-3 py-2 text-sm rounded-md hover:bg-muted transition-colors cursor-pointer"
-      aria-label={`Switch to ${currentLocale === 'en' ? 'Spanish' : 'English'}`}
+      aria-label={currentLocale === 'en' ? 'Cambiar a espanol' : 'Switch to English'}
     >
       <Languages className="w-4 h-4" />
       <span className="font-medium">{currentLocale === 'en' ? 'ES' : 'EN'}</span>

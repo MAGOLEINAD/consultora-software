@@ -98,9 +98,9 @@ export default function Header({ locale, translations, solutions, services }: He
 
         {/* CTA and Language Switcher */}
         <div className="hidden md:flex md:items-center md:gap-4">
-          <ThemeSwitcher />
+          <ThemeSwitcher locale={locale} />
           <LanguageSwitcher currentLocale={locale} />
-          <Button asChild size="sm" className="hover:-translate-y-0.5 transition-transform">
+          <Button asChild size="default" className="text-base font-semibold hover:-translate-y-0.5 transition-transform">
             <Link href="/contact">{translations.contact}</Link>
           </Button>
         </div>
@@ -109,7 +109,7 @@ export default function Header({ locale, translations, solutions, services }: He
         <button
           className="md:hidden p-2 text-neutral-800"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={locale === 'es' ? 'Abrir menu' : 'Toggle menu'}
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
@@ -166,9 +166,9 @@ export default function Header({ locale, translations, solutions, services }: He
               </div>
             ))}
             <div className="pt-4 border-t border-border space-y-4">
-              <ThemeSwitcher />
+              <ThemeSwitcher locale={locale} />
               <LanguageSwitcher currentLocale={locale} />
-              <Button asChild className="w-full">
+              <Button asChild className="w-full text-base font-semibold">
                 <Link href="/contact">{translations.contact}</Link>
               </Button>
             </div>

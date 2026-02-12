@@ -23,7 +23,7 @@ export default async function LocaleLayout(props: {
     notFound();
   }
 
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
   const schema = generateOrganizationSchema(locale);
 
   const headerTranslations = {
@@ -43,6 +43,8 @@ export default async function LocaleLayout(props: {
     address: messages.footer.address as string,
     email: messages.footer.email as string,
     phone: messages.footer.phone as string,
+    terms: messages.footer.terms as string,
+    privacy: messages.footer.privacy as string,
     copyright: messages.footer.copyright as string,
   };
 

@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npx shadcn@latest add tabs)",
-      "Bash(npx shadcn@latest add badge)"
+      "Bash(npx shadcn@latest add badge)",
+      "Bash(npx shadcn@latest add:*)"
     ]
   }
 }

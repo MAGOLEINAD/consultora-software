@@ -2,7 +2,15 @@ import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import { notFound } from 'next/navigation';
 import SolutionHero from '@/components/solutions/SolutionHero';
-import SolutionDetailLayout from '@/components/solutions/SolutionDetailLayout';
+
+// 🎨 PROPUESTAS DE DISEÑO - Comentar/descomentar para cambiar
+// ============================================================
+
+// Propuestas INTERACTIVAS ⭐ (transformación problema → solución)
+import FlipCardLayout from '@/components/solutions/layouts/FlipCardLayout';          // Propuesta 4: Flip Cards 3D (click para voltear)
+// Elegir layout aquí (descomentar solo UNO):
+const SolutionDetailLayout = FlipCardLayout;        // Propuesta 4 (Flip 3D)
+
 
 const solutionSlugs = [
   'fpa-automation',
@@ -75,6 +83,7 @@ export default async function SolutionDetailPage(props: { params: Promise<{ loca
       <SolutionHero
         name={name}
         description={description}
+        locale={locale}
       />
 
       <SolutionDetailLayout
@@ -86,11 +95,7 @@ export default async function SolutionDetailPage(props: { params: Promise<{ loca
         caseTitle={caseTitle}
         caseDescription={caseDescription}
         ctaButtonText={t('navigation.contact')}
-        tabsLabels={{
-          struggles: t('solutions.tabsLabels.struggles'),
-          solutions: t('solutions.tabsLabels.solutions'),
-          case: t('solutions.tabsLabels.case'),
-        }}
+        locale={locale}
       />
     </>
   );

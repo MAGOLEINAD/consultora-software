@@ -18,7 +18,8 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
 
 export default async function ManagedServicesPage(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  const t = await getTranslations({ locale: params.locale });
+  const { locale } = params;
+  const t = await getTranslations({ locale });
 
   return (
     <>
@@ -26,6 +27,7 @@ export default async function ManagedServicesPage(props: { params: Promise<{ loc
         icon={Headphones}
         name={t('services.managedServices.name')}
         shortDescription={t('services.managedServices.shortDescription')}
+        locale={locale}
       />
       <ServiceDetailLayout
         challengesTitle={t('services.managedServices.challenges.title')}
@@ -42,6 +44,7 @@ export default async function ManagedServicesPage(props: { params: Promise<{ loc
           deliverables: t('services.tabsLabels.deliverables'),
           outcomes: t('services.tabsLabels.outcomes'),
         }}
+        locale={locale}
       />
     </>
   );

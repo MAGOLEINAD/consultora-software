@@ -18,7 +18,8 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
 
 export default async function MlForecastingPage(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
-  const t = await getTranslations({ locale: params.locale });
+  const { locale } = params;
+  const t = await getTranslations({ locale });
 
   return (
     <>
@@ -26,6 +27,7 @@ export default async function MlForecastingPage(props: { params: Promise<{ local
         icon={TrendingUp}
         name={t('services.mlForecasting.name')}
         shortDescription={t('services.mlForecasting.shortDescription')}
+        locale={locale}
       />
       <ServiceDetailLayout
         challengesTitle={t('services.mlForecasting.challenges.title')}
@@ -42,6 +44,7 @@ export default async function MlForecastingPage(props: { params: Promise<{ local
           deliverables: t('services.tabsLabels.deliverables'),
           outcomes: t('services.tabsLabels.outcomes'),
         }}
+        locale={locale}
       />
     </>
   );
