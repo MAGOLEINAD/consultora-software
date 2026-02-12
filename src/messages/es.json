@@ -179,7 +179,7 @@
         {
           "name": "Mejora continua",
           "duration": "mensual",
-          "price": "USD 9k–20k / mes",
+          "price": "Desde USD 9k",
           "includesLength": "3",
           "includes": [
             "Soporte + optimización",
@@ -215,7 +215,7 @@
           "pricing": "desde USD 45k"
         },
         {
-          "package": "Mejora continua (Managed Improvements)",
+          "package": "Mejora continua",
           "bestFor": "Optimización constante",
           "duration": "mensual",
           "outcomes": "Mejoras continuas + SLA",
