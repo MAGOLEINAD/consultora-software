@@ -52,13 +52,16 @@ interface ServicesGridProps {
   title: string;
   subtitle: string;
   services: Service[];
+  sectionClassName?: string;
 }
 
-export default function ServicesGrid({ title, subtitle, services }: ServicesGridProps) {
+export default function ServicesGrid({ title, subtitle, services, sectionClassName = 'section-padding bg-white' }: ServicesGridProps) {
+  const hasHeading = Boolean(title?.trim()) || Boolean(subtitle?.trim());
+
   return (
-    <section className="section-padding bg-white">
+    <section className={sectionClassName}>
       <div className="container mx-auto px-4 md:px-8">
-        <SectionHeading title={title} subtitle={subtitle} />
+        {hasHeading && <SectionHeading title={title} subtitle={subtitle} />}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => {

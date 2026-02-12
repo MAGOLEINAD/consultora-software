@@ -1,6 +1,3 @@
-import { Link } from '@/i18n/routing';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import { defaultBlurDataURL } from '@/lib/image';
 
@@ -8,97 +5,60 @@ interface HeroProps {
   locale: string;
   title: string;
   subtitle: string;
-  cta1: string;
   badge: string;
-  metricTitle: string;
-  metricSubtitle: string;
-  awardLine: string;
 }
 
-export default function Hero({ title, subtitle, cta1, badge, metricTitle, metricSubtitle, awardLine }: HeroProps) {
+export default function Hero({ locale, title, subtitle, badge }: HeroProps) {
+  const proofPoints = locale === 'es'
+    ? ['Data Platforms', 'Automatizacion', 'IA Aplicada']
+    : ['Data Platforms', 'Automation', 'Applied AI'];
+
   return (
     <section className="relative overflow-hidden fexo-hero-dark text-white">
+      <Image
+        src="/images/hero/it.avif"
+        alt="Technology background"
+        fill
+        className="object-cover object-right opacity-30"
+        placeholder="blur"
+        blurDataURL={defaultBlurDataURL}
+        sizes="100vw"
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#08122b]/90 via-[#08122b]/80 to-black/85"></div>
       <div className="absolute inset-0 fexo-circuit opacity-40"></div>
       <div className="absolute -top-28 -right-28 h-80 w-80 rounded-full bg-primary opacity-20 blur-3xl"></div>
+      <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-accent opacity-20 blur-3xl"></div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 py-16 md:py-24 lg:py-28">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-4 text-sm uppercase tracking-[0.4em] text-white/70 mb-6">
-              <span className="h-px w-14 bg-white/40"></span>
-              <span>{badge}</span>
-            </div>
-
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-6 leading-[0.95] tracking-tight">
-              {title}
-            </h1>
-
-            <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed max-w-2xl">
-              {subtitle}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-white group border-none shadow-lg shadow-primary/25 hover:-translate-y-0.5 transition-transform">
-                <Link href="/services">
-                  {cta1}
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-4 text-white/80">
-              <div className="flex -space-x-3">
-                {[
-                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80',
-                  'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80',
-                  'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80',
-                  'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=120&q=80',
-                ].map((src, idx) => (
-                  <div key={idx} className="relative h-10 w-10 rounded-full overflow-hidden border-2 border-accent">
-                    <Image
-                      src={src}
-                      alt="Team member"
-                      fill
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL={defaultBlurDataURL}
-                      sizes="40px"
-                    />
-                  </div>
-                ))}
-              </div>
-              <div>
-                <p className="text-lg font-semibold text-white">{metricTitle}</p>
-                <p className="text-sm text-white/60">{metricSubtitle}</p>
-              </div>
-              <div className="text-sm text-white/60">
-                {awardLine}
-              </div>
-            </div>
+        <div className="max-w-5xl">
+          <div className="flex items-center gap-4 text-sm uppercase tracking-[0.35em] text-white/70 mb-7">
+            <span className="h-px w-14 bg-white/40"></span>
+            <span>{badge}</span>
           </div>
 
-          <div className="relative h-[420px] lg:h-[560px]">
-            <div className="absolute inset-0 rounded-[36px] overflow-hidden border border-white/10 shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
-                alt="Software engineer at work"
-                fill
-                className="object-cover"
-                placeholder="blur"
-                blurDataURL={defaultBlurDataURL}
-                priority
-              />
-            </div>
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold mb-7 leading-[0.92] tracking-tight max-w-4xl">
+            {title}
+          </h1>
 
-            <div className="absolute -left-10 top-1/2 -translate-y-1/2 h-20 w-20 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur">
-              <div className="h-12 w-12 rounded-full bg-white/90 text-accent flex items-center justify-center">
-                <Play className="h-5 w-5" />
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl">
+            {subtitle}
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4 md:gap-6">
+            {proofPoints.map((item, index) => (
+              <div key={item} className="inline-flex items-center gap-4">
+                <span className="px-4 py-2 rounded-full border border-white/20 bg-white/5 text-sm md:text-base font-semibold text-white/90">
+                  {item}
+                </span>
+                {index < proofPoints.length - 1 && (
+                  <span className="hidden md:inline-block h-px w-8 bg-white/20"></span>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
-

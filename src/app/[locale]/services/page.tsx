@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { generatePageMetadata } from '@/lib/metadata';
 import ServicesGrid from '@/components/home/ServicesGrid';
-import GradientBlur from '@/components/shared/GradientBlur';
 
 export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params;
@@ -54,10 +53,9 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
 
   return (
     <>
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <GradientBlur />
+      <section className="relative pt-12 md:pt-16 pb-4 md:pb-6 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               {t('services.title')}
             </h1>
@@ -72,6 +70,7 @@ export default async function ServicesPage(props: { params: Promise<{ locale: st
         locale={params.locale}
         title=""
         subtitle=""
+        sectionClassName="pt-4 md:pt-6 pb-16 md:pb-20 bg-white"
         services={services}
       />
     </>

@@ -86,10 +86,6 @@ export default async function HomePage(props: { params: Promise<{ locale: string
         badge={t('home.hero.badge')}
         title={t('home.hero.title')}
         subtitle={t('home.hero.subtitle')}
-        cta1={t('home.hero.cta1')}
-        metricTitle={t('home.hero.metricTitle')}
-        metricSubtitle={t('home.hero.metricSubtitle')}
-        awardLine={t('home.hero.awardLine')}
       />
 
       <TechnologySlider title={t('home.trustedBy')} />
